@@ -40,3 +40,10 @@ Route::get("/signout", [
   "as"   => "signout",
   "uses" => "AccountController@getAccountSignout"
 ]);
+
+// ABOUT
+
+Route::get("/about", [
+  "as"   => "about",
+  "uses" => "AboutController@getAbout"
+]);
