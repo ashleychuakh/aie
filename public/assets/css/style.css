@@ -113,6 +113,9 @@ a:hover, a:focus {
 .mtop100 {
     margin-top: 100px;
 }
+.mtop200 {
+    margin-top: 200px;
+}
 .mbtm10 {
     margin-bottom: 10px;
 }
@@ -238,13 +241,19 @@ footer.page-footer {
   text-transform: none;
   box-shadow: none;
 }
-.btn-theme:hover, .btn-link:focus {
+.btn-theme:hover, .btn-theme:focus {
   background-color: #F15B5A;
   box-shadow: 0 5px 11px 0 rgba(0,0,0,0.18),0 4px 15px 0 rgba(0,0,0,0.15);
 }
 .btn-fat {
   padding-top: 5px;
   padding-bottom: 40px;
+}
+.btn-link-fat {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-left: 40px;
+  padding-right: 40px;
 }
 .link-minimal {
   background-color: #ffd600;
@@ -255,28 +264,18 @@ footer.page-footer {
   text-align: center;
 }
 footer.page-footer {
-    background-color: #222222;
+    background-color: #616161;
 }
 footer.page-footer .footer-main {
   padding: 20px;
   min-height: 250px;
 }
-footer.page-footer .footer-main .google-download {
-  text-align: center;
-}
-footer.page-footer .footer-main .apple-download {
-  text-align: center;
-}
-footer.page-footer .footer-main .google-download img {
-  max-height: 65px;
-  max-width: 100%;
-}
-footer.page-footer .footer-main .apple-download img {
-  max-height: 65px;
-  max-width: 100%;
+footer.page-footer .footer-main h5 {
+  color: #fff;
+  padding-bottom: 20px;
 }
 footer.page-footer .footer-main p {
-  font-size: 1.2em;
+  color: #fff;
   padding-bottom: 20px;
 }
 footer.page-footer .footer-main p img {
@@ -284,64 +283,66 @@ footer.page-footer .footer-main p img {
   max-width: 100%;
 }
 footer.page-footer .footer-main ul {
-  columns: 2;
-  -webkit-columns: 2;
-  -moz-columns: 2;
+
 }
 footer.page-footer .footer-main ul li {
-  padding: 5px 0;
-}
-footer .footer-totop {
-  position: absolute;
-  width: 80px;
-  text-align: center;
-  top: 40px;
-  right: 30px;
-}
-footer .footer-totop a {
-  color: #fff;
-  font-size: 2.5em;
-}
-footer .footer-totop .totop-link {
-  width: 50px;
-  height: 50px;
-  border: 1px solid #fff;
-  border-radius: 50%;
-}
-footer .footer-totop .totop-link i {
-  display: block;
-  margin-top: 4px;
-}
-footer .footer-follow {
-  color: #fff;
-  width: 40%;
-  margin: 0 auto;
-  text-align: center;
-  padding-top: 10px;
-}
-footer .footer-follow ul li {
-  display: inline-block;
-  width: 40px;
-  height: 40px;
-  background-color: #fff;
-  border-radius: 50%;
-  margin: 0 20px;
-  font-size: 1.3em;
-}
-footer .footer-follow ul li i{
-  display: block;
-  margin-top: 12px;
-}
-footer .footer-follow p {
-  color: #fff;
-  padding: 15px;
-}
-footer.page-footer .footer-copyright {
-  height: 200px;
-  background-color: #323232;
-  position: relative;
+  padding: 15px 0;
+  text-transform: uppercase;
 }
 
+footer.page-footer .footer-main ul li a {
+  color: #fff;
+  font-weight: 300;
+}
+
+footer.page-footer .footer-main .social li {
+  display: inline-block;
+  padding: 0 5px;
+}
+
+footer.page-footer .footer-main .social li a{
+  border: 2px solid #fff;
+  font-size: 2em;
+  padding: 5px 10px;
+}
+
+footer.page-footer .footer-main .details li {
+  padding: 20px 0;
+}
+
+footer.page-footer .footer-main .details li .content{
+  display: inline-block;
+  position: absolute;
+  margin-left: 20px;
+  margin-top: 5px;
+}
+
+footer.page-footer .footer-main .details li p {
+  padding: 0;
+  margin: 0;
+}
+
+footer.page-footer .footer-main .details li img {
+  max-height: 50px;
+  display: inline-block;
+}
+footer.page-footer .footer-copyright {
+  border-top: 1px solid #fff;
+  margin: 0 15px;
+  background-color: #616161;
+  position: relative;
+  padding-top: 5px;
+}
+footer.page-footer .footer-copyright p {
+  color: #fff;
+}
+footer.page-footer .footer-copyright ul li {
+  display: inline-block;
+  padding: 0 10px;
+}
+footer.page-footer .footer-copyright ul li a{
+  color: #fff;
+}
 .toast.success, .alt-badge.success {
   background-color: #00c853;
 }
