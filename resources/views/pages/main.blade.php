@@ -1,7 +1,7 @@
 @extends("layouts/default")
 
 @section("head")
-<title>Meggnify</title>
+<title>AIE SG</title>
 <style>
 header {
   z-index: 1000;
@@ -41,6 +41,25 @@ header {
   z-index: 2;
   width: 100%;
   margin-top: 450px;
+}
+
+.hero-text h1 {
+  font-weight: 700;
+}
+
+.hero-text p {
+  font-family: Arial, sans-serif;
+}
+
+.hero-downwards {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  text-align:center;
+  margin-bottom: 20px;
+}
+
+.btn-downwards {
 }
 
 .hero .owl-stage-outer {
@@ -88,14 +107,27 @@ header {
   margin: 0 auto;
 }
 
-.hero-item-blank .owl-carousel .owl-item h5 {
-  color: #828284;
-  font-weight: 300;
+.hero-item-blank .item h5 {
+    color: #828284;
+    font-weight: 300;
 }
 
-.hero-item-blank .owl-carousel .owl-item p {
-  color: #3D9FF9;
-  font-family: Arial, sans-serif;
+.hero-item-blank .item p {
+    color: #3D9FF9;
+    font-family: Arial, sans-serif;
+}
+
+.hero-item-blank .item.line {
+  border-right: 1px solid #bdbdbd;
+}
+
+.hero-item-blank .btn-border {
+  border: 2px solid #bdbdbd;
+  color: #757575;
+}
+
+.hero-item-blank-signup {
+  padding: 20px;
 }
 
 .hero-item-blank .owl-stage-outer {
@@ -129,18 +161,83 @@ header {
   margin-top: 60px;
 }
 
+#owl-item {
+  padding-top: 30px;
+}
+
+#owl-clients {
+  padding-top: 30px;
+}
+
 .hero-item-1 {
-  background: linear-gradient(rgba(0,0,0,0.05),rgba(0,0,0,0.05)),url(/assets/img/main/hero-item-1.jpg);
-  min-height: 600px;
+  position: relative;
   background-position: center;
   text-align: center;
 }
 
+.hero-item-1 .parallax-content-container {
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.hero-item-1 h3 {
+  margin: 0;
+  padding-top: 50px;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+.hero-item-1 .item h4 {
+  color: #fff;
+}
+.hero-item-1 .item hr {
+  border: 3px solid #fff;
+  width: 60px;
+  margin: 0 auto;
+}
+.hero-item-1 .item p {
+  color: #fff;
+  font-size: 1.1em;
+  font-weight: 300;
+  margin-top: 15px;
+}
+
 .hero-item-2 {
-  background: linear-gradient(rgba(0,0,0,0.05),rgba(0,0,0,0.05)),url(/assets/img/main/hero-item-2.jpg);
-  min-height: 600px;
+  position: relative;
   background-position: center;
   text-align: center;
+}
+
+.hero-item-2 .parallax-content-container {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  margin-top: 80px;
+}
+
+.hero-item-2 h1 {
+  margin: 0;
+  padding-top: 50px;
+  text-transform: uppercase;
+  color: #fff;
+  font-weight: 700;
+}
+
+.hero-item-2 h4 {
+  margin: 0;
+  color: #fff;
+  padding-top: 10px;
+  font-family: Arial, sans-serif;
+}
+
+.hero-item-2-learnmore {
+  margin-top: 70px;
+}
+
+.hero-item-2-learnmore .btn-border {
+  border: 2px solid #fff;
+  color: #fff;
 }
 </style>
 <link type="text/css" rel="stylesheet" href="/assets/css/owl.carousel.css" />
@@ -159,8 +256,11 @@ header {
         <div class="item"><img src="/assets/img/main/02.jpg"></div>
         <div class="item"><img src="/assets/img/main/03.jpg"></div>
       </div>
+      <div class="hero-downwards">
+        <button id="to-next" href="javascript:;" class="btn-floating btn-large btn-theme btn-downwards">wee</button>
+      </div>
     </div>
-    <div class="hero-item-blank">
+    <div id="services" class="hero-item-blank">
       <div class="container">
         <div class="item-text">
           <h3>Our Services</h3>
@@ -202,10 +302,123 @@ header {
       </div>
     </div>
     <div class="hero-item-1">
-    asdfsf
+      <div class="parallax-container">
+        <div class="parallax"><img src="/assets/img/main/hero-item-1.jpg"></div>
+      </div>
+      <div class="parallax-content-container">
+        <h3>The Facts</h3>
+        <div class="container mtop100">
+          <div class="row no-margin">
+            <div class="item col s3">
+              <img alt="General Service" src="/assets/img/main/snowflake.png">
+              <h4>300</h4>
+              <hr>
+              <p>Happy Customers</p>
+            </div>
+            <div class="item col s3">
+              <img alt="General Service" src="/assets/img/main/snowflake.png">
+              <h4>300</h4>
+              <hr>
+              <p>Happy Customers</p>
+            </div>
+            <div class="item col s3">
+              <img alt="General Service" src="/assets/img/main/snowflake.png">
+              <h4>300</h4>
+              <hr>
+              <p>Happy Customers</p>
+            </div>
+            <div class="item col s3">
+              <img alt="General Service" src="/assets/img/main/snowflake.png">
+              <h4>300</h4>
+              <hr>
+              <p>Happy Customers</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-item-blank">
+        <div class="item-text">
+          <h3>Account Features</h3>
+        </div>
+        <div class="container mtop100">
+          <div class="row">
+            <div class="item line col s3">
+              <img alt="General Service" src="/assets/img/main/snowflake.png">
+              <h5>General Service</h5>
+              <p>blahblahblah</p>
+            </div>
+            <div class="item line col s3">
+              <img alt="General Service" src="/assets/img/main/snowflake.png">
+              <h5>General Service</h5>
+              <p>blahblahblah</p>
+            </div>
+            <div class="item line col s3">
+              <img alt="General Service" src="/assets/img/main/snowflake.png">
+              <h5>General Service</h5>
+              <p>blahblahblah</p>
+            </div>
+            <div class="item last col s3">
+              <img alt="General Service" src="/assets/img/main/snowflake.png">
+              <h5>General Service</h5>
+              <p>blahblahblah</p>
+            </div>
+          </div>
+          <div class="hero-item-blank-signup">
+            <a href="" class="btn-border btn-link-fat">Sign Up Now</a>
+          </div>
+        </div>
     </div>
     <div class="hero-item-2">
-    asdfsf
+      <div class="parallax-container">
+        <div class="parallax"><img src="/assets/img/main/hero-item-2.jpg"></div>
+      </div>
+      <div class="parallax-content-container">
+        <h1>Built to Last</h1>
+        <h4>Singapore Certified Installation Materials that outlast time</h4>
+        <div class="hero-item-2-learnmore">
+          <a href="" class="btn-border btn-link-fat">Learn More</a>
+        </div>
+      </div>
+    </div>
+    <div class="hero-item-blank">
+      <div class="container">
+        <div class="item-text">
+          <h3>Our Clients</h3>
+        </div>
+        <div id="owl-clients" class="owl-carousel owl-theme">
+          <div class="item">
+            <img alt="General Service" src="/assets/img/main/snowflake.png">
+            <h5>General Service</h5>
+            <p>blahblahblah</p>
+          </div>
+          <div class="item">
+            <img alt="General Service" src="/assets/img/main/honeycomb.png">
+            <h5>Chemical & Overhauling</h5>
+            <p>blahblahblah</p>
+          </div>
+          <div class="item">
+            <img alt="General Service" src="/assets/img/main/spanner.png">
+            <h5>Repairs & Replacement</h5>
+            <p>blahblahblah</p>
+          </div>
+          <div class="item">
+            <img alt="General Service" src="/assets/img/main/snowflake.png">
+            <h5>General Service</h5>
+            <p>blahblahblah</p>
+          </div>
+          <div class="item">
+            <img alt="General Service" src="/assets/img/main/honeycomb.png">
+            <h5>Chemical & Overhauling</h5>
+            <p>blahblahblah</p>
+          </div>
+          <div class="item">
+            <img alt="General Service" src="/assets/img/main/spanner.png">
+            <h5>Repairs & Replacement</h5>
+            <p>blahblahblah</p>
+          </div>
+        </div>
+      </div>
     </div>
   </main>
 @stop
@@ -231,6 +444,24 @@ header {
           autoplay: false,
           slideBy: 3
       });
+
+      $('#owl-clients').owlCarousel({
+          items:4,
+          margin:10,
+          loop: true,
+          dots: true,
+          nav: true,
+          autoplay: false,
+          slideBy: 3
+      });
+
+      $('#to-next').click(function() {      // When arrow is clicked
+          $('body,html').animate({
+              scrollTop: $("#services").offset().top
+          }, 800);
+      });
+
+      $('.parallax').parallax();
     });
   </script>
 @stop
