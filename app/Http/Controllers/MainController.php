@@ -20,6 +20,26 @@ class MainController extends Controller {
 		return view("pages.main");
 	}
 
+	public function getAbout()
+	{
+		return view("pages.about");
+	}
+
+	public function getServices()
+	{
+		return view("pages.services");
+	}
+
+	public function getPackages()
+	{
+		return view("pages.packages");
+	}
+
+	public function getMaterials()
+	{
+		return view("pages.materials");
+	}
+
 	public function getTerms()
 	{
 		return view("pages.terms");

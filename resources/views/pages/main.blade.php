@@ -205,6 +205,7 @@
           loop: true,
           dots: true,
           nav: true,
+          navText: ['<i class="material-icons medium grey-text text-darken-1">chevron_left</i>', '<i class="material-icons medium grey-text text-darken-1">chevron_right</i>'],
           autoplay: false,
           slideBy: 3
       });
@@ -215,6 +216,7 @@
           loop: true,
           dots: true,
           nav: true,
+          navText: ['<i class="material-icons medium grey-text text-darken-1">chevron_left</i>', '<i class="material-icons medium grey-text text-darken-1">chevron_right</i>'],
           autoplay: false,
           slideBy: 3
       });

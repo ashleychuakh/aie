@@ -16,6 +16,41 @@ Route::get("/", [
   "uses" => "MainController@getMain"
 ]);
 
+Route::get("/about", [
+  "as"   => "about",
+  "uses" => "MainController@getAbout"
+]);
+
+Route::get("/services", [
+  "as"   => "services",
+  "uses" => "MainController@getServices"
+]);
+
+Route::get("/packages", [
+  "as"   => "packages",
+  "uses" => "MainController@getPackages"
+]);
+
+Route::get("/materials", [
+  "as"   => "materials",
+  "uses" => "MainController@getMaterials"
+]);
+
+Route::get("/products", [
+  "as"   => "products",
+  "uses" => "MainController@getProducts"
+]);
+
+Route::get("/faq", [
+  "as"   => "faq",
+  "uses" => "MainController@getFAQ"
+]);
+
+Route::get("/contact", [
+  "as"   => "contact",
+  "uses" => "MainController@getContact"
+]);
+
 Route::get("/signin", [
   "as"   => "signin",
   "uses" => "AccountController@getAccountSignin"
@@ -39,11 +74,4 @@ Route::post("/signup", [
 Route::get("/signout", [
   "as"   => "signout",
   "uses" => "AccountController@getAccountSignout"
-]);
-
-// ABOUT
-
-Route::get("/about", [
-  "as"   => "about",
-  "uses" => "AboutController@getAbout"
 ]);

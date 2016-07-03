@@ -3,9 +3,6 @@
 @section("head")
 <title>AIE SG</title>
 <style>
-header {
-  z-index: 1000;
-}
 
 .purple-header {
   color: #808aa3;
@@ -20,183 +17,8 @@ header {
   text-align: left;
 }
 
-#about-header-img {
-  width: 100%;
-  height: 720px;
-  background-size: cover;
-  background-image: url('/assets/img/about/about-banner.jpg');
-}
-
-.hero {
-  color: #fff;
-  min-height: 720px;
-  position: relative;
-  bottom: 0%;
-  left: 0%;
-  height: 100%;
-  width: 100%;
-  overflow: hidden;
-  background: #000;
-  margin-top: -190px;
-}
-
-.hero p {
-  color: #fff;
-  font-size: 1.5em;
-}
-
 .hero-text {
-  position: absolute;
-  text-align: center;
-  z-index: 2;
-  width: 100%;
-  margin-top: 450px;
-}
-
-.hero-item-blank {
-  background: #fff;
-  background-position: center;
-  text-align: center;
-  padding: 30px;
-}
-
-.hero-item-blank .item-text h3{
-  color: #828284;
-  text-transform: uppercase;
-}
-
-.hero-item-blank .item-text p {
-  color: #3D9FF9;
-  text-transform: uppercase;
-  font-size: 1.2em;
-}
-
-.hero-item-blank .item-text-small p{
-  color: #3D9FF9;
-  text-transform: uppercase;
-  font-size: 1.2em;
-  text-align: left;
-}
-
-.hero-item-blank .item-text h3{
-  color: #828284;
-  text-transform: uppercase;
-}
-
-.hero-item-blank .item-text p {
-  color: #3D9FF9;
-  text-transform: uppercase;
-  font-size: 1.2em;
-}
-
-.hero-item-blank .owl-carousel .owl-item .about img {
-  width: 150px;
-  height: 80px;
-  margin: 0 auto;
-}
-
-.hero-item-blank .owl-stage-outer {
-  z-index: -1;
-}
-.hero-item-blank .owl-dots {
-  margin: 30px 0;
-}
-
-.hero-item-blank .owl-theme .owl-dots .owl-dot span {
-  background: transparent;
-  border: 2px solid #676767;
-  margin: 5px 2.5px;
-}
-
-.hero-item-blank .owl-theme .owl-dots .owl-dot.active span, .hero-item-blank .owl-theme .owl-dots .owl-dot:hover span {
-  background: #3D9FF9;
-  border: none;
-}
-
-.hero-item-blank .owl-carousel .owl-nav .owl-prev {
-  position: absolute;
-  top: 0;
-  margin-top: 60px;
-}
-
-.hero-item-blank .owl-carousel .owl-nav .owl-next {
-  position: absolute;
-  top: 0;
-  right: 0;
-  margin-top: 60px;
-}
-
-.hero-item-blank .owl-carousel .owl-item img {
-  margin: 0 auto;
-}
-
-.hero-item-blank .owl-carousel .owl-item h5 {
-  color: #828284;
-  font-weight: 300;
-}
-
-.hero-item-blank .owl-carousel .owl-item p {
-  color: #3D9FF9;
-  font-family: Arial, sans-serif;
-}
-
-.slider-projects {
-  background-color: #676767;
-}
-
-.slider-projects-header {
-  color: #fff;
-  font-size: 1.4em;
-  text-transform: uppercase;
-}
-
-.slider-projects-subs {
-  color: #fff;
-  font-size: 1.0em;
-  text-transform: uppercase;
-}
-
-.prev {
-  color: white;
-  cursor: pointer;
-}
-.next {
-  color: white;
-  cursor: pointer;
-}
-
-.hero-item-1 {
-  position: relative;
-  background-position: center;
-  text-align: center;
-}
-
-.hero-item-1 .parallax-content-container {
-  position: absolute;
-  top: 0;
-  width: 100%;
-}
-
-.hero-item-1 h3 {
-  margin: 0;
-  padding-top: 50px;
-  text-transform: uppercase;
-  color: #fff;
-}
-
-.hero-item-1 .item h4 {
-  color: #fff;
-}
-.hero-item-1 .item hr {
-  border: 3px solid #fff;
-  width: 60px;
-  margin: 0 auto;
-}
-.hero-item-1 .item p {
-  color: #fff;
-  font-size: 1.1em;
-  font-weight: 300;
-  margin-top: 15px;
+  margin-top: 300px;
 }
 
 </style>
@@ -207,7 +29,7 @@ header {
 @section("content")
 <main>
   <div class="hero" style="background: #fff;">
-    <div class="hero-text purple-header">
+    <div class="hero-text">
       <h1>ABOUT US</h1>
       <p class="blue-text">afasdfasfasfdasfdasfasdfasdfsfsafasdf</p>
     </div>
@@ -215,7 +37,7 @@ header {
       <div id="about-header-img"></div>
     </div>
   </div>
-  <div class="hero-item-blank">
+  <div class="hero-item-blank special">
     <div class="container">
       <div class="item-text-small">
         <div class="row" style="text-align: left">
@@ -236,7 +58,7 @@ header {
       </div>
     </div>
   </div>
-  <div class="hero-item-blank">
+  <div class="hero-item-blank projects">
     <div class="container">
       <div id="owl-item-projects" class="owl-carousel">
         <div class="item">
@@ -250,7 +72,7 @@ header {
               <i class="material-icons medium next">chevron_right</i>
             </div>
             <div class="col s12 m7">
-              <img class="responsive-img" src="http://placehold.it/270x150">
+              <img class="responsive-img" src="http://placehold.it/1280x720">
             </div>
           </div>
         </div>
@@ -265,7 +87,7 @@ header {
               <i class="material-icons medium next">chevron_right</i>
             </div>
             <div class="col s12 m7">
-              <img class="responsive-img" src="http://placehold.it/270x150">
+              <img class="responsive-img" src="http://placehold.it/1280x720">
             </div>
           </div>
         </div>
@@ -280,7 +102,7 @@ header {
               <i class="material-icons medium next">chevron_right</i>
             </div>
             <div class="col s12 m7">
-              <img class="responsive-img" src="http://placehold.it/270x150">
+              <img class="responsive-img" src="http://placehold.it/1280x720">
             </div>
           </div>
         </div>
@@ -288,32 +110,44 @@ header {
     </div>
   </div>
   <div class="hero-item-blank">
-    <div class="container">
-      <div class="item-text">
-        <p class="grey-text" style="text-align:center; font-size: 1.3em;">OUR CLIENTS</p><br/>
-      </div>
-      <div id="owl-item" class="owl-carousel owl-theme">
-        <div class="item about">
-          <img alt="Client Name" src="http://placehold.it/250x150">
+      <div class="container">
+        <div class="item-text">
+          <h3>Our Clients</h3>
         </div>
-        <div class="item about">
-          <img alt="Client Name" src="http://placehold.it/250x150">
-        </div>
-        <div class="item about">
-          <img alt="Client Name" src="http://placehold.it/250x150">
-        </div>
-        <div class="item about">
-          <img alt="Client Name" src="http://placehold.it/250x150">
-        </div>
-        <div class="item about">
-          <img alt="Client Name" src="http://placehold.it/250x150">
-        </div>
-        <div class="item about">
-          <img alt="Client Name" src="http://placehold.it/250x150">
+        <div id="owl-clients" class="owl-carousel owl-theme">
+          <div class="item">
+            <img alt="General Service" src="/assets/img/main/snowflake.png">
+            <h5>General Service</h5>
+            <p>blahblahblah</p>
+          </div>
+          <div class="item">
+            <img alt="General Service" src="/assets/img/main/honeycomb.png">
+            <h5>Chemical & Overhauling</h5>
+            <p>blahblahblah</p>
+          </div>
+          <div class="item">
+            <img alt="General Service" src="/assets/img/main/spanner.png">
+            <h5>Repairs & Replacement</h5>
+            <p>blahblahblah</p>
+          </div>
+          <div class="item">
+            <img alt="General Service" src="/assets/img/main/snowflake.png">
+            <h5>General Service</h5>
+            <p>blahblahblah</p>
+          </div>
+          <div class="item">
+            <img alt="General Service" src="/assets/img/main/honeycomb.png">
+            <h5>Chemical & Overhauling</h5>
+            <p>blahblahblah</p>
+          </div>
+          <div class="item">
+            <img alt="General Service" src="/assets/img/main/spanner.png">
+            <h5>Repairs & Replacement</h5>
+            <p>blahblahblah</p>
+          </div>
         </div>
       </div>
     </div>
-  </div>
   <div class="hero-item-1">
     <div class="parallax-container">
       <div class="parallax"><img src="/assets/img/main/hero-item-1.jpg"></div>
@@ -365,12 +199,15 @@ $(function() {
     autoplay: true
   });
 
-  $('#owl-item').owlCarousel({
-    items:4,
-    margin:10,
-    loop: true,
-    dots: true,
-    autoplay: false
+  $('#owl-clients').owlCarousel({
+      items:4,
+      margin:10,
+      loop: true,
+      dots: true,
+      nav: true,
+      navText: ['<i class="material-icons medium grey-text text-darken-1">chevron_left</i>', '<i class="material-icons medium grey-text text-darken-1">chevron_right</i>'],
+      autoplay: false,
+      slideBy: 3
   });
 
   $('#owl-item-projects').owlCarousel({

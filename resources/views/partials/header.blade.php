@@ -32,12 +32,14 @@
               </ul>
               
               <ul class="right hide-on-med-and-down">
-                  <li class="active"><a href="{{ route('main') }}">Home</a></li>
-                  <li><a href="{{ route('signin') }}">About Us</a></li>
-                  <li><a href="{{ route('signup') }}">Services</a></li>
-                  <li><a href="{{ route('signup') }}">Products</a></li>
-                  <li><a href="{{ route('signup') }}">FAQ</a></li>
-                  <li><a href="{{ route('signup') }}">Contact</a></li>
+                  <li class="{{ Ekko::isActiveRoute('main') }}"><a href="{{ route('main') }}">Home</a></li>
+                  <li class="{{ Ekko::isActiveRoute('about') }}"><a href="{{ route('about') }}">About Us</a></li>
+                  <li class="{{ Ekko::isActiveRoute('services') }}"><a href="{{ route('services') }}">Services</a></li>
+                  <li class="{{ Ekko::isActiveRoute('packages') }}"><a href="{{ route('packages') }}">Packages</a></li>
+                  <li class="{{ Ekko::isActiveRoute('materials') }}"><a href="{{ route('materials') }}">Materials</a></li>
+                  <li class="{{ Ekko::isActiveRoute('products') }}"><a href="{{ route('products') }}">Products</a></li>
+                  <li class="{{ Ekko::isActiveRoute('faq') }}"><a href="{{ route('faq') }}">FAQ</a></li>
+                  <li class="{{ Ekko::isActiveRoute('contact') }}"><a href="{{ route('contact') }}">Contact</a></li>
               </ul>
               <ul class="side-nav" id="mobile-demo">
                 @if(Auth::check())
