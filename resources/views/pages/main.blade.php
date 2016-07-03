@@ -68,38 +68,65 @@ header {
   background: #fff;
   background-position: center;
   text-align: center;
-  padding: 20px;
+  padding: 30px;
 }
 
-.hero-item-blank .item-text {
-  text-align: center;
+.hero-item-blank .item-text h3{
+  color: #828284;
+  text-transform: uppercase;
 }
 
-.hero-item-blank .owl-stage-outer {
-  z-index: -1;
-}
-.hero-item-blank .owl-dots {
-    position: absolute;
-    z-index: 1;
-    right: 0;
-    margin-right: 50px;
-    bottom: 0;
-    margin-bottom: 30px;
-}
-
-.hero-item-blank .owl-theme .owl-dots .owl-dot span {
-  background: #676767;
-  margin: 5px 2.5px;
-}
-
-.hero-item-blank .owl-theme .owl-dots .owl-dot.active span, .hero-item-blank .owl-theme .owl-dots .owl-dot:hover span {
-  background: #3D9FF9;
+.hero-item-blank .item-text p {
+  color: #3D9FF9;
+  text-transform: uppercase;
+  font-size: 1.2em;
 }
 
 .hero-item-blank .owl-carousel .owl-item img {
   width: 72px;
   height: 72px;
   margin: 0 auto;
+}
+
+.hero-item-blank .owl-carousel .owl-item h5 {
+  color: #828284;
+  font-weight: 300;
+}
+
+.hero-item-blank .owl-carousel .owl-item p {
+  color: #3D9FF9;
+  font-family: Arial, sans-serif;
+}
+
+.hero-item-blank .owl-stage-outer {
+  z-index: -1;
+}
+.hero-item-blank .owl-dots {
+  margin: 30px 0;
+}
+
+.hero-item-blank .owl-theme .owl-dots .owl-dot span {
+  background: transparent;
+  border: 2px solid #676767;
+  margin: 5px 2.5px;
+}
+
+.hero-item-blank .owl-theme .owl-dots .owl-dot.active span, .hero-item-blank .owl-theme .owl-dots .owl-dot:hover span {
+  background: #3D9FF9;
+  border: none;
+}
+
+.hero-item-blank .owl-carousel .owl-nav .owl-prev {
+  position: absolute;
+  top: 0;
+  margin-top: 60px;
+}
+
+.hero-item-blank .owl-carousel .owl-nav .owl-next {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin-top: 60px;
 }
 
 .hero-item-1 {
@@ -139,29 +166,39 @@ header {
           <h3>Our Services</h3>
           <p>Only the Highest Quality of Services For You</p>
         </div>
-
         <div id="owl-item" class="owl-carousel owl-theme">
           <div class="item">
-            <img alt="General Service" src="/assets/img/main/snowflake.png" width="72px">
+            <img alt="General Service" src="/assets/img/main/snowflake.png">
             <h5>General Service</h5>
             <p>blahblahblah</p>
           </div>
           <div class="item">
-            
+            <img alt="General Service" src="/assets/img/main/honeycomb.png">
+            <h5>Chemical & Overhauling</h5>
+            <p>blahblahblah</p>
           </div>
           <div class="item">
-            
+            <img alt="General Service" src="/assets/img/main/spanner.png">
+            <h5>Repairs & Replacement</h5>
+            <p>blahblahblah</p>
           </div>
           <div class="item">
-            
+            <img alt="General Service" src="/assets/img/main/snowflake.png">
+            <h5>General Service</h5>
+            <p>blahblahblah</p>
           </div>
           <div class="item">
-            
+            <img alt="General Service" src="/assets/img/main/honeycomb.png">
+            <h5>Chemical & Overhauling</h5>
+            <p>blahblahblah</p>
           </div>
           <div class="item">
-            
+            <img alt="General Service" src="/assets/img/main/spanner.png">
+            <h5>Repairs & Replacement</h5>
+            <p>blahblahblah</p>
           </div>
         </div>
+        <button class="btn btn-theme btn-fat">Make an Appointment</button>
       </div>
     </div>
     <div class="hero-item-1">
@@ -190,7 +227,9 @@ header {
           margin:10,
           loop: true,
           dots: true,
-          autoplay: false
+          nav: true,
+          autoplay: false,
+          slideBy: 3
       });
     });
   </script>
