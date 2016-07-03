@@ -3,6 +3,12 @@
 @section("head")
 <title>AIE SG</title>
 <style>
+.top-bar {
+  background-color: rgba(242, 242, 242, 0.71);
+}
+nav {
+  background-color: rgba(242, 242, 242, 0.71);
+}
 </style>
 <link type="text/css" rel="stylesheet" href="/assets/css/owl.carousel.css" />
 <link type="text/css" rel="stylesheet" href="/assets/css/owl.theme.default.min.css" />
@@ -62,7 +68,7 @@
             <p>blahblahblah</p>
           </div>
         </div>
-        <button class="btn btn-theme btn-fat">Make an Appointment</button>
+        <a class="btn btn-theme btn-fat">Make an Appointment</a>
       </div>
     </div>
     <div class="hero-item-1">

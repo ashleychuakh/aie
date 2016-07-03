@@ -20,7 +20,8 @@ body {
     flex-direction: column;
 }
 main {
-    flex: 1 0 auto;
+  flex: 1 0 auto;
+  background-color: #fff;
 }
 h1, h2, h3, h4, h5, h6 {
     font-family: 'proxima-nova', sans-serif;
@@ -83,6 +84,12 @@ a:hover, a:focus {
 .center {
     text-align: center;
 }
+.clearfix:after {
+    content:"";
+    display:block;
+    clear:both;
+}
+
 /*  ################################################################
     BOOTSTRAP MODIFICATIONS & TWEAKS
 ################################################################# */
@@ -178,7 +185,7 @@ a:hover, a:focus {
 /* Everything Else */
 .top-bar {
   height: 60px;
-  background-color: rgba(242, 242, 242, 0.71);
+  background-color: #fff;
 }
 .top-bar ul {
   line-height: 60px;
@@ -192,7 +199,7 @@ a:hover, a:focus {
   color: #2f3080;
 }
 nav {
-  background-color: rgba(242, 242, 242, 0.71);
+  background-color: #fff;
   height: 90px;
 }
 nav a {
@@ -713,6 +720,17 @@ footer.page-footer {
   box-shadow: none;
 }
 .btn-theme:hover, .btn-theme:focus {
+  color: #fff;
+  background-color: #F15B5A;
+  box-shadow: 0 5px 11px 0 rgba(0,0,0,0.18),0 4px 15px 0 rgba(0,0,0,0.15);
+}
+.btn-table-fat {
+  display: table;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+.btn-table-fat:hover, .btn-table-fat:focus {
+  color: #fff;
   background-color: #F15B5A;
   box-shadow: 0 5px 11px 0 rgba(0,0,0,0.18),0 4px 15px 0 rgba(0,0,0,0.15);
 }
@@ -720,11 +738,21 @@ footer.page-footer {
   padding-top: 5px;
   padding-bottom: 40px;
 }
+.btn-fat:hover, .btn-fat:focus {
+  color: #fff;
+  background-color: #F15B5A;
+  box-shadow: 0 5px 11px 0 rgba(0,0,0,0.18),0 4px 15px 0 rgba(0,0,0,0.15);
+}
 .btn-link-fat {
   padding-top: 15px;
   padding-bottom: 15px;
   padding-left: 40px;
   padding-right: 40px;
+}
+.btn-link-fat:hover, .btn-link-fat:focus {
+  color: #fff;
+  background-color: #F15B5A;
+  box-shadow: 0 5px 11px 0 rgba(0,0,0,0.18),0 4px 15px 0 rgba(0,0,0,0.15);
 }
 .link-minimal {
   background-color: #ffd600;

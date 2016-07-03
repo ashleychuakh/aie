@@ -21,7 +21,7 @@
     </div>
   </div>
   <div class="navbar">
-    <nav class="no-shadow bottom-shadow">
+    <nav class="no-shadow">
       <div class="container">
         <div class="row">
           <div class="col l12">
