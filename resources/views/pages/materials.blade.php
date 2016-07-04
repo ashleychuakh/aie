@@ -3,25 +3,6 @@
 @section("head")
 <title>AIE SG</title>
 <style>
-
-.purple-header {
-  color: #808aa3;
-}
-
-.blue-text {
-  color: #3d9ff9;
-}
-
-.grey-text {
-  color: #7f8c8d;
-  text-align: left;
-}
-
-.hero-text {
-  margin-top: 300px;
-}
-
-
 </style>
 <link type="text/css" rel="stylesheet" href="/assets/css/owl.carousel.css" />
 <link type="text/css" rel="stylesheet" href="/assets/css/owl.theme.default.min.css" />
@@ -31,9 +12,9 @@
 <main>
   <div class="hero" style="background: #fff;">
     <div class="hero-text purple-header">
-      <h1>BUILT TO LAST</h1>
-      <p class="blue-text">SPECIALLY SELECTED & CERTIFIED INSTALLATION</p>
-      <p class="blue-text">MATERIALS THAT WITHSTAND TIME</p>
+      <h1 class="blue-theme-text">BUILT TO LAST</h1>
+      <p class="lightblue-theme-text">SPECIALLY SELECTED & CERTIFIED INSTALLATION</p>
+      <p class="lightblue-theme-text">MATERIALS THAT WITHSTAND TIME</p>
     </div>
     <div>
       <div id="materials-header-img"></div>
@@ -68,7 +49,7 @@
       <div class="row">
         <div class="single-material-item mtop50">
           <div class="col s6 center">
-            <h5>Copper Pipes</h5>
+            <h4 class="lightblue-theme-text">Copper Pipes</h4>
             <div class="owl-carousel owl-theme">
               <div class="item">
                 <img alt="General Service" src="http://placehold.it/500x500">
@@ -123,7 +104,7 @@
       <div class="row">
         <div class="single-material-item mtop50">
           <div class="col s6 center">
-            <h5>Copper Pipes</h5>
+            <h4 class="lightblue-theme-text">Copper Pipes</h4>
             <div class="owl-carousel owl-theme">
               <div class="item">
                 <img alt="General Service" src="http://placehold.it/500x500">
@@ -178,7 +159,7 @@
       <div class="row">
         <div class="single-material-item mtop50">
           <div class="col s6 center">
-            <h5>Copper Pipes</h5>
+            <h4 class="lightblue-theme-text">Copper Pipes</h4>
             <div class="owl-carousel owl-theme">
               <div class="item">
                 <img alt="General Service" src="http://placehold.it/500x500">
@@ -233,7 +214,7 @@
       <div class="row">
         <div class="single-material-item mtop50">
           <div class="col s6 center">
-            <h5>Copper Pipes</h5>
+            <h4 class="lightblue-theme-text">Copper Pipes</h4>
             <div class="owl-carousel owl-theme">
               <div class="item">
                 <img alt="General Service" src="http://placehold.it/500x500">
@@ -288,7 +269,7 @@
       <div class="row">
         <div class="single-material-item mtop50">
           <div class="col s6 center">
-            <h5>Copper Pipes</h5>
+            <h4 class="lightblue-theme-text">Copper Pipes</h4>
             <div class="owl-carousel owl-theme">
               <div class="item">
                 <img alt="General Service" src="http://placehold.it/500x500">

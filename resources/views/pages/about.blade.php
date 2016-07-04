@@ -3,24 +3,6 @@
 @section("head")
 <title>AIE SG</title>
 <style>
-
-.purple-header {
-  color: #808aa3;
-}
-
-.blue-text {
-  color: #3d9ff9;
-}
-
-.grey-text {
-  color: #7f8c8d;
-  text-align: left;
-}
-
-.hero-text {
-  margin-top: 300px;
-}
-
 </style>
 <link type="text/css" rel="stylesheet" href="/assets/css/owl.carousel.css" />
 <link type="text/css" rel="stylesheet" href="/assets/css/owl.theme.default.min.css" />
@@ -30,8 +12,8 @@
 <main>
   <div class="hero" style="background: #fff;">
     <div class="hero-text">
-      <h1>ABOUT US</h1>
-      <p class="blue-text">afasdfasfasfdasfdasfasdfasdfsfsafasdf</p>
+      <h1 class="blue-theme-text">ABOUT US</h1>
+      <p class="lightblue-theme-text">afasdfasfasfdasfdasfasdfasdfsfsafasdf</p>
     </div>
     <div>
       <div id="about-header-img"></div>
@@ -50,7 +32,7 @@
           <div class="col s12 m7">
             <div class="grey-text" style="font-size: 1.1em">Lorem ipsum dolor sit amet, an phaedrum dissentiet per, ad viris dolore denique ius. Sea dicant assueverit id, mel eruditi labores cu. Ea commodo corpora intellegebat cum. Nec te mazim euismod sapientem, vide illud id est.</div>
             <br/>
-            <p><i class="fa fa-1x margin-right-5 fa-check ticks grey-text" aria-hidden="true"></i> WE OFFER QULITY WORK</p>
+            <p><i class="fa fa-1x margin-right-5 fa-check ticks grey-text" aria-hidden="true"></i> WE OFFER QUALITY WORK</p>
             <p><i class="fa fa-1x margin-right-5 fa-check ticks grey-text" aria-hidden="true"></i> TEST & INSPECT BEFORE START WORK</p>
             <p><i class="fa fa-1x margin-right-5 fa-check ticks grey-text" aria-hidden="true"></i> WE KEEP YOUR HOME COOL</p>
           </div>

@@ -9,6 +9,12 @@
 nav {
   background-color: rgba(242, 242, 242, 0.71);
 }
+.hero-text {
+  margin-top: 450px;
+}
+.btn-large i {
+  font-size: 3em;
+}
 </style>
 <link type="text/css" rel="stylesheet" href="/assets/css/owl.carousel.css" />
 <link type="text/css" rel="stylesheet" href="/assets/css/owl.theme.default.min.css" />
@@ -19,7 +25,7 @@ nav {
     <div class="hero">
       <div class="hero-text">
         <h1>Lorem ipsum dolor</h1>
-        <p>afasdfasfasfdasfdasfasdfasdfsfsafasdf</p>
+        <p class="white-text">afasdfasfasfdasfdasfasdfasdfsfsafasdf</p>
       </div>
       <div id="owl-hero" class="owl-carousel owl-theme">
         <div class="item"><img src="/assets/img/main/01.jpg"></div>
@@ -27,7 +33,7 @@ nav {
         <div class="item"><img src="/assets/img/main/03.jpg"></div>
       </div>
       <div class="hero-downwards">
-        <button id="to-next" href="javascript:;" class="btn-floating btn-large btn-theme btn-downwards">wee</button>
+        <button id="to-next" href="javascript:;" class="btn-floating btn-large btn-theme btn-downwards"><i class="material-icons medium">expand_more</i></button>
       </div>
     </div>
     <div id="services" class="hero-item-blank">

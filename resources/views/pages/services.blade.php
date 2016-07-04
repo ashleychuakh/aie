@@ -3,23 +3,6 @@
 @section("head")
 <title>AIE SG</title>
 <style>
-
-.purple-header {
-  color: #808aa3;
-}
-
-.blue-text {
-  color: #3d9ff9;
-}
-
-.grey-text {
-  color: #7f8c8d;
-  text-align: left;
-}
-
-.hero-text {
-  margin-top: 300px;
-}
 </style>
 <link type="text/css" rel="stylesheet" href="/assets/css/owl.carousel.css" />
 <link type="text/css" rel="stylesheet" href="/assets/css/owl.theme.default.min.css" />
@@ -28,9 +11,9 @@
 @section("content")
 <main>
   <div class="hero" style="background: #fff;">
-    <div class="hero-text purple-header">
-      <h1>OUR SERVICES</h1>
-      <p class="blue-text">ONLY THE HIGHEST QUALITY OF SERVICES FOR YOU</p>
+    <div class="hero-text">
+      <h1 class="blue-theme-text">OUR SERVICES</h1>
+      <p class="lightblue-theme-text">ONLY THE HIGHEST QUALITY OF SERVICES FOR YOU</p>
     </div>
     <div>
       <div id="services-header-img"></div>
@@ -117,7 +100,7 @@
               Workmanship warranty: 90 Days
             </h5>
             <p>
-              *Prices applicable for HDB and private residential only. For commercial clients please contact us.
+              *Prices applicable for HDB and private residential only. For commercial clients please <a href="">contact us.</a>
             </p>
             <div class="scope mtop30">
               <h5 class="blue-text">Scope of Work</h5>
