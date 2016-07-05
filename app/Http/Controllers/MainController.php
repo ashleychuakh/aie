@@ -60,4 +60,12 @@ class MainController extends Controller {
 	{
 
 	}
+
+	public function getfaq(){
+		return view("pages.faq");
+	}
+
+	public function getContact(){
+		return view("pages.contact");
+	}
 }
