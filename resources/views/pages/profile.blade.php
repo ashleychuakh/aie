@@ -10,12 +10,12 @@
 #billing-check + label {
 	margin: 0px;
 }
-#billing {
-	margin-top:35px;
+#billing.hidden{
 	display: none;
 }
-#billing.tada {
+.hidden-billing{
 	display: inline-block;
+	margin-top:35px;
 }
 </style>
 @stop 
@@ -82,34 +82,34 @@
 						</select>
 					</div>
 					<div class="input-field col s12 mbtm20 mtop0">
-						<input id="billing-check" name="billing-check" type="checkbox" value="yes" @if(empty($billingaddress)) checked @endif>
+						<input id="billing-check" name="billing-check" type="checkbox" value="yes">
 						<label for="billing-check">Different Billing Address?</label>
 					</div>
 
 					<!-- Billing form -->
-					<div id="billing">
+					<div id="billing" class="hidden hidden-billing" >
 						<h6 class="lightblue-theme-text center">BILLING ADDRESS</h6>
 						<div class="input-field col s12">
-						   <input id="billing-name" name="billing-name" class="input-box" type="text" placeholder="{{ empty($billingaddress->name) ? 'Name' : $billingaddress->name }}" value="{{ $billingaddress->name }}" data-parsley-required="true" data-parsley-trigger="change">
+						   <input id="billing-name" name="billing-name" class="input-box" type="text" placeholder="{{ empty($billingaddress->name) ? 'Name' : $billingaddress->name }}" value="{{ $billingaddress->name }}" data-parsley-required="true" data-parsley-trigger="change" disabled>
 						</div>
 						<div class="input-field col s12 m6">
-						  <input id="billing-phone" name="billing-phone" class="input-box" type="text" placeholder="{{ empty($billingaddress->phone) ? 'Contact No.' : $billingaddress->phone }}" value="{{ $billingaddress->phone }}" data-parsley-required="true" data-parsley-trigger="change" data-parsley-pattern="^[\d\+\-\.\(\)\/\s]*$">
+						  <input id="billing-phone" name="billing-phone" class="input-box" type="text" placeholder="{{ empty($billingaddress->phone) ? 'Contact No.' : $billingaddress->phone }}" value="{{ $billingaddress->phone }}" data-parsley-required="true" data-parsley-trigger="change" data-parsley-pattern="^[\d\+\-\.\(\)\/\s]*$" disabled>
 						</div>
 						<div class="input-field col s12 m6">
-						  <input id="billing-email" name="billing-email" class="input-box" type="email" placeholder="{{ empty($billingaddress->email) ? 'Email' : $billingaddress->email }}" value="{{ $billingaddress->email }}" data-parsley-required="true" data-parsley-trigger="change">
+						  <input id="billing-email" name="billing-email" class="input-box" type="email" placeholder="{{ empty($billingaddress->email) ? 'Email' : $billingaddress->email }}" value="{{ $billingaddress->email }}" data-parsley-required="true" data-parsley-trigger="change" disabled>
 						</div>
 						<div class="input-field col s12">
-						   <input id="billing-address" name="billing-address" class="input-box" type="text" placeholder="{{ empty($billingaddress->address) ? 'Address' : $billingaddress->address }}" value="{{ $billingaddress->address }}" data-parsley-required="true" data-parsley-trigger="change">
+						   <input id="billing-address" name="billing-address" class="input-box" type="text" placeholder="{{ empty($billingaddress->address) ? 'Address' : $billingaddress->address }}" value="{{ $billingaddress->address }}" data-parsley-required="true" data-parsley-trigger="change" disabled>
 						</div>
 						<div class="input-field col s12">
-						   <input id="billing-postalcode" name="billing-postalcode" class="input-box" type="text" placeholder="{{ empty($billingaddress->postalcode) ? 'Postal Code' : $billingaddress->postalcode }}" value="{{ $billingaddress->postalcode }}" data-parsley-required="true" data-parsley-trigger="change">
+						   <input id="billing-postalcode" name="billing-postalcode" class="input-box" type="text" placeholder="{{ empty($billingaddress->postalcode) ? 'Postal Code' : $billingaddress->postalcode }}" value="{{ $billingaddress->postalcode }}" data-parsley-required="true" data-parsley-trigger="change" disabled>
 						</div>
 						<div class="input-field col s12">
-							<select id="billing-buildingtype" name="billing-buildingtype" class="input-select-border" data-parsley-required="true" data-parsley-trigger="change">
+							<select id="billing-buildingtype" name="billing-buildingtype" class="input-select-border" data-parsley-required="true" data-parsley-trigger="change" disabled>
 								<option value="" disabled selected>Building Type</option>
-								<option value="1" @if(empty($billingaddress->buildingtype)) @if($billingaddress->buildingtype == "1") selected @endif @endif>Option 1</option>
-								<option value="2" @if(empty($billingaddress->buildingtype)) @if($billingaddress->buildingtype == "2") selected @endif @endif>Option 2</option>
-								<option value="3" @if(empty($billingaddress->buildingtype)) @if($billingaddress->buildingtype == "3") selected @endif @endif>Option 3</option>
+								<option value="1" @if(isset($billingaddress->buildingtype)) @if($billingaddress->buildingtype == "1") selected @endif @endif>Option 1</option>
+								<option value="2" @if(isset($billingaddress->buildingtype)) @if($billingaddress->buildingtype == "2") selected @endif @endif>Option 2</option>
+								<option value="3" @if(isset($billingaddress->buildingtype)) @if($billingaddress->buildingtype == "3") selected @endif @endif>Option 3</option>
 							</select>
 						</div>
 					</div>
@@ -133,65 +133,74 @@ $(function() {
 	});
 
 	$('select').on('change', function() {
-	  $(this).siblings(".select-dropdown").addClass("grey-theme-text");
-	  $(this).parent().removeClass('invalid').addClass('valid');
+	  $(this).siblings('.select-dropdown').addClass('grey-theme-text');
 	});
-/*
+
 	$('#billing-check').click(function(){
-        $("#billing").toggleClass("hidden");
-    });*/
+        $('#billing').toggleClass("hidden");
+        if($(this).prop('checked') == true)
+        {
+        	enableConditionalForm('billing');
+        }
+        else
+        {
+        	$('#billing').find('input,select').prop('disabled', true);
+        }
+        $('#profile').parsley().destroy();
+		initParsley('profile');
+    });
 
 	@if(isset($defaultaddress->buildingtype))
-		$('select').siblings(".select-dropdown").addClass("grey-theme-text");
+		$('select').siblings('.select-dropdown').addClass('grey-theme-text');
 	@endif
 
-	@if (empty($billingaddress))
-        $("#billing").toggleClass("hidden");
+	@if(isset($billingaddress) && !empty($billingaddress->name))
+		$('#billing-check').prop('checked', true);
+        $("#billing").toggleClass('hidden');
+    	enableConditionalForm('billing');
+    	$('#billing').find('select').siblings('.select-dropdown').addClass('grey-theme-text');
 	@endif
 
-	$('#profile').parsley({
-	  successClass: 'valid',
-	  errorClass: 'invalid',
-	  errorsContainer: function (velem) {
-	    var $errelem = velem.$element.siblings('label');
-	    $errelem.attr('data-error', window.Parsley.getErrorMessage(velem.validationResult[0].assert));
-	    return true;
-	  },
-	  errorsWrapper: '',
-	  errorTemplate: ''
-	})
-	.on('field:validated', function(velem) {
-	  
-	})
-	.on('field:success', function(velem) {
-	  if (velem.$element.is('select'))
-	  {
-	    velem.$element.parent().removeClass('invalid').addClass('valid');
-	    console.log("yah");
-	  }
-	})
-	.on('field:error', function(velem) {
-	  if (velem.$element.is('select'))
-	  {
-	    velem.$element.parent().removeClass('valid').addClass('invalid');
-	  }
-	});
+	initParsley('profile');
 
-	var fValidate = $.parselyConditions({
-	    formname: 'profile',
-	    csstoggle: 'tada',
-	    validationfields: [
-	        {
-	            fid: 'billing-check',
-	            ftype: 'checkbox',
-	            fvalue: 'yes',
-	            faffected: ['billing-name', 'billing-phone', 'billing-email', 'billing-address', 'billing-postalcode', 'billing-buildingtype'],
-	            fhide: 'billing'
-	        }
-	    ]
-	});
+	function enableConditionalForm(elementid)
+	{
+		$('#' + elementid).find('input,select').prop('disabled', false);
+		$.when($('#' + elementid).find('select').material_select()).done(function(e) {
+		  $('#' + elementid).find('.select-wrapper span.caret').html('<i class="icon-aieicons-downarrow grey-theme-text"></i>');
+		});
+	}
 
-	fValidate.toggleFields();
+	function initParsley(elementid)
+	{
+		$('#' + elementid).parsley({
+		  successClass: 'valid',
+		  errorClass: 'invalid',
+		  errorsContainer: function (velem) {
+		    var $errelem = velem.$element.siblings('label');
+		    $errelem.attr('data-error', window.Parsley.getErrorMessage(velem.validationResult[0].assert));
+		    return true;
+		  },
+		  errorsWrapper: '',
+		  errorTemplate: '',
+		  excluded: ':disabled'
+		})
+		.on('field:validated', function(velem) {
+		  
+		})
+		.on('field:success', function(velem) {
+		  if (velem.$element.is('select'))
+		  {
+		    velem.$element.parent().removeClass('invalid').addClass('valid');
+		  }
+		})
+		.on('field:error', function(velem) {
+		  if (velem.$element.is('select'))
+		  {
+		    velem.$element.parent().removeClass('valid').addClass('invalid');
+		  }
+		});
+	}
 });
 </script>
 @stop
