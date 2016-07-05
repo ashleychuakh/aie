@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Auth;
 use Log;
 
 use Illuminate\Http\Request;
@@ -20,7 +21,11 @@ class BookingController extends Controller {
 
 	public function getBookAppointmentStep2()
 	{
-		return view("pages.book.step2");
+		$account = Auth::user();
+        $defaultaddress = $account->defaultaddress()->first() != null ? $account->defaultaddress()->first() : new AccountAddress;
+        $billingaddress = $account->billingaddress()->first() != null ? $account->billingaddress()->first() : new AccountAddress;
+
+		return view("pages.book.step2", compact('account', 'defaultaddress', 'billingaddress'));
 	}
 
 	public function getBookAppointmentStep3()

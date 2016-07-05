@@ -2,16 +2,6 @@
 
 @section("head")
 <style>
-#billing-check + label {
-	margin: 0px;
-}
-#billing.hidden{
-	display: none;
-}
-.hidden-billing{
-	display: inline-block;
-	margin-top:35px;
-}
 </style>
 @stop 
 

@@ -2,6 +2,9 @@
 
 @section("head")
 <style>
+.progress-bar {
+  text-align: center;
+}
 .section {
   position: relative;
   margin-bottom: 20px;
@@ -92,9 +95,7 @@
           </div>
           <div class="container-fluid">
             <div class="row">
-              <div class="contact-map">
-                <img src="/assets/img/gray-google-map.jpg" style="width:100%">
-              </div>
+              <div id="map"></div>
             </div>
           </div>
 
@@ -109,11 +110,47 @@
 @stop
 
 @section("scripts")
+<script src="http://maps.google.cn/maps/api/js?key=AIzaSyARpGOa92NMTPq01qT6b7w8lnu5ZXhNLR8&libraries=places" type="text/javascript"></script>
+
 <script>
-$(document).ready(function() {
+"use strict"
+$(function() {
   $('select').material_select();
 
+  initMap();
+  function initMap() {
+    var map;
+    var centerPosition = new google.maps.LatLng(1.3587374, 103.8916353);
 
+    var options = {
+        zoom: 16,
+        center: centerPosition,
+        scrollwheel: false,
+        mapTypeId: google.maps.MapTypeId.ROADMAP
+    };
+
+    $('#map').css('width', '100%');
+    $('#map').css('height', '450px');
+
+    map = new google.maps.Map($('#map')[0], options);
+
+    var image = {
+        url: '/assets/img/marker.png',
+        origin: new google.maps.Point(0, 0),
+        anchor: new google.maps.Point(12, 59)
+    };
+    var shadow = {
+        url: '/assets/img/shadow.png',
+        origin: new google.maps.Point(0, 0),
+        anchor: new google.maps.Point(-2, 36)
+    };
+    var marker = new google.maps.Marker({
+        position: centerPosition,
+        map: map,
+        icon: image,
+        shadow: shadow
+    });
+  }
 });
 </script>
 @stop

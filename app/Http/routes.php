@@ -53,20 +53,10 @@ Route::group(['middleware' => ['auth']], function () {
     "as"   => "profile",
     "uses" => "AccountController@postAccountProfile"
   ]);
-
-  Route::get("/book/step1", [
-    "as"   => "book/step1",
-    "uses" => "BookingController@getBookAppointmentStep1"
-  ]);
-
-  Route::get("/book/step2", [
-    "as"   => "book/step2",
-    "uses" => "BookingController@getBookAppointmentStep2"
-  ]);
-
-  Route::get("/book/step3", [
-    "as"   => "book/step3",
-    "uses" => "BookingController@getBookAppointmentStep3"
+  
+  Route::get("/signout", [
+    "as"   => "signout",
+    "uses" => "AccountController@getAccountSignout"
   ]);
 });
 
@@ -115,9 +105,19 @@ Route::get("/contact", [
   "uses" => "MainController@getContact"
 ]);
 
-Route::get("/signout", [
-  "as"   => "signout",
-  "uses" => "AccountController@getAccountSignout"
+Route::get("/book/details", [
+  "as"   => "book/step1",
+  "uses" => "BookingController@getBookAppointmentStep1"
+]);
+
+Route::get("/book/address", [
+  "as"   => "book/step2",
+  "uses" => "BookingController@getBookAppointmentStep2"
+]);
+
+Route::get("/book/confirmation", [
+  "as"   => "book/step3",
+  "uses" => "BookingController@getBookAppointmentStep3"
 ]);
 
 /*Route::resource('accounts', 'Admin\AccountController');

@@ -2,39 +2,18 @@
 
 @section("head")
 <style>
-   .contact-details {
-    margin-top: 40px;
-   }
-   .contact-details img {
-    max-width: 80px;
-    background-color: #000;
-   }
-	.contact-ta{
-		height:100px;
-		padding:10px;
-		border: thin solid #808aa3;
-	}
-   .contact-form .btn {
-    padding: 25px 100px;
-    line-height: 0px;
-    margin: 20px 0;
-   }
-   .contact-map {
-    width: 100%;
+.map-responsive{
+    overflow: hidden;
+    position: relative;
     height: 500px;
-    background: linear-gradient(rgba(255,255,255,0.4),rgba(255,255,255,0.4)),url(/assets/img/gray-google-map.jpg);
-   }
-
-   .contact-details i {
-    display: inline-block;
-    border: 2px solid #808aa3;
-    border-radius: 50%;
-    padding: .25em;
-    font-size: 2em;
-    margin-bottom: 15px;
-   }
+}
+.map-responsive iframe{
+    left: 0;
+    top: 0;
+    height: 500px;
+    width: 100%;
+}
 </style>
-
 @endsection
 
 @section("content")
@@ -50,7 +29,7 @@
                   <i class="icon-aieicons-location"></i>
 						<p>FIND US</p>
 						<p class="no-margin lightblue-theme-text">Blk 2 Defu Lane 10</p>
-                  <p class="no-margin lightblue-theme-text">#03-515 (S) 539183</p>
+                  <p class="no-margin lightblue-theme-text">#04-513 (S) 539183</p>
    				</div>
    				<div class="col s4">
                   <i class="icon-aieicons-phone"></i>
@@ -61,7 +40,7 @@
    				<div class="col s4">
                   <i class="icon-aieicons-email"></i>
 						<p>ASK US</p>
-						<p class="no-margin lightblue-theme-text">enquiry@aiesg.com</p>
+						<p class="no-margin lightblue-theme-text">contact@aiesg.com</p>
    				</div>
    		</div>
    	</div>
@@ -83,7 +62,7 @@
                <input name="email" class="input-box" type="text" class="validate" placeholder="Email">
              </div>
              <div class="input-field col s12">
-                   <textarea class="form-textarea contact-ta"  type="text" placeholder="Leave a Message"  rows="5" required></textarea>
+                   <textarea class="materialize-textarea"  type="text" placeholder="Leave a Message"  rows="5" required></textarea>
                 </div>
              <div class="input-field col s12 center">
                 <button class="btn btn-theme" type="submit">Send Message</button>
@@ -93,7 +72,50 @@
        </div>
     </div>
    	<div class="container-fluid">
-			<div class="contact-map"></div>
+      <div id="map"></div>
    	</div>
 </main>
-@endsection
+@stop
+
+@section("scripts")
+<script src="http://maps.google.cn/maps/api/js?key=AIzaSyARpGOa92NMTPq01qT6b7w8lnu5ZXhNLR8&libraries=places" type="text/javascript"></script>
+<script>
+"use strict"
+$(function() {
+  initMap();
+  function initMap() {
+    var map;
+    var centerPosition = new google.maps.LatLng(1.3587374, 103.8916353);
+
+    var options = {
+        zoom: 16,
+        center: centerPosition,
+        scrollwheel: false,
+        mapTypeId: google.maps.MapTypeId.ROADMAP
+    };
+
+    $('#map').css('width', '100%');
+    $('#map').css('height', '450px');
+
+    map = new google.maps.Map($('#map')[0], options);
+
+    var image = {
+        url: '/assets/img/marker.png',
+        origin: new google.maps.Point(0, 0),
+        anchor: new google.maps.Point(12, 59)
+    };
+    var shadow = {
+        url: '/assets/img/shadow.png',
+        origin: new google.maps.Point(0, 0),
+        anchor: new google.maps.Point(-2, 36)
+    };
+    var marker = new google.maps.Marker({
+        position: centerPosition,
+        map: map,
+        icon: image,
+        shadow: shadow
+    });
+  }
+});
+</script>
+@stop

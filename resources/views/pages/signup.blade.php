@@ -2,11 +2,11 @@
 
 @section("head")
 <style>
-	.signup-subtext{
-		width:80%;
-		text-align: center;
-		margin: 0 auto;
-	}
+.signup-subtext{
+	width:80%;
+	text-align: center;
+	margin: 0 auto;
+}
 </style>
 @stop 
 

@@ -3,19 +3,6 @@
 @section("head")
 <title>AIE SG</title>
 <style>
-.item-text-small {
-  padding: 0 50px;
-}
-.item-text-small h5 {
-  margin: 30px 15px;
-}
-.item-text-small .description {
-  font-size: 1.1em;
-  margin-bottom: 30px;
-}
-.item-text-small p {
-  font-size: 1.2em;
-}
 </style>
 <link type="text/css" rel="stylesheet" href="/assets/css/owl.carousel.css" />
 <link type="text/css" rel="stylesheet" href="/assets/css/owl.theme.default.min.css" />

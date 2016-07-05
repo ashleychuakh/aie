@@ -2,21 +2,6 @@
 
 @section("head")
 <style>
-.signup-subtext{
-	width:80%;
-	text-align: center;
-	margin: 0 auto;
-}
-#billing-check + label {
-	margin: 0px;
-}
-#billing.hidden{
-	display: none;
-}
-.hidden-billing{
-	display: inline-block;
-	margin-top:35px;
-}
 </style>
 @stop 
 
