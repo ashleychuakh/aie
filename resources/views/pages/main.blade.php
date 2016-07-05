@@ -192,7 +192,7 @@ nav {
           margin:10,
           loop: true,
           dots: true,
-          autoplay: false
+          autoplay: true
       });
 
       $('#owl-item').owlCarousel({

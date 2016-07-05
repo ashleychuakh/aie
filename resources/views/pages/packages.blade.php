@@ -3,6 +3,15 @@
 @section("head")
 <title>AIE SG</title>
 <style>
+
+.package-item.selected {
+  background-color: #3d9ff9;
+  border: 1px solid #3d9ff9;
+}
+
+.package-item.selected p {
+  color: #fff ;
+}
 </style>
 <link type="text/css" rel="stylesheet" href="/assets/css/owl.carousel.css" />
 <link type="text/css" rel="stylesheet" href="/assets/css/owl.theme.default.min.css" />
@@ -20,14 +29,14 @@
       <div class="packages-item-container">
         <div class="row no-margin">
           <div class="col l6 s12 mbtm30">
-            <div class="package-item pright">
+            <div class="package-item pright" data-package="1">
               <p class="item-header">3 times/year (every 4 months)</p>
               <p>$35/unit (wall mounted unit)</p>
               <p>$45/unit (casette unit)</p>
             </div>
           </div>
           <div class="col l6 s12 mbtm30">
-            <div class="package-item pleft">
+            <div class="package-item pleft" data-package="2">
               <p class="item-header">4 times/year (every 3 months)</p>
               <p>$35/unit (wall mounted unit)</p>
               <p>$45/unit (casette unit)</p>
@@ -36,14 +45,14 @@
         </div>
         <div class="row no-margin">
           <div class="col l6 s12 mbtm30">
-            <div class="package-item pright">
+            <div class="package-item pright" data-package="3">
               <p class="item-header">6 times/year (every 2 months)</p>
               <p>$35/unit (wall mounted unit)</p>
               <p>$45/unit (casette unit)</p>
             </div>
           </div>
           <div class="col l6 s12 mbtm30">
-            <div class="package-item pleft">
+            <div class="package-item pleft" data-package="4">
               <p class="item-header">12 times/year (every 1 month)&nbsp;</p>
               <p>$35/unit (wall mounted unit)</p>
               <p>$45/unit (casette unit)</p>
@@ -52,8 +61,8 @@
         </div>
         <div class="row no-margin">
           <div class="col s12">
-            <div class="package-item pcenter">
-              <p class="item-header" style="clear: both;">Customise Your Own Package</p>
+            <div class="package-item pcenter" data-package="custom">
+              <p class="item-header">Customise Your Own Package</p>
               <p>Contact Us to customise your own package</p>
             </div>
           </div>
@@ -69,7 +78,11 @@
             </ul>
           </div>
           <div class="col s12">
-            <a class="btn btn-theme btn-table-fat" href="{{ route('book/step1') }}">Book Package</a>
+            <form>
+               <input id="packageselected" name="packageselected" type="hidden">
+               {!! csrf_field() !!}
+               <button class="btn btn-theme btn-table-fat">Book Package</button>
+            </form>
           </div>
         </div>
       </div>
@@ -88,6 +101,12 @@ $(function() {
       dots: true,
       autoplay: false,
       slideBy: 3
+  });
+
+  $('.package-item').click(function(){
+    $('.packages-item-container').find('.package-item').removeClass('selected');
+    $(this).addClass('selected');
+    $('#packageselected').val($(this).attr('data-package'));
   });
 });
 </script>

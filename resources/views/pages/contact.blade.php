@@ -47,25 +47,26 @@
 
     <div class="container">
        <div class="row">
-         <form class="contact-form col s12">
+         <form id="contact" class="contact-form col s12" method="post">
            <div class="row">
              <div class="input-field col s12">
-               <input name="name" class="input-box" type="text" class="validate" placeholder="Name">
+               <input id="name" name="name" class="input-box" type="text" placeholder="Name" data-parsley-required="true" data-parsley-trigger="change">
              </div>
              <div class="input-field col s12">
-               <input name="companyname" class="input-box" type="text" class="validate" placeholder="Company Name">
+               <input id="companyname" name="companyname" class="input-box" type="text" placeholder="Company Name" data-parsley-required="true" data-parsley-trigger="change">
              </div>
              <div class="input-field col s12 m6">
-               <input name="contact" class="input-box" type="text" class="validate" placeholder="Contact No.">
+               <input id="phone" name="phone" class="input-box" type="text" placeholder="Contact No." data-parsley-required="true" data-parsley-trigger="change" data-parsley-pattern="^[\d\+\-\.\(\)\/\s]*$">
              </div>
              <div class="input-field col s12 m6">
-               <input name="email" class="input-box" type="text" class="validate" placeholder="Email">
+               <input id="email" name="email" class="input-box" type="email" placeholder="Email" data-parsley-required="true" data-parsley-trigger="change">
              </div>
              <div class="input-field col s12">
-                   <textarea class="materialize-textarea"  type="text" placeholder="Leave a Message"  rows="5" required></textarea>
-                </div>
+               <textarea id="message" name="message" class="materialize-textarea" type="text" placeholder="Leave a Message" rows="5" data-parsley-required="true" data-parsley-trigger="change"></textarea>
+              </div>
              <div class="input-field col s12 center">
-                <button class="btn btn-theme" type="submit">Send Message</button>
+               {!! csrf_field() !!}
+               <button class="btn btn-theme" type="submit">Send Message</button>
              </div>
            </div>
          </form>
@@ -82,6 +83,18 @@
 <script>
 "use strict"
 $(function() {
+  $('#contact').parsley({
+      successClass: 'valid',
+      errorClass: 'invalid',
+      errorsContainer: function (velem) {
+        var $errelem = velem.$element.siblings('label');
+        $errelem.attr('data-error', window.Parsley.getErrorMessage(velem.validationResult[0].assert));
+        return true;
+      },
+      errorsWrapper: '',
+      errorTemplate: ''
+    });
+
   initMap();
   function initMap() {
     var map;

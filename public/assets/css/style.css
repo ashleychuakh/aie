@@ -794,6 +794,7 @@ footer.page-footer {
 .packages-cta-container .btn {
   margin: 0 auto;
   padding: 10px 80px;
+  line-height: 0;
   text-transform: uppercase;
 }
 
