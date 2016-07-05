@@ -10,12 +10,12 @@
 #billing-check + label {
 	margin: 0px;
 }
-#billing.hidden{
+#billing {
+	margin-top:35px;
 	display: none;
 }
-.hidden-billing{
+#billing.tada {
 	display: inline-block;
-	margin-top:35px;
 }
 </style>
 @stop 
@@ -82,34 +82,34 @@
 						</select>
 					</div>
 					<div class="input-field col s12 mbtm20 mtop0">
-						<input id="billing-check" name="billing-check" type="checkbox" @if(isset($billingaddress)) checked @endif>
+						<input id="billing-check" name="billing-check" type="checkbox" value="yes" @if(empty($billingaddress)) checked @endif>
 						<label for="billing-check">Different Billing Address?</label>
 					</div>
 
 					<!-- Billing form -->
-					<div id="billing" class="hidden hidden-billing" >
+					<div id="billing">
 						<h6 class="lightblue-theme-text center">BILLING ADDRESS</h6>
 						<div class="input-field col s12">
-						   <input id="billing-name" name="billing-name" class="input-box" type="text" placeholder="{{ empty($billingaddress->name) ? 'Name' : $billingaddress->name }}" value="{{ $billingaddress->name }}" data-parsley-trigger="change">
+						   <input id="billing-name" name="billing-name" class="input-box" type="text" placeholder="{{ empty($billingaddress->name) ? 'Name' : $billingaddress->name }}" value="{{ $billingaddress->name }}" data-parsley-required="true" data-parsley-trigger="change">
 						</div>
 						<div class="input-field col s12 m6">
-						  <input id="billing-phone" name="billing-phone" class="input-box" type="text" placeholder="{{ empty($billingaddress->phone) ? 'Contact No.' : $billingaddress->phone }}" value="{{ $billingaddress->phone }}" data-parsley-trigger="change" data-parsley-pattern="^[\d\+\-\.\(\)\/\s]*$">
+						  <input id="billing-phone" name="billing-phone" class="input-box" type="text" placeholder="{{ empty($billingaddress->phone) ? 'Contact No.' : $billingaddress->phone }}" value="{{ $billingaddress->phone }}" data-parsley-required="true" data-parsley-trigger="change" data-parsley-pattern="^[\d\+\-\.\(\)\/\s]*$">
 						</div>
 						<div class="input-field col s12 m6">
-						  <input id="billing-email" name="billing-email" class="input-box" type="email" placeholder="{{ empty($billingaddress->email) ? 'Email' : $billingaddress->email }}" value="{{ $billingaddress->email }}" data-parsley-trigger="change">
+						  <input id="billing-email" name="billing-email" class="input-box" type="email" placeholder="{{ empty($billingaddress->email) ? 'Email' : $billingaddress->email }}" value="{{ $billingaddress->email }}" data-parsley-required="true" data-parsley-trigger="change">
 						</div>
 						<div class="input-field col s12">
-						   <input id="billing-address" name="billing-address" class="input-box" type="text" placeholder="{{ empty($billingaddress->address) ? 'Address' : $billingaddress->address }}" value="{{ $billingaddress->address }}" data-parsley-trigger="change">
+						   <input id="billing-address" name="billing-address" class="input-box" type="text" placeholder="{{ empty($billingaddress->address) ? 'Address' : $billingaddress->address }}" value="{{ $billingaddress->address }}" data-parsley-required="true" data-parsley-trigger="change">
 						</div>
 						<div class="input-field col s12">
-						   <input id="billing-postalcode" name="billing-postalcode" class="input-box" type="text" placeholder="{{ empty($billingaddress->postalcode) ? 'Postal Code' : $billingaddress->postalcode }}" value="{{ $billingaddress->postalcode }}" data-parsley-trigger="change">
+						   <input id="billing-postalcode" name="billing-postalcode" class="input-box" type="text" placeholder="{{ empty($billingaddress->postalcode) ? 'Postal Code' : $billingaddress->postalcode }}" value="{{ $billingaddress->postalcode }}" data-parsley-required="true" data-parsley-trigger="change">
 						</div>
 						<div class="input-field col s12">
-							<select id="billing-buildingtype" name="billing-buildingtype" class="input-select-border" data-parsley-trigger="change">
+							<select id="billing-buildingtype" name="billing-buildingtype" class="input-select-border" data-parsley-required="true" data-parsley-trigger="change">
 								<option value="" disabled selected>Building Type</option>
-								<option value="1" @if(isset($billingaddress->buildingtype)) @if($billingaddress->buildingtype == "1") selected @endif @endif>Option 1</option>
-								<option value="2" @if(isset($billingaddress->buildingtype)) @if($billingaddress->buildingtype == "2") selected @endif @endif>Option 2</option>
-								<option value="3" @if(isset($billingaddress->buildingtype)) @if($billingaddress->buildingtype == "3") selected @endif @endif>Option 3</option>
+								<option value="1" @if(empty($billingaddress->buildingtype)) @if($billingaddress->buildingtype == "1") selected @endif @endif>Option 1</option>
+								<option value="2" @if(empty($billingaddress->buildingtype)) @if($billingaddress->buildingtype == "2") selected @endif @endif>Option 2</option>
+								<option value="3" @if(empty($billingaddress->buildingtype)) @if($billingaddress->buildingtype == "3") selected @endif @endif>Option 3</option>
 							</select>
 						</div>
 					</div>
@@ -136,16 +136,16 @@ $(function() {
 	  $(this).siblings(".select-dropdown").addClass("grey-theme-text");
 	  $(this).parent().removeClass('invalid').addClass('valid');
 	});
-
+/*
 	$('#billing-check').click(function(){
         $("#billing").toggleClass("hidden");
-    });
+    });*/
 
 	@if(isset($defaultaddress->buildingtype))
 		$('select').siblings(".select-dropdown").addClass("grey-theme-text");
 	@endif
 
-	@if (isset($billingaddress))
+	@if (empty($billingaddress))
         $("#billing").toggleClass("hidden");
 	@endif
 
@@ -176,6 +176,22 @@ $(function() {
 	    velem.$element.parent().removeClass('valid').addClass('invalid');
 	  }
 	});
+
+	var fValidate = $.parselyConditions({
+	    formname: 'profile',
+	    csstoggle: 'tada',
+	    validationfields: [
+	        {
+	            fid: 'billing-check',
+	            ftype: 'checkbox',
+	            fvalue: 'yes',
+	            faffected: ['billing-name', 'billing-phone', 'billing-email', 'billing-address', 'billing-postalcode', 'billing-buildingtype'],
+	            fhide: 'billing'
+	        }
+	    ]
+	});
+
+	fValidate.toggleFields();
 });
 </script>
 @stop

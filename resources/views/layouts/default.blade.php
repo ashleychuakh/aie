@@ -16,6 +16,7 @@
     <script type="text/javascript" src="/assets/js/moment-with-locales.min.js"></script>
     <script type="text/javascript" src="/assets/js/materialize.min.js"></script>
     <script type="text/javascript" src="/assets/js/parsley.min.js"></script>
+    <script type="text/javascript" src="/assets/js/parselyConditions.min.js"></script>
     <script type="text/javascript" src="/assets/js/site.js"></script>
     @yield("head")
   </head>

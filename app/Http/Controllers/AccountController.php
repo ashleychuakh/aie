@@ -229,7 +229,7 @@ class AccountController extends AppBaseController
 
         if($request->has('billing-check'))
         {
-            if($request->input('billing-check') == "on")
+            if($request->input('billing-check') == "yes")
             {
                 $aab = [
                     'name' => $request->input('billing-name'),
@@ -262,7 +262,7 @@ class AccountController extends AppBaseController
     {
         $account = Auth::user();
         $defaultaddress = $account->defaultaddress()->first();
-        $billingaddress = $account->billingaddress()->first();
+        $billingaddress = $account->billingaddress()->first() != null ? $account->billingaddress()->first() : new AccountAddress;
 
         return view("pages.profile", compact('account', 'defaultaddress', 'billingaddress'));
     }
@@ -290,7 +290,7 @@ class AccountController extends AppBaseController
 
         if($request->has('billing-check'))
         {
-            if($request->input('billing-check') == "on")
+            if($request->input('billing-check') == "yes")
             {
                 $aab = [
                     'name' => $request->input('billing-name'),
@@ -306,6 +306,17 @@ class AccountController extends AppBaseController
                 $accountaddress = $account->billingaddress()->first() != null ? $account->billingaddress()->first() : new AccountAddress;
                 $accountaddress->fill($aab);
                 $accountaddress->save();
+            }
+        }
+        else
+        {
+            Log::info($request->all());
+
+            $billingaddress = $account->billingaddress()->first();
+
+            if($billingaddress != null)
+            {
+                $billingaddress->delete();
             }
         }
         
