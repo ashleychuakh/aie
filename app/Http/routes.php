@@ -75,3 +75,18 @@ Route::get("/signout", [
   "as"   => "signout",
   "uses" => "AccountController@getAccountSignout"
 ]);
+
+Route::get("/book", [
+  "as"   => "book",
+  "uses" => "BookingController@getBookAppointment"
+]);
+
+Route::get("/book2", [
+  "as"   => "book2",
+  "uses" => "BookingController@getBookAppointmentStep2"
+]);
+
+Route::get("/book3", [
+  "as"   => "book3",
+  "uses" => "BookingController@getBookAppointmentStep3"
+]);
