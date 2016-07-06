@@ -2,13 +2,6 @@
 
 @section("head")
 <style>
-@font-face {
-  font-family: 'fonttella'; /*a name to be used later*/
-  src: href="/assets/css/style.css";/*URL to font*/
-}
-.contact-icon{
-  font-family: 'fonttella';
-}
 .contact-ta{
   height:100px;
   padding:10px;
@@ -154,7 +147,8 @@ input.contact-input{
     </div>
   </div>
 </main>
-@endsection
+@stop
+
 @section("scripts")
 <script>
 $(document).ready(function() {

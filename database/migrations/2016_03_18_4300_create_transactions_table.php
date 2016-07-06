@@ -25,6 +25,7 @@ class CreateTransactionsTable extends Migration
             $table->integer('appointment_id')->unsigned();
             $table->foreign('appointment_id')->references('id')->on('appointments');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
     /**

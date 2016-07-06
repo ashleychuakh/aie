@@ -2,13 +2,6 @@
 
 @section("head")
 <style>
-@font-face {
-  font-family: 'fonttella'; /*a name to be used later*/
-  src: href="/assets/css/style.css";/*URL to font*/
-}
-.contact-icon{
-  font-family: 'fonttella';
-}
 .contact-ta{
   height:100px;
   padding:10px;
@@ -108,24 +101,24 @@ input.contact-input{
   <div class="row">
     <div class="contact-form">
       <form >
-        <div class="form-group center">
+        <div class="input-field center">
           <input class="contact-input input-box" type="text" placeholder="Name">
         </div>
-        <div class="form-group center">
-          <div class="form-group col m6">
+        <div class="input-field center">
+          <div class="input-field col m6">
             <input class="contact-input input-box" type="text" placeholder="Contact No." style="margin-left:-10px">
           </div>
-          <div class="form-group col m6">
+          <div class="input-field col m6">
             <input class="contact-input input-box" type="text" placeholder="Email" style="margin-left:10px">
           </div>
         </div>
-        <div class="form-group center">
+        <div class="input-field center">
           <input class="contact-input input-box" type="text" placeholder="Address Line">
         </div>
-        <div class="form-group center">
+        <div class="input-field center">
           <input class="contact-input input-box" type="text" placeholder="Postal Code">
         </div>
-        <div class="form-group center">
+        <div class="input-field center">
           <select class="aieDropDownList">
             <option value="" disabled selected>Building Type</option>
             <option value="1">Option 1</option>
@@ -137,7 +130,7 @@ input.contact-input{
           <input type="checkbox" id="diffBillingAddress" />
           <label for="diffBillingAddress">Different Billing Address?</label>
         </p>
-        <div class="form-group center">
+        <div class="input-field center">
           <button class="btn btn-submit contact-submit"> NEXT STEP </button>
         </div>
       </form>
@@ -145,7 +138,8 @@ input.contact-input{
   </div>
 </div>
 </main>
-@endsection
+@stop
+
 @section("scripts")
 <script>
 $(document).ready(function() {

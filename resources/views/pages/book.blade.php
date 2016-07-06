@@ -2,13 +2,6 @@
 
 @section("head")
 <style>
-@font-face {
-  font-family: 'fonttella'; /*a name to be used later*/
-  src: href="/assets/css/style.css";/*URL to font*/
-}
-.contact-icon{
-  font-family: 'fonttella';
-}
 .contact-ta{
   height:100px;
   padding:10px;
@@ -70,10 +63,10 @@ input.contact-input{
     <div class="row">
       <div class="contact-form">
         <form class="">
-          <div class="form-group center">
+          <div class="input-field center">
             <input class="contact-input input-box" type="date" class="datepicker" placeholder="Select Date">
           </div>
-          <div class="form-group center">
+          <div class="input-field center">
             <select class="aieDropDownList">
               <option value="" disabled selected>Select Arrival Time</option>
               <option value="1">Option 1</option>
@@ -81,7 +74,7 @@ input.contact-input{
               <option value="3">Option 3</option>
             </select>
           </div>
-          <div class="form-group center">
+          <div class="input-field center">
             <select class="aieDropDownList">
               <option value="" disabled selected>Service Type</option>
               <option value="1">Option 1</option>
@@ -89,7 +82,7 @@ input.contact-input{
               <option value="3">Option 3</option>
             </select>
           </div>
-          <div class="form-group col m6" style="margin-left:-10px">
+          <div class="input-field col m6" style="margin-left:-10px">
             <select class="aieDropDownList">
               <option value="" disabled selected>A/C Type</option>
               <option value="1">Option 1</option>
@@ -97,13 +90,13 @@ input.contact-input{
               <option value="3">Option 3</option>
             </select>
           </div>
-          <div class="form-group col m6">
+          <div class="input-field col m6">
             <input class="contact-input input-box" type="text" placeholder="Qty" style="margin-left:10px">
           </div>
-          <div class="form-group center">
+          <div class="input-field center">
             <textarea class="form-textarea contact-ta"  type="text" placeholder="Additional Notes"  rows="5" required></textarea>
           </div>
-          <div class="form-group center">
+          <div class="input-field center">
             <button class="btn btn-submit contact-submit"> NEXT STEP </button>
           </div>
         </form>
@@ -111,7 +104,8 @@ input.contact-input{
     </div>
   </div>
 </main>
-@endsection
+@stop
+
 @section("scripts")
 <script>
 $(document).ready(function() {

@@ -28,6 +28,7 @@ class CreateAirconsTable extends Migration
             $table->integer('location_id')->unsigned();
             $table->foreign('location_id')->references('id')->on('locations');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
     /**

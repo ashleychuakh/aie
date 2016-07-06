@@ -11,7 +11,7 @@
 @section("content")
 <main>
   <div class="blank-hero">
-    <div class="hero-text purple-header">
+    <div class="hero-text">
       <h4 class="grey-theme-text">AIRCON CARE PACKAGES</h4>
       <p class="lightblue-theme-text">MAINTENANCE FOR YOUR AIRCON</p>
     </div>
