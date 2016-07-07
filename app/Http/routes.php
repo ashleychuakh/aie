@@ -71,6 +71,11 @@ Route::post("/signup", [
   "uses" => "AccountController@postAccountSignup"
 ]);
 
+Route::get("/signupinfo",[
+  "as"   => "signupinfo",
+  "uses" => "AccountController@getAccountSignupInfo"
+]);
+
 Route::get("/signout", [
   "as"   => "signout",
   "uses" => "AccountController@getAccountSignout"

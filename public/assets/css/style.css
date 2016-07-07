@@ -1051,26 +1051,29 @@ i.faq-search-btn{
     -moz-box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.14);
     box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.14);
   padding: 10px;
-  margin-bottom: 30px;
+  margin-bottom: 50px;
 }
 .signin-form{
   padding:25px 15px 15px;
 }
-.forgetpass-l{
-  display:block;
-  margin-top:-50px;
-  margin-right: 10px;
-  text-align: left;
-  color:#808aa3;
-  text-decoration: underline;
-  cursor: pointer;
-  z-index: 100;
-}
 .signin-submit{
-  margin:0;
   height:45px;
 }
+.divider-text{
+  padding-top: 15px;
+}
+.login-img{
+  width: 25px;
+  height: 25px;
+  margin-bottom: -8px;
+}
 
+/* signup*/ 
+.select-box{
+  border: thin solid #9e9e9e;
+  padding-left:10px;
+  height: 48px;
+}
 /* horizontal line between text */ 
 p.line {
     overflow: hidden;
