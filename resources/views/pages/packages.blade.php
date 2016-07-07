@@ -51,7 +51,7 @@
           </div>
         </div>
         <div class="row mtop30 mbtm30">
-          <div class="col l6 offset-l3">
+          <div class="col l6 offset-l3 s12">
             <div class="package-item pcenter">
               <p class="item-header" style="clear: both;">Customise Your Own Package</p>
               <p>Contact Us to customise your own package</p>
@@ -61,14 +61,14 @@
       </div>
       <div class="packages-cta-container">
         <div class="row">
-          <div class="col l9 offset-l1">
+          <div class="col l9 offset-l1 s12">
             <ul>
               <li>$15 transportation charge will be waived for packages</li>
               <li>Free 2 year warranty extension upon signing up for an Aircon Care Package, only applicable if installation is done by our quality installation team. <a href="">Terms & Conditions</a> apply.</li>
               <li>Prices applicable for HDB and private residential only. For commercial clients please <a href="">Contact Us</a></li>
             </ul>
           </div>
-          <div class="col l12">
+          <div class="col s12">
             <a class="btn btn-theme btn-table-fat">Book Package</a>
           </div>
         </div>

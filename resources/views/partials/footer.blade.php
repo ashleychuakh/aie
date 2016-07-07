@@ -45,13 +45,11 @@
             <div class="content">
               <p>blah</p>
               <p>blah</p>
-              <p>blah</p>
             </div>
           </li>
           <li>
             <img src="/assets/img/time.png">
             <div class="content">
-              <p>blah</p>
               <p>blah</p>
               <p>blah</p>
             </div>

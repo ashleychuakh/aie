@@ -3,6 +3,19 @@
 @section("head")
 <title>AIE SG</title>
 <style>
+.item-text-small {
+  padding: 0 50px;
+}
+.item-text-small h5 {
+  margin: 30px 15px;
+}
+.item-text-small .description {
+  font-size: 1.1em;
+  margin-bottom: 30px;
+}
+.item-text-small p {
+  font-size: 1.2em;
+}
 </style>
 <link type="text/css" rel="stylesheet" href="/assets/css/owl.carousel.css" />
 <link type="text/css" rel="stylesheet" href="/assets/css/owl.theme.default.min.css" />
@@ -10,7 +23,7 @@
 
 @section("content")
 <main>
-  <div class="hero" style="background: #fff;">
+  <div class="hero">
     <div class="hero-text">
       <h1 class="blue-theme-text">ABOUT US</h1>
       <p class="lightblue-theme-text">afasdfasfasfdasfdasfasdfasdfsfsafasdf</p>
@@ -22,19 +35,18 @@
   <div class="hero-item-blank special">
     <div class="container">
       <div class="item-text-small">
-        <div class="row" style="text-align: left">
+        <div class="row tleft">
           <div class="col s12">
-            <p style="font-size: 1.3em;">OUR MISSION & VISION</p>
+            <h5 class="lightblue-theme-text">OUR MISSION & VISION</h5>
           </div>
           <div class="col s12 m5">
             <img class="responsive-img service-img-2" src="http://placehold.it/400x250">
           </div>
           <div class="col s12 m7">
-            <div class="grey-text" style="font-size: 1.1em">Lorem ipsum dolor sit amet, an phaedrum dissentiet per, ad viris dolore denique ius. Sea dicant assueverit id, mel eruditi labores cu. Ea commodo corpora intellegebat cum. Nec te mazim euismod sapientem, vide illud id est.</div>
-            <br/>
-            <p><i class="fa fa-1x margin-right-5 fa-check ticks grey-text" aria-hidden="true"></i> WE OFFER QUALITY WORK</p>
-            <p><i class="fa fa-1x margin-right-5 fa-check ticks grey-text" aria-hidden="true"></i> TEST & INSPECT BEFORE START WORK</p>
-            <p><i class="fa fa-1x margin-right-5 fa-check ticks grey-text" aria-hidden="true"></i> WE KEEP YOUR HOME COOL</p>
+            <div class="description" >Lorem ipsum dolor sit amet, an phaedrum dissentiet per, ad viris dolore denique ius. Sea dicant assueverit id, mel eruditi labores cu. Ea commodo corpora intellegebat cum. Nec te mazim euismod sapientem, vide illud id est.</div>
+            <p class="lightblue-theme-text"><i class="fa fa-1x margin-right-5 fa-check ticks grey-text" aria-hidden="true"></i> WE OFFER QUALITY WORK</p>
+            <p class="lightblue-theme-text"><i class="fa fa-1x margin-right-5 fa-check ticks grey-text" aria-hidden="true"></i> TEST & INSPECT BEFORE START WORK</p>
+            <p class="lightblue-theme-text"><i class="fa fa-1x margin-right-5 fa-check ticks grey-text" aria-hidden="true"></i> WE KEEP YOUR HOME COOL</p>
           </div>
         </div>
       </div>

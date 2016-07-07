@@ -10,7 +10,7 @@
 
 @section("content")
 <main>
-  <div class="hero" style="background: #fff;">
+  <div class="hero">
     <div class="hero-text">
       <h1 class="blue-theme-text">OUR SERVICES</h1>
       <p class="lightblue-theme-text">ONLY THE HIGHEST QUALITY OF SERVICES FOR YOU</p>
@@ -19,7 +19,7 @@
       <div id="services-header-img"></div>
     </div>
   </div>
-  <div class="container mtop50">
+  <div class="container mtop50 mbtm50">
     <div class="row">
       <div class="col l3 service-sidebar">
         <a href="#services" data-toggle="tab">

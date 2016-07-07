@@ -10,7 +10,7 @@
 
 @section("content")
 <main>
-  <div class="hero" style="background: #fff;">
+  <div class="hero">
     <div class="hero-text purple-header">
       <h1 class="blue-theme-text">BUILT TO LAST</h1>
       <p class="lightblue-theme-text">SPECIALLY SELECTED & CERTIFIED INSTALLATION</p>
@@ -20,7 +20,7 @@
       <div id="materials-header-img"></div>
     </div>
   </div>
-  <div class="container mtop50">
+  <div class="container mtop50 mbtm50">
     <div class="materials-cta-container">
       <ul>
         <li> 

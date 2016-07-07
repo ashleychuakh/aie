@@ -73,14 +73,23 @@ a:hover, a:focus {
     text-shadow: none;
     background: #2B2E31;
 }
+.tleft {
+  text-align: left;
+}
+.tright {
+  text-align: right;
+}
+.tcenter {
+  text-align: center;
+}
 .left {
-    text-align: left;
+  text-align: left;
 }
 .right {
-    text-align: right;
+  text-align: right;
 }
 .center {
-    text-align: center;
+  text-align: center;
 }
 .clearfix:after {
     content:"";
@@ -336,13 +345,14 @@ footer.page-footer {
 }
 
 .hero-item-blank .item h5 {
-    color: #828284;
-    font-weight: 300;
+  color: #828284;
+  font-weight: 300;
+  text-transform: uppercase;
 }
 
 .hero-item-blank .item p {
-    color: #3D9FF9;
-    font-family: Arial, sans-serif;
+  color: #3D9FF9;
+  font-family: Arial, sans-serif;
 }
 
 .hero-item-blank .item.line {
@@ -380,6 +390,7 @@ footer.page-footer {
   position: absolute;
   top: 0;
   margin-top: 60px;
+  margin-left: -60px;
 }
 
 .hero-item-blank .owl-carousel .owl-nav .owl-next {
@@ -387,6 +398,7 @@ footer.page-footer {
   top: 0;
   right: 0;
   margin-top: 60px;
+  margin-right: -60px;
 }
 
 #owl-item {
@@ -889,7 +901,7 @@ footer.page-footer .footer-main ul {
 
 }
 footer.page-footer .footer-main ul li {
-  padding: 15px 0;
+  padding: 13px 0;
   text-transform: uppercase;
 }
 
