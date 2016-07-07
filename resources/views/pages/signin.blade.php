@@ -25,7 +25,7 @@
 
     <div class="container">
 	    <div class="row">
-		    <div class="col offset-m3 m6 signin-box">
+		    <div class="col offset-m3 m6 s12 signin-box">
 		    	<form class="signin-form">
 		    		<!-- {!! csrf_field() !!} -->
 		    		<div class="input-field center">
@@ -38,7 +38,7 @@
 		    		</div>
 
 		    		<div class="input-field center">
-		    			<button class="btn signin-submit btn-theme" style="width:100%;">SIGN IN</button>
+		    			<button class="btn btn-theme btn-fat full-width">SIGN IN</button>
 		    		</div>
 
 		    		<div class="input-field center divider-text" style="">
