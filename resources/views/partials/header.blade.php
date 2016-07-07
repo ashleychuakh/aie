@@ -11,10 +11,10 @@
         </div>
         <div class="col s6 right">
           <ul>
-            <li><a href="" class="btn-border">BOOK NOW</a></li>
+            <li><a href="{{ route('book') }}" class="btn-border">BOOK NOW</a></li>
             <li><a href="{{ route('signin') }}">Login</a></li>
             <li><div class="verticalline"></div></li>
-            <li><a href="">Signup</a></li>
+            <li><a href="{{ route('signup') }}">Signup</a></li>
           </ul>
         </div>
       </div>

@@ -40,6 +40,11 @@ class MainController extends Controller {
 		return view("pages.materials");
 	}
 
+	public function getProducts()
+	{
+		return view("pages.products");
+	}
+
 	public function getTerms()
 	{
 		return view("pages.terms");

@@ -2,89 +2,147 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Model;
-use Illuminate\Foundation\Auth\User as Authenticatable;
+use Eloquent as Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Account extends Authenticatable
+/**
+ * @SWG\Definition(
+ *      definition="Account",
+ *      required={},
+ *      @SWG\Property(
+ *          property="id",
+ *          description="id",
+ *          type="integer",
+ *          format="int32"
+ *      ),
+ *      @SWG\Property(
+ *          property="client_name",
+ *          description="client_name",
+ *          type="string"
+ *      ),
+ *      @SWG\Property(
+ *          property="client_address",
+ *          description="client_address",
+ *          type="string"
+ *      ),
+ *      @SWG\Property(
+ *          property="client_email",
+ *          description="client_email",
+ *          type="string"
+ *      ),
+ *      @SWG\Property(
+ *          property="client_numbers",
+ *          description="client_numbers",
+ *          type="string"
+ *      ),
+ *      @SWG\Property(
+ *          property="password",
+ *          description="password",
+ *          type="string"
+ *      ),
+ *      @SWG\Property(
+ *          property="contract",
+ *          description="contract",
+ *          type="string"
+ *      ),
+ *      @SWG\Property(
+ *          property="type",
+ *          description="type",
+ *          type="string"
+ *      ),
+ *      @SWG\Property(
+ *          property="status",
+ *          description="status",
+ *          type="string"
+ *      ),
+ *      @SWG\Property(
+ *          property="role_id",
+ *          description="role_id",
+ *          type="integer",
+ *          format="int32"
+ *      ),
+ *      @SWG\Property(
+ *          property="company_id",
+ *          description="company_id",
+ *          type="integer",
+ *          format="int32"
+ *      ),
+ *      @SWG\Property(
+ *          property="confirmed",
+ *          description="confirmed",
+ *          type="boolean"
+ *      ),
+ *      @SWG\Property(
+ *          property="confirmation_code",
+ *          description="confirmation_code",
+ *          type="string"
+ *      ),
+ *      @SWG\Property(
+ *          property="remember_token",
+ *          description="remember_token",
+ *          type="string"
+ *      )
+ * )
+ */
+class Account extends Model
 {
+    use SoftDeletes;
 
-    /**
-     * The database table used by the model.
-     *
-     * @var string
-     */
-    protected $table = 'accounts';
+    public $table = 'accounts';
+    
+    const CREATED_AT = 'created_at';
+    const UPDATED_AT = 'updated_at';
 
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array
-     */
-    protected $fillable = [
-        'company_id',
-        'role_id',
+
+    protected $dates = ['deleted_at'];
+
+
+    public $fillable = [
         'client_name',
         'client_address',
         'client_email',
         'client_numbers',
-        'type',
         'password',
         'contract',
+        'type',
         'status',
-        'confirmation_code'
-
+        'role_id',
+        'company_id',
+        'confirmed',
+        'confirmation_code',
+        'remember_token',
+        'deleted_at'
     ];
 
-    public function Company()
-    {
-        return $this->hasMany('App\Models\Company');
-    }
-
-    public function Transaction()
-    {
-        return $this->hasMany('App\Models\Transaction');
-    }
     /**
-     * The attributes that should be hidden for arrays.
+     * The attributes that should be casted to native types.
      *
      * @var array
      */
-    protected $hidden = [
-        'password', 'remember_token',
+    protected $casts = [
+        'id' => 'integer',
+        'client_name' => 'string',
+        'client_address' => 'string',
+        'client_email' => 'string',
+        'client_numbers' => 'string',
+        'password' => 'string',
+        'contract' => 'string',
+        'type' => 'string',
+        'status' => 'string',
+        'role_id' => 'integer',
+        'company_id' => 'integer',
+        'confirmed' => 'boolean',
+        'confirmation_code' => 'string',
+        'remember_token' => 'string',
+        'deleted_at' => 'datetime'
     ];
 
-    public function role()
-    {
-        return $this->hasOne('App\Models\Role', 'id', 'role_id');
-    }
-
-    public function hasRole($roles)
-    {
-        $this->have_role = $this->getUserRole();
-//        dd($this->have_role);
-        // Check if the user is a root account
-        if(@$this->have_role->name == 'Root') {
-            return true;
-        }
-        if(is_array($roles)){
-            foreach($roles as $need_role){
-                if($this->checkIfUserHasRole($need_role)) {
-                    return true;
-                }
-            }
-        } else{
-            return $this->checkIfUserHasRole($roles);
-        }
-        return false;
-    }
-    private function getUserRole()
-    {
-        return $this->role()->getResults();
-    }
-    private function checkIfUserHasRole($need_role)
-    {
-        return (strtolower($need_role)==strtolower(@$this->have_role->name)) ? true : false;
-    }
-
-
+    /**
+     * Validation rules
+     *
+     * @var array
+     */
+    public static $rules = [
+        
+    ];
 }

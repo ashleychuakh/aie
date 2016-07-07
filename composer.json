@@ -9,7 +9,14 @@
         "laravel/framework": "5.2.*",
         "laravel/socialite": "^2.0",
         "laravelista/ekko": "^1.2",
-        "barryvdh/laravel-debugbar": "^2.2"
+        "barryvdh/laravel-debugbar": "^2.2",
+        "infyomlabs/laravel-generator": "dev-master",
+        "laravelcollective/html": "5.2.*",
+        "doctrine/dbal": "~2.3",
+        "infyomlabs/metronic-templates": "dev-master",
+        "infyomlabs/swagger-generator": "dev-master",
+        "jlapp/swaggervel": "dev-master",
+        "yajra/laravel-datatables-oracle": "~6.0"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

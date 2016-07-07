@@ -13,7 +13,10 @@ nav {
   margin-top: 450px;
 }
 .btn-large i {
-  font-size: 3em;
+  font-size: 7em;
+  display: block;
+  margin-left: -.23em;
+  margin-top: -.2em;
 }
 </style>
 <link type="text/css" rel="stylesheet" href="/assets/css/owl.carousel.css" />
@@ -33,7 +36,7 @@ nav {
         <div class="item"><img src="/assets/img/main/03.jpg"></div>
       </div>
       <div class="hero-downwards">
-        <button id="to-next" href="javascript:;" class="btn-floating btn-large btn-theme btn-downwards"><i class="material-icons medium">expand_more</i></button>
+        <button id="to-next" href="javascript:;" class="btn-floating btn-large btn-theme btn-downwards"><i class="icon-aie-icons-down-button-08"></i></button>
       </div>
     </div>
     <div id="services" class="hero-item-blank">

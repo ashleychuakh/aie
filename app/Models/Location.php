@@ -2,24 +2,81 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Model;
+use Eloquent as Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
+/**
+ * @SWG\Definition(
+ *      definition="Location",
+ *      required={},
+ *      @SWG\Property(
+ *          property="id",
+ *          description="id",
+ *          type="integer",
+ *          format="int32"
+ *      ),
+ *      @SWG\Property(
+ *          property="name",
+ *          description="name",
+ *          type="string"
+ *      ),
+ *      @SWG\Property(
+ *          property="address",
+ *          description="address",
+ *          type="string"
+ *      ),
+ *      @SWG\Property(
+ *          property="unit_number",
+ *          description="unit_number",
+ *          type="string"
+ *      ),
+ *      @SWG\Property(
+ *          property="postal_code",
+ *          description="postal_code",
+ *          type="string"
+ *      ),
+ *      @SWG\Property(
+ *          property="latitude",
+ *          description="latitude",
+ *          type="string"
+ *      ),
+ *      @SWG\Property(
+ *          property="longitude",
+ *          description="longitude",
+ *          type="string"
+ *      ),
+ *      @SWG\Property(
+ *          property="place_id",
+ *          description="place_id",
+ *          type="string"
+ *      ),
+ *      @SWG\Property(
+ *          property="status",
+ *          description="status",
+ *          type="string"
+ *      ),
+ *      @SWG\Property(
+ *          property="company_id",
+ *          description="company_id",
+ *          type="integer",
+ *          format="int32"
+ *      )
+ * )
+ */
 class Location extends Model
 {
-    /**
-     * The database table used by the model.
-     *
-     * @var string
-     */
-    protected $table = 'locations';
+    use SoftDeletes;
 
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array
-     */
+    public $table = 'locations';
+    
+    const CREATED_AT = 'created_at';
+    const UPDATED_AT = 'updated_at';
 
-    protected $fillable =  [
+
+    protected $dates = ['deleted_at'];
+
+
+    public $fillable = [
         'name',
         'address',
         'unit_number',
@@ -28,22 +85,35 @@ class Location extends Model
         'longitude',
         'place_id',
         'status',
-        'company_id'
+        'company_id',
+        'deleted_at'
     ];
 
-    public function Appointment()
-    {
-        return $this->hasMany('App\Models\Appointment');
-    }
+    /**
+     * The attributes that should be casted to native types.
+     *
+     * @var array
+     */
+    protected $casts = [
+        'id' => 'integer',
+        'name' => 'string',
+        'address' => 'string',
+        'unit_number' => 'string',
+        'postal_code' => 'string',
+        'latitude' => 'string',
+        'longitude' => 'string',
+        'place_id' => 'string',
+        'status' => 'string',
+        'company_id' => 'integer',
+        'deleted_at' => 'datetime'
+    ];
 
-    public function Aircon()
-    {
-        return $this->hasMany('App\Models\Aircon');
-    }
-
-    public function Company()
-    {
-        return $this->belongsTo('App\Models\Company', 'company_id');
-    }
-
+    /**
+     * Validation rules
+     *
+     * @var array
+     */
+    public static $rules = [
+        
+    ];
 }

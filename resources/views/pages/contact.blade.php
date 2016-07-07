@@ -2,13 +2,10 @@
 
 @section("head")
 <style>
-@font-face {
-    font-family: 'fonttella'; /*a name to be used later*/
-    src: href="/assets/css/style.css";/*URL to font*/
-}
-	.contact-icon{
-		font-family: 'fonttella';
-	}
+   .contact-details img {
+      max-width: 80px;
+      background-color: #000;
+   }
 	.contact-ta{
 		height:100px;
 		padding:10px;
@@ -20,18 +17,23 @@
 		padding:5px 10px;
 		margin-bottom: 18px;
 	}
+   .contact-form .btn {
+      padding: 25px 200px;
+      line-height: 0px;
+      margin: 20px 0;
+      font-weight: 300;
+   }
 </style>
 
 @endsection
 
 @section("content")
 <main>
-	<div class="container" style="background: #fff;">
-		 <div class="row">
-		      <h4 class="faq-header" style="font-weight:300">CONTACT US</h4>
-	  </div>
+    <div class="blank-hero">
+      <div class="hero-text">
+        <h4 class="lightblue-theme-text">CONTACT US</h4>
+      </div>
     </div>
-
     <div class="container">
    		<div class="row">
    			<div class="contact-details center">
@@ -78,23 +80,23 @@
    		<div class="row">
    			<div class="contact-form">
    				<form class="">
-   					<div class="form-group center">
+   					<div class="input-field center">
    						<input class="contact-input input-box"type="text" placeholder="Name">
    					</div>
-   					<div class="form-group center">
+   					<div class="input-field center">
    						<input class="contact-input input-box" type="text" placeholder="Company Name">
    					</div>
-   					<div class="form-group col m6">
+   					<div class="input-field col m6">
    						<input class="contact-input input-box" type="text" placeholder="Contact No." style="margin-left:-10px">
    					</div>
-   					<div class="form-group col m6">
+   					<div class="input-field col m6">
    						<input class="contact-input input-box" type="text" placeholder="Email" style="margin-left:10px">
    					</div>
-   					<div class="form-group center">
-		    			<textarea class="form-textarea contact-ta"  type="text" placeholder="Leave a Message"  rows="5" required></textarea>
+   					<div class="input-field center">
+		    			   <textarea class="form-textarea contact-ta"  type="text" placeholder="Leave a Message"  rows="5" required></textarea>
    					</div>
-   					<div class="form-group center">
-   						<button class="btn btn-submit contact-submit"> Send Message </button>
+   					<div class="input-field center">
+   						<button class="btn btn-theme" type="submit"> Send Message </button>
    					</div>
    				</form>
    			</div>
