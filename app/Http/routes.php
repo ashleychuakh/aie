@@ -36,6 +36,11 @@ Route::get("/materials", [
   "uses" => "MainController@getMaterials"
 ]);
 
+Route::get("/productdetails", [
+  "as"   => "products",
+  "uses" => "MainController@getProductDetails"
+]);
+
 Route::get("/products", [
   "as"   => "products",
   "uses" => "MainController@getProducts"
