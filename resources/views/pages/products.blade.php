@@ -18,7 +18,7 @@ ul.sidenav-items li{
   padding: 4px 0;
 }
 hr{
-margin: 15px 0;
+  margin: 15px 0;
 }
 .sidebar-headings{
   line-height:3rem; 
@@ -31,8 +31,36 @@ margin: 15px 0;
   border-radius: 0px;
 }
 [type="checkbox"].filled-in:checked+label:after{
-    border: 2px solid #03a9f4;
-    background-color: #03a9f4;
+  border: 2px solid #03a9f4;
+  background-color: #03a9f4;
+}
+.select-wrapper input.select-dropdown{
+  border-bottom: none;
+  text-align: center;
+}
+.select-wrapper span.caret{
+  display: none;
+}
+.product-item{
+  position: relative;
+  display: inline-block;
+}
+
+.product-item:hover .over {
+  display: block;
+}
+.over{
+  display: none;
+  position: absolute;
+  left: 0;
+  bottom:0;
+  right: 0;
+  background-color:  #fff;
+  opacity:0.8;
+  height:100%;
+}
+.prod-search a{
+  color:#808aa3;
 }
 </style>
 
@@ -40,64 +68,68 @@ margin: 15px 0;
 
 @section("content")
 <main>
-  <div class="container">
+  <div class="container mtop50 mbtm50">
    <div class="row"> 
     <div class="col m4">
-      <div class="products-sidebar-box">
-        <div class="products-sidebar">
-          <h5>FILTER</h5>
-          <a class="reset right lightblue-theme-text">Reset filter</a>
-          <hr> 
-
-          <label class="lightblue-theme-text sidebar-headings">AIR CONDITIONING TYPE</label>
-          <ul class="sidenav-items">
-            <li><i class="fa fa-angle-right" aria-hidden="true"></i> Casement Air-conditioners</li>
-            <li><i class="fa fa-angle-right" aria-hidden="true"></i> Single-spilt Air-conditioners</li>
-            <li><i class="fa fa-angle-right" aria-hidden="true"></i> Casement Air-conditioners</li>
-            <li><i class="fa fa-angle-right" aria-hidden="true"></i> Single-spilt Air-conditioners</li>
-          </ul>
-
-          <hr>
-          
-          <label class="lightblue-theme-text sidebar-headings">BRANDS</label>
-          <ul class="sidenav-items">
-            <li><input type="checkbox" class="filled-in" id="filled-in-box" /><label for="filled-in-box">Filled in</label></li>
-            <li><input type="checkbox" class="filled-in" id="filled-in-box"  /><label for="filled-in-box">Filled in</label></li>
-          </ul>
-
-          <hr>
-
-          <label class="lightblue-theme-text sidebar-headings">PRICE</label>
-<!-- 
-        <div id="range-input" class="noUi-target noUi-ltr noUi-horizontal noUi-background">
-          <div class="noUi-base">
-            <div class="noUi-origin noUi-connect">
-              <div class="noUi-handle noUi-handle-lower">
-                <div class="range-label">
-                  <span></span>
-                </div>
-              </div>
-            </div>
-            <div class="noUi-origin noUi-background">
-              <div class="noUi-handle noUi-handle-upper">
-                <div class="range-label">
-                  <span></span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div> -->
-
-    <div class="range-field">
-      <input type="range" id="test5" min="0" max="100" />
+      @include("partials/product-sidebar")
     </div>
 
-        
-
-        </div>
+    <div class="col m8"><div class="row">
+      <div class="prod-search right" >
+        <a href="" class="prod-search-btn"><i class="fa fa-search" aria-hidden="true"></i></a>
+        <select class="prod-sort right ">
+          <option value="" disabled selected>Sort by &or;</option>
+          <option value="1">Option 1</option>
+          <option value="2">Option 2</option>
+          <option value="3">Option 3</option>
+        </select>
       </div>
     </div>
+    <hr>
+    <div class="products">
+      <div class="col m4 s6 center product-item">
+        <div class="row"><img src="http://placehold.it/180x180"></div>
+        <p class="prod-model lightblue-theme-text">Model</p>
+        <p>#Model No<br>Product Name</p>
+        <div class="over valign-wrapper"><a href="{{url('/productdetails')}}"> 
+          <i class="fa fa-eye lightblue-theme-text" aria-hidden="true" style="font-size:50px; padding-top:50px"></i><br>
+          Quick View</a>
+        </div>
+      </div>
+
+      <div class="col m4 s6 center product-item">
+        <div class="row"><img src="http://placehold.it/180x180"></div>
+        <p class="prod-model lightblue-theme-text">Model</p>
+        <p>#Model No<br>Product Name</p>
+        <div class="over valign-wrapper"><a href="{{url('/productdetails')}}"> 
+          <i class="fa fa-eye lightblue-theme-text" aria-hidden="true" style="font-size:50px; padding-top:50px"></i><br>
+          Quick View</a>
+        </div>
+      </div>
+
+      <div class="col m4 s6 center product-item">
+        <div class="row"><img src="http://placehold.it/180x180"></div>
+        <p class="prod-model lightblue-theme-text">Model</p>
+        <p>#Model No<br>Product Name</p>
+        <div class="over valign-wrapper"><a href="{{url('/productdetails')}}"> 
+          <i class="fa fa-eye lightblue-theme-text" aria-hidden="true" style="font-size:50px; padding-top:50px"></i><br>
+          Quick View</a>
+        </div>
+      </div>
+
+      <div class="col m4 s6 center product-item">
+        <div class="row"><img src="http://placehold.it/180x180"></div>
+        <p class="prod-model lightblue-theme-text">Model</p>
+        <p>#Model No<br>Product Name</p>
+        <div class="over valign-wrapper"><a href="{{url('/productdetails')}}"> 
+          <i class="fa fa-eye lightblue-theme-text" aria-hidden="true" style="font-size:50px; padding-top:50px"></i><br>
+          Quick View</a>
+        </div>
+      </div>
+
+    </div>
   </div>
+</div>
 </div>
 </main>
 @stop
@@ -106,27 +138,26 @@ margin: 15px 0;
 <script src="/assets/js/nouislider.min.js"></script>
 <script src="/assets/js/nouislider.js"></script>
 <script>
-  var slider = document.getElementById('#test5');
-  noUiSlider.create(slider, {
-   start: [20, 80],
-   connect: true,
-   step: 1,
-   range: {
-     'min': 0,
-     'max': 100
-   },
-   format: wNumb({
-     decimals: 0
-   })
-  });
-
-  $("#slider-connect").noUiSlider({
-  start: 40,
-  connect: "lower",
-  range: {
-    'min': 0,
-    'max': 100
-  }
+var slider = document.getElementById('#test5');
+noUiSlider.create(slider, {
+ start: [20, 80],
+ connect: true,
+ step: 1,
+ range: {
+   'min': 0,
+   'max': 100
+ },
+ format: wNumb({
+   decimals: 0
+ })
 });
+
 </script>
+<script>
+$(document).ready(function() {
+  $('select').material_select();
+});
+
+</script>
+
 @stop
