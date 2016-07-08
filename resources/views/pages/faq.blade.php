@@ -67,7 +67,7 @@
     min-height: 6rem;
     line-height: 6rem;
     padding: 0 3rem;
-    border-bottom: 2px solid #ddd;
+    border-bottom: 2px solid #808aa3;
   }
   .collapsible-body p {
     padding: 3rem;
@@ -86,7 +86,7 @@
     margin: 50px 0;
   }
   .totop-link i {
-    border: 2px solid #ddd;
+    border: 2px solid #808aa3;
     border-radius: 50%;
     font-size: 2.5em;
     padding: 15px;
@@ -152,7 +152,7 @@
 </main>
 <div class="fixed-action-btn">
   <a class="waves-effect waves-dark btn-floating btn-large btn-floating-theme modal-trigger" href="#more-questions">
-    <i class="icon-aieicons-question grey-theme-text"></i>
+    <i class="icon-aieicons-question"></i>
   </a>
 </div>
 <!-- Modal Structure -->
