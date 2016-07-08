@@ -3,55 +3,57 @@
  <div class="container">
    <div class="footer-main">
     <div class="row">
-      <div class="col s4">
+      <div class="col s12 l4 sitemap">
         <ul>
-          <li><a href="#">Home</a></li>
-          <li><a href="#">About Us</a></li>
-          <li><a href="#!">Services</a></li>
-          <li><a href="#!">Products</a></li>
-          <li><a href="#!">Faq</a></li>
-          <li><a href="#!">Contact</a></li>
+          <li><a href="{{ route('main') }}">Home</a></li>
+          <li><a href="{{ route('about') }}">About Us</a></li>
+          <li><a href="{{ route('services') }}">Services</a></li>
+          <li><a href="{{ route('packages') }}">Packages</a></li>
+          <li><a href="{{ route('materials') }}">Materials</a></li>
+          <li><a href="{{ route('products') }}">Products</a></li>
+          <li><a href="{{ route('faq') }}">FAQ</a></li>
+          <li><a href="{{ route('contact') }}">Contact</a></li>
         </ul>
       </div>
-      <div class="col s4">
+      <div class="col s12 l4 social">
         <h5>AIE ENGINEERING SVC</h5>
         <p>LADFSFDS</p>
-        <ul class="social">
-          <li><a href="#" style="padding-left: 15px; padding-right: 15px;"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-          <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-          <li><a href="#!"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+        <ul>
+          <li><i class="icon-aieicons-facebook"></i></li>
+          <li><i class="icon-aieicons-instagram"></i></li>
+          <li><i class="icon-aieicons-twitter"></i></li>
         </ul>
       </div>
-      <div class="col s4">
-        <ul class="details">
+      <div class="col s12 l4 details">
+        <ul>
           <li>
-            <img src="/assets/img/location.png">
+            <i class="icon-aieicons-location"></i>
             <div class="content">
-              <p>blah</p>
-              <p>blah</p>
-              <p>blah</p>
+              <p>ADDRESS</p>
+              <p>Blk 2 Defu Lane 10 #03-515</p>
+              <p>Singapore 539183</p>
             </div>
           </li>
           <li>
-            <img src="/assets/img/call.png">
+            <i class="icon-aieicons-phone"></i>
             <div class="content">
-              <p>blah</p>
-              <p>blah</p>
-              <p>blah</p>
+              <p>CALL US</p>
+              <p>+65 6592 6887 (T)</p>
+              <p>+65 6228 0270 (F)</p>
             </div>
           </li>
           <li>
-            <img src="/assets/img/email.png">
+            <i class="icon-aieicons-email"></i>
             <div class="content">
-              <p>blah</p>
-              <p>blah</p>
+              <p>EMAIL US</p>
+              <p>service@aiesg.com</p>
             </div>
           </li>
           <li>
-            <img src="/assets/img/time.png">
+            <i class="icon-aieicons-clock"></i>
             <div class="content">
-              <p>blah</p>
-              <p>blah</p>
+              <p>OPERATING HOURS</p>
+              <p>Mon to Fri - 9am to 6pm</p>
             </div>
           </li>
         </ul>
@@ -62,7 +64,7 @@
      <div class="row">
        <div class="col s6">
         <ul>
-          <li><a href="">Contact Us</a></li>
+          <li><a href="{{ route('contact') }}">Contact Us</a></li>
           <li><a href="">Privacy Policy</a></li>
           <li><a href="">Terms & Conditions</a></li>
         </ul>

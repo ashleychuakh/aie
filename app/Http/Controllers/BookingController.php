@@ -13,18 +13,18 @@ class BookingController extends Controller {
 	{
 	}
 
-	public function getBookAppointment()
+	public function getBookAppointmentStep1()
 	{
-		return view("pages.book");
+		return view("pages.book.step1");
 	}
 
 	public function getBookAppointmentStep2()
 	{
-		return view("pages.book2");
+		return view("pages.book.step2");
 	}
 
 	public function getBookAppointmentStep3()
 	{
-		return view("pages.book3");
+		return view("pages.book.step3");
 	}
 }

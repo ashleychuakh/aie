@@ -82,17 +82,14 @@
     margin-right: 1rem;
   }
   .totop-link {
-    width: 50px;
-    height: 50px;
-    border: 1px solid #ddd;
-    border-radius: 50%;
-    margin: 0 auto;
+    text-align: center;
+    margin: 50px 0;
   }
   .totop-link i {
-    font-size: 50px;
-    width: 100%;
-    text-align: center;
-    margin-top: -5px;
+    border: 2px solid #ddd;
+    border-radius: 50%;
+    font-size: 2.5em;
+    padding: 15px;
   }
   #more-questions {
     width: 600px;
@@ -132,30 +129,30 @@
     </div>
   </div>
 	<div class="container">
-    <div class="row">
+    <div class="row no-margin">
         <div class="col s12">
           <ul class="collapsible" data-collapsible="accordion">
               <li>
-                <div class="collapsible-header">First<i class="material-icons">filter_drama</i></div>
+                <div class="collapsible-header">First<i class="icon-aieicons-downarrow grey-theme-text"></i></div>
                 <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
               </li>
               <li>
-                <div class="collapsible-header">Second</div>
+                <div class="collapsible-header">Second<i class="icon-aieicons-downarrow grey-theme-text"></i></div>
                 <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
               </li>
               <li>
-                <div class="collapsible-header">Third</div>
+                <div class="collapsible-header">Third<i class="icon-aieicons-downarrow grey-theme-text"></i></div>
                 <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
               </li>
             </ul>
-            <a id="return-to-top" href="javascript:;"><div class="totop-link"><i class="fa fa-angle-up" aria-hidden="true"></i></div></a>
+            <div class="totop-link"><a id="return-to-top" href="javascript:;"><i class="icon-aieicons-totop grey-theme-text"></i></a></div>
         </div>
 	   </div>
   </div>
 </main>
 <div class="fixed-action-btn">
   <a class="waves-effect waves-dark btn-floating btn-large btn-floating-theme modal-trigger" href="#more-questions">
-  <i class="fa fa-question" aria-hidden="true"></i>
+    <i class="icon-aieicons-question grey-theme-text"></i>
   </a>
 </div>
 <!-- Modal Structure -->
@@ -191,6 +188,15 @@
     "use strict"
     $(function() {
       $('.modal-trigger').leanModal();
+
+      $('.collapsible .collapsible-header').click(function(e) {
+        console.log($(this).children('i').attr('class'));
+        if ($(this).children('i').hasClass("vflip")) {
+          $(this).children('i').removeClass("vflip");
+        } else {
+          $(this).children('i').addClass("vflip");
+        }
+      })
     });
   </script>
 @stop

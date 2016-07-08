@@ -12,7 +12,7 @@
 <main>
   <div class="hero">
     <div class="hero-text">
-      <h1 class="blue-theme-text">OUR SERVICES</h1>
+      <h1 class="grey-theme-text">OUR SERVICES</h1>
       <p class="lightblue-theme-text">ONLY THE HIGHEST QUALITY OF SERVICES FOR YOU</p>
     </div>
     <div>
@@ -21,7 +21,7 @@
   </div>
   <div class="container mtop50 mbtm50">
     <div class="row">
-      <div class="col l3 service-sidebar">
+      <div class="col s12 m5 l4 xl3 service-sidebar">
         <a href="#services" data-toggle="tab">
           <div class="service-single active">
             <img class="grayscale" src="/assets/img/services/general.png">
@@ -57,11 +57,11 @@
             <p class="cta-header mtop50">ONLINE APPOINTMENT</p>
             <img src="/assets/img/services/click.png">
             <p class="cta-book">Book your appointment now!</p>
-            <a href="/book" class="btn btn-theme">MAKE APPOINTMENT</a>
+            <a class="btn btn-theme" href="{{ route('book/step1') }}">MAKE APPOINTMENT</a>
           </div>
         </div>
       </div>
-      <div class="col l9 service-content">
+      <div class="col s12 m7 l8 xl9 service-content">
         <div class="wrapper">
           <div class="header">
             <img src="/assets/img/services/general.png">
@@ -78,10 +78,10 @@
                   <span class="blue-text">Wall mounted-unit:</span>
                 </div>
                 <div class="col s4 full-border border-bottom-none">
-                  <span>9,000bt-15,000btu ($35/unit)</span>
+                  <span>9,000bt - 15,000btu ($35/unit)</span>
                 </div>
                 <div class="col s4 full-border border-left-none border-bottom-none">
-                  <span>18,000bt-26,000btu ($45/unit)</span>
+                  <span>18,000bt - 26,000btu ($45/unit)</span>
                 </div>
               </div>
               <div class="row">
@@ -89,10 +89,10 @@
                   <span class="blue-text">Casette unit:</span>
                 </div>
                 <div class="col s4 full-border">
-                  <span>18,000bt-26,000btu ($50/unit)</span>
+                  <span>18,000bt - 26,000btu ($50/unit)</span>
                 </div>
                 <div class="col s4 full-border border-left-none">
-                  <span>36,000bt-50,000btu ($80/unit)</span>
+                  <span>36,000bt - 50,000btu ($80/unit)</span>
                 </div>
               </div>
             </div>
@@ -100,7 +100,7 @@
               Workmanship warranty: 90 Days
             </h5>
             <p>
-              *Prices applicable for HDB and private residential only. For commercial clients please <a href="">contact us.</a>
+              *Prices applicable for HDB and private residential only. For commercial clients please <a href="{{ route('contact') }}">contact us.</a>
             </p>
             <div class="scope mtop30">
               <h5 class="blue-text">Scope of Work</h5>

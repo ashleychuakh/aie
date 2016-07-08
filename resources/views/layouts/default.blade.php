@@ -4,10 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="csrf-token" content="{{ csrf_token() }}" />
-    <link type="text/css" rel="stylesheet" href="/assets/css/materialize.min.css" />
+    <link type="text/css" rel="stylesheet" href="/assets/css/materialize.css" />
     <link type="text/css" rel="stylesheet" href="/assets/css/font-awesome.min.css" />
     <link type="text/css" rel="stylesheet" href="/assets/css/style.css" />
-    <link type="text/css" rel="stylesheet" href="/assets/css/fontello.css" />
+    <link type="text/css" rel="stylesheet" href="/assets/css/aieset.css" />
     <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
 
     {{-- Revert to jQuery 1.11.2 instead of 1.12.0 due to an error with scrollspy on html selectors --}}

@@ -25,7 +25,7 @@
 <main>
   <div class="hero">
     <div class="hero-text">
-      <h1 class="blue-theme-text">ABOUT US</h1>
+      <h1 class="grey-theme-text">ABOUT US</h1>
       <p class="lightblue-theme-text">afasdfasfasfdasfdasfasdfasdfsfsafasdf</p>
     </div>
     <div>
@@ -62,8 +62,8 @@
               <br/>
               <div class="slider-projects-subs">Fat</div>
               <br/>
-              <i class="material-icons medium prev">chevron_left</i>
-              <i class="material-icons medium next">chevron_right</i>
+              <i class="icon-aieicons-leftarrow prev"></i>
+              <i class="icon-aieicons-rightarrow next"></i>
             </div>
             <div class="col s12 m7">
               <img class="responsive-img" src="http://placehold.it/1280x720">
@@ -104,78 +104,64 @@
     </div>
   </div>
   <div class="hero-item-blank">
-      <div class="container">
-        <div class="item-text">
-          <h3>Our Clients</h3>
+    <div class="container">
+      <div class="item-text">
+        <h3>Our Clients</h3>
+      </div>
+      <div id="owl-clients" class="owl-carousel owl-theme">
+        <div class="item">
+          <img src="http://placehold.it/320x150">
         </div>
-        <div id="owl-clients" class="owl-carousel owl-theme">
-          <div class="item">
-            <img alt="General Service" src="/assets/img/main/snowflake.png">
-            <h5>General Service</h5>
-            <p>blahblahblah</p>
-          </div>
-          <div class="item">
-            <img alt="General Service" src="/assets/img/main/honeycomb.png">
-            <h5>Chemical & Overhauling</h5>
-            <p>blahblahblah</p>
-          </div>
-          <div class="item">
-            <img alt="General Service" src="/assets/img/main/spanner.png">
-            <h5>Repairs & Replacement</h5>
-            <p>blahblahblah</p>
-          </div>
-          <div class="item">
-            <img alt="General Service" src="/assets/img/main/snowflake.png">
-            <h5>General Service</h5>
-            <p>blahblahblah</p>
-          </div>
-          <div class="item">
-            <img alt="General Service" src="/assets/img/main/honeycomb.png">
-            <h5>Chemical & Overhauling</h5>
-            <p>blahblahblah</p>
-          </div>
-          <div class="item">
-            <img alt="General Service" src="/assets/img/main/spanner.png">
-            <h5>Repairs & Replacement</h5>
-            <p>blahblahblah</p>
-          </div>
+        <div class="item">
+          <img src="http://placehold.it/320x150">
+        </div>
+        <div class="item">
+          <img src="http://placehold.it/320x150">
+        </div>
+        <div class="item">
+          <img src="http://placehold.it/320x150">
+        </div>
+        <div class="item">
+          <img src="http://placehold.it/320x150">
+        </div>
+        <div class="item">
+          <img src="http://placehold.it/320x150">
         </div>
       </div>
     </div>
+  </div>
   <div class="hero-item-1">
     <div class="parallax-container">
       <div class="parallax"><img src="/assets/img/main/hero-item-1.jpg"></div>
-    </div>
-    <div class="parallax-content-container">
-      <h3>The Facts</h3>
-      <div class="container mtop100">
-        <div class="row no-margin">
-          <div class="item col s3">
-            <img alt="General Service" src="/assets/img/main/snowflake.png">
-            <h4>300</h4>
-            <hr>
-            <p>Happy Customers</p>
-          </div>
-          <div class="item col s3">
-            <img alt="General Service" src="/assets/img/main/snowflake.png">
-            <h4>300</h4>
-            <hr>
-            <p>Happy Customers</p>
-          </div>
-          <div class="item col s3">
-            <img alt="General Service" src="/assets/img/main/snowflake.png">
-            <h4>300</h4>
-            <hr>
-            <p>Happy Customers</p>
-          </div>
-          <div class="item col s3">
-            <img alt="General Service" src="/assets/img/main/snowflake.png">
-            <h4>300</h4>
-            <hr>
-            <p>Happy Customers</p>
+        <h3>The Facts</h3>
+        <div class="container mtop70">
+          <div class="row no-margin">
+            <div class="item col s12 m6 l3">
+              <img class="circle" src="http://placehold.it/150x150">
+              <h4>300</h4>
+              <hr>
+              <p>Happy Customers</p>
+            </div>
+            <div class="item col s12 m6 l3">
+              <img class="circle" src="http://placehold.it/150x150">
+              <h4>300</h4>
+              <hr>
+              <p>Happy Customers</p>
+            </div>
+            <div class="item col s12 m6 l3">
+              <img class="circle" src="http://placehold.it/150x150">
+              <h4>300</h4>
+              <hr>
+              <p>Happy Customers</p>
+            </div>
+            <div class="item col s12 m6 l3">
+              <img class="circle" src="http://placehold.it/150x150">
+              <h4>300</h4>
+              <hr>
+              <p>Happy Customers</p>
+            </div>
           </div>
         </div>
-      </div>
     </div>
   </div>
 </main>
@@ -199,9 +185,24 @@ $(function() {
       loop: true,
       dots: true,
       nav: true,
-      navText: ['<i class="material-icons medium grey-text text-darken-1">chevron_left</i>', '<i class="material-icons medium grey-text text-darken-1">chevron_right</i>'],
+      navText: ['<i class="icon-aieicons-leftarrow"></i>', '<i class="icon-aieicons-rightarrow"></i>'],
       autoplay: false,
-      slideBy: 3
+      slideBy: 1,
+      responsive:{
+        0:{
+          items:1,
+          nav:false
+        },
+        600:{
+          items:3,
+          nav:false
+        },
+        1000:{
+          items:5,
+          nav:true,
+          loop:false
+        }
+      }
   });
 
   $('#owl-item-projects').owlCarousel({

@@ -12,7 +12,7 @@
 <main>
   <div class="hero">
     <div class="hero-text purple-header">
-      <h1 class="blue-theme-text">BUILT TO LAST</h1>
+      <h1 class="grey-theme-text">BUILT TO LAST</h1>
       <p class="lightblue-theme-text">SPECIALLY SELECTED & CERTIFIED INSTALLATION</p>
       <p class="lightblue-theme-text">MATERIALS THAT WITHSTAND TIME</p>
     </div>
@@ -21,7 +21,7 @@
     </div>
   </div>
   <div class="container mtop50 mbtm50">
-    <div class="materials-cta-container">
+    <div class="materials-cta-container desktop-only">
       <ul>
         <li> 
           <img src="http://placehold.it/100x100">
@@ -47,8 +47,8 @@
     </div>
     <div class="materials-items-container">
       <div class="row">
-        <div class="single-material-item mtop50">
-          <div class="col s6 center">
+        <div class="single-material-item first mtop50">
+          <div class="col s12 l6 center">
             <h4 class="lightblue-theme-text">Copper Pipes</h4>
             <div class="owl-carousel owl-theme">
               <div class="item">
@@ -59,31 +59,31 @@
               </div>
             </div>
           </div>
-          <div class="col s6 mtop50">
-            <ul>
+          <div class="col s12 l6">
+            <ul class="items-point-container">
               <li class="item-point">
-                <i class="fa fa-4x fa-file-image-o mtop30"></i>
+                <i class="icon-aieicons-snowflake grey-theme-text"></i>
                 <div class="point-content">
                   <p class="point-header">General Service</p>
                   <p class="point-body">Lorem ipsum dolor sit amet, viderer commune an vix, utinam vivendum oportere at quo.</p>
                 </div>
               </li>
               <li class="item-point">
-                <i class="fa fa-4x fa-file-image-o mtop30"></i>
+                <i class="icon-aieicons-snowflake grey-theme-text"></i>
                 <div class="point-content">
                   <p class="point-header">General Service</p>
                   <p class="point-body">Lorem ipsum dolor sit amet, viderer commune an vix, utinam vivendum oportere at quo.</p>
                 </div>
               </li>
               <li class="item-point">
-                <i class="fa fa-4x fa-file-image-o mtop30"></i>
+                <i class="icon-aieicons-snowflake grey-theme-text"></i>
                 <div class="point-content">
                   <p class="point-header">General Service</p>
                   <p class="point-body">Lorem ipsum dolor sit amet, viderer commune an vix, utinam vivendum oportere at quo.</p>
                 </div>
               </li>
               <li class="item-point">
-                <i class="fa fa-4x fa-file-image-o mtop30"></i>
+                <i class="icon-aieicons-snowflake grey-theme-text"></i>
                 <div class="point-content">
                   <p class="point-header">General Service</p>
                   <p class="point-body">Lorem ipsum dolor sit amet, viderer commune an vix, utinam vivendum oportere at quo.</p>
@@ -102,8 +102,8 @@
         </div>
       </div>
       <div class="row">
-        <div class="single-material-item mtop50">
-          <div class="col s6 center">
+        <div class="single-material-item subsequent mtop50">
+          <div class="col s12 l6 center">
             <h4 class="lightblue-theme-text">Copper Pipes</h4>
             <div class="owl-carousel owl-theme">
               <div class="item">
@@ -114,31 +114,31 @@
               </div>
             </div>
           </div>
-          <div class="col s6 mtop50">
-            <ul>
+          <div class="col s12 l6">
+            <ul class="items-point-container">
               <li class="item-point">
-                <i class="fa fa-4x fa-file-image-o mtop30"></i>
+                <i class="icon-aieicons-snowflake grey-theme-text"></i>
                 <div class="point-content">
                   <p class="point-header">General Service</p>
                   <p class="point-body">Lorem ipsum dolor sit amet, viderer commune an vix, utinam vivendum oportere at quo.</p>
                 </div>
               </li>
               <li class="item-point">
-                <i class="fa fa-4x fa-file-image-o mtop30"></i>
+                <i class="icon-aieicons-snowflake grey-theme-text"></i>
                 <div class="point-content">
                   <p class="point-header">General Service</p>
                   <p class="point-body">Lorem ipsum dolor sit amet, viderer commune an vix, utinam vivendum oportere at quo.</p>
                 </div>
               </li>
               <li class="item-point">
-                <i class="fa fa-4x fa-file-image-o mtop30"></i>
+                <i class="icon-aieicons-snowflake grey-theme-text"></i>
                 <div class="point-content">
                   <p class="point-header">General Service</p>
                   <p class="point-body">Lorem ipsum dolor sit amet, viderer commune an vix, utinam vivendum oportere at quo.</p>
                 </div>
               </li>
               <li class="item-point">
-                <i class="fa fa-4x fa-file-image-o mtop30"></i>
+                <i class="icon-aieicons-snowflake grey-theme-text"></i>
                 <div class="point-content">
                   <p class="point-header">General Service</p>
                   <p class="point-body">Lorem ipsum dolor sit amet, viderer commune an vix, utinam vivendum oportere at quo.</p>
@@ -157,8 +157,8 @@
         </div>
       </div>
       <div class="row">
-        <div class="single-material-item mtop50">
-          <div class="col s6 center">
+        <div class="single-material-item subsequent mtop50">
+          <div class="col s12 l6 center">
             <h4 class="lightblue-theme-text">Copper Pipes</h4>
             <div class="owl-carousel owl-theme">
               <div class="item">
@@ -169,31 +169,31 @@
               </div>
             </div>
           </div>
-          <div class="col s6 mtop50">
-            <ul>
+          <div class="col s12 l6">
+            <ul class="items-point-container">
               <li class="item-point">
-                <i class="fa fa-4x fa-file-image-o mtop30"></i>
+                <i class="icon-aieicons-snowflake grey-theme-text"></i>
                 <div class="point-content">
                   <p class="point-header">General Service</p>
                   <p class="point-body">Lorem ipsum dolor sit amet, viderer commune an vix, utinam vivendum oportere at quo.</p>
                 </div>
               </li>
               <li class="item-point">
-                <i class="fa fa-4x fa-file-image-o mtop30"></i>
+                <i class="icon-aieicons-snowflake grey-theme-text"></i>
                 <div class="point-content">
                   <p class="point-header">General Service</p>
                   <p class="point-body">Lorem ipsum dolor sit amet, viderer commune an vix, utinam vivendum oportere at quo.</p>
                 </div>
               </li>
               <li class="item-point">
-                <i class="fa fa-4x fa-file-image-o mtop30"></i>
+                <i class="icon-aieicons-snowflake grey-theme-text"></i>
                 <div class="point-content">
                   <p class="point-header">General Service</p>
                   <p class="point-body">Lorem ipsum dolor sit amet, viderer commune an vix, utinam vivendum oportere at quo.</p>
                 </div>
               </li>
               <li class="item-point">
-                <i class="fa fa-4x fa-file-image-o mtop30"></i>
+                <i class="icon-aieicons-snowflake grey-theme-text"></i>
                 <div class="point-content">
                   <p class="point-header">General Service</p>
                   <p class="point-body">Lorem ipsum dolor sit amet, viderer commune an vix, utinam vivendum oportere at quo.</p>
@@ -212,8 +212,8 @@
         </div>
       </div>
       <div class="row">
-        <div class="single-material-item mtop50">
-          <div class="col s6 center">
+        <div class="single-material-item subsequent mtop50">
+          <div class="col s12 l6 center">
             <h4 class="lightblue-theme-text">Copper Pipes</h4>
             <div class="owl-carousel owl-theme">
               <div class="item">
@@ -224,31 +224,31 @@
               </div>
             </div>
           </div>
-          <div class="col s6 mtop50">
-            <ul>
+          <div class="col s12 l6">
+            <ul class="items-point-container">
               <li class="item-point">
-                <i class="fa fa-4x fa-file-image-o mtop30"></i>
+                <i class="icon-aieicons-snowflake grey-theme-text"></i>
                 <div class="point-content">
                   <p class="point-header">General Service</p>
                   <p class="point-body">Lorem ipsum dolor sit amet, viderer commune an vix, utinam vivendum oportere at quo.</p>
                 </div>
               </li>
               <li class="item-point">
-                <i class="fa fa-4x fa-file-image-o mtop30"></i>
+                <i class="icon-aieicons-snowflake grey-theme-text"></i>
                 <div class="point-content">
                   <p class="point-header">General Service</p>
                   <p class="point-body">Lorem ipsum dolor sit amet, viderer commune an vix, utinam vivendum oportere at quo.</p>
                 </div>
               </li>
               <li class="item-point">
-                <i class="fa fa-4x fa-file-image-o mtop30"></i>
+                <i class="icon-aieicons-snowflake grey-theme-text"></i>
                 <div class="point-content">
                   <p class="point-header">General Service</p>
                   <p class="point-body">Lorem ipsum dolor sit amet, viderer commune an vix, utinam vivendum oportere at quo.</p>
                 </div>
               </li>
               <li class="item-point">
-                <i class="fa fa-4x fa-file-image-o mtop30"></i>
+                <i class="icon-aieicons-snowflake grey-theme-text"></i>
                 <div class="point-content">
                   <p class="point-header">General Service</p>
                   <p class="point-body">Lorem ipsum dolor sit amet, viderer commune an vix, utinam vivendum oportere at quo.</p>
@@ -267,8 +267,8 @@
         </div>
       </div>
       <div class="row">
-        <div class="single-material-item mtop50">
-          <div class="col s6 center">
+        <div class="single-material-item subsequent mtop50">
+          <div class="col s12 l6 center">
             <h4 class="lightblue-theme-text">Copper Pipes</h4>
             <div class="owl-carousel owl-theme">
               <div class="item">
@@ -279,31 +279,31 @@
               </div>
             </div>
           </div>
-          <div class="col s6 mtop50">
-            <ul>
+          <div class="col s12 l6">
+            <ul class="items-point-container">
               <li class="item-point">
-                <i class="fa fa-4x fa-file-image-o mtop30"></i>
+                <i class="icon-aieicons-snowflake grey-theme-text"></i>
                 <div class="point-content">
                   <p class="point-header">General Service</p>
                   <p class="point-body">Lorem ipsum dolor sit amet, viderer commune an vix, utinam vivendum oportere at quo.</p>
                 </div>
               </li>
               <li class="item-point">
-                <i class="fa fa-4x fa-file-image-o mtop30"></i>
+                <i class="icon-aieicons-snowflake grey-theme-text"></i>
                 <div class="point-content">
                   <p class="point-header">General Service</p>
                   <p class="point-body">Lorem ipsum dolor sit amet, viderer commune an vix, utinam vivendum oportere at quo.</p>
                 </div>
               </li>
               <li class="item-point">
-                <i class="fa fa-4x fa-file-image-o mtop30"></i>
+                <i class="icon-aieicons-snowflake grey-theme-text"></i>
                 <div class="point-content">
                   <p class="point-header">General Service</p>
                   <p class="point-body">Lorem ipsum dolor sit amet, viderer commune an vix, utinam vivendum oportere at quo.</p>
                 </div>
               </li>
               <li class="item-point">
-                <i class="fa fa-4x fa-file-image-o mtop30"></i>
+                <i class="icon-aieicons-snowflake grey-theme-text"></i>
                 <div class="point-content">
                   <p class="point-header">General Service</p>
                   <p class="point-body">Lorem ipsum dolor sit amet, viderer commune an vix, utinam vivendum oportere at quo.</p>

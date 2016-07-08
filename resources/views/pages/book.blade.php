@@ -2,12 +2,7 @@
 
 @section("head")
 <style>
-.contact-ta{
-  height:100px;
-  padding:10px;
-  width:102%;
-  border: thin solid #808aa3;
-}
+
 input.contact-input{
   border: thin solid #808aa3;
   padding:5px 10px;
@@ -57,6 +52,33 @@ input.contact-input{
         <div class="determinate" style="width: 0%"></div>
       </div>
     </div>
+  </div>
+
+  <div class="container">
+     <div class="row">
+       <form class="book-form col s12">
+         <div class="row">
+           <div class="input-field col s12">
+             <input name="name" class="input-box" type="text" class="validate" placeholder="Name">
+           </div>
+           <div class="input-field col s12">
+             <input name="companyname" class="input-box" type="text" class="validate" placeholder="Company Name">
+           </div>
+           <div class="input-field col s12 m6">
+             <input name="contact" class="input-box" type="text" class="validate" placeholder="Contact No.">
+           </div>
+           <div class="input-field col s12 m6">
+             <input name="email" class="input-box" type="text" class="validate" placeholder="Email">
+           </div>
+           <div class="input-field col s12">
+                 <textarea class="form-textarea contact-ta"  type="text" placeholder="Leave a Message"  rows="5" required></textarea>
+              </div>
+           <div class="input-field col s12 center">
+              <button class="btn btn-theme" type="submit">Send Message</button>
+           </div>
+         </div>
+       </form>
+     </div>
   </div>
 
   <div class="container">
