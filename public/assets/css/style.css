@@ -619,12 +619,6 @@ footer.page-footer {
   text-align: center;
 }
 
-.appointment-cta img {
-  display: block;
-  margin: 0 auto;
-  margin-top: 60px;
-}
-
 .appointment-cta .cta-book {
   text-align: center;
   margin-top: 20px;
@@ -638,6 +632,13 @@ footer.page-footer {
   margin-bottom: 50px;
   margin-top: 50px;
   padding: 10px 30px;
+}
+
+.appointment-cta i {
+  display: block;
+  text-align: center;
+  font-size: 3.5em;
+  margin: 60px 0;
 }
 
 .service-content .wrapper .header img {

@@ -55,7 +55,7 @@
         <div class="appointment-cta mtop50">
           <div class="cta-container">
             <p class="cta-header mtop50">ONLINE APPOINTMENT</p>
-            <img src="/assets/img/services/click.png">
+            <i class="icon-aieicons-ctabookappointment lightblue-theme-text"></i>
             <p class="cta-book">Book your appointment now!</p>
             <a class="btn btn-theme" href="{{ route('book/step1') }}">MAKE APPOINTMENT</a>
           </div>
@@ -105,14 +105,14 @@
             <div class="scope mtop30">
               <h5 class="blue-text">Scope of Work</h5>
               <ul>
-                <li><i class="fa fa-check"></i>Cleaning of Casing</li>
-                <li><i class="fa fa-check"></i>Cleaning of Filters</li>
-                <li><i class="fa fa-check"></i>Vaccum Cooling Coil</li>
-                <li><i class="fa fa-check"></i>Vaccum Drainage Pipes</li>
-                <li><i class="fa fa-check"></i>Cleaning of Blower Wheel</li>
-                <li><i class="fa fa-check"></i>Lubricate Moving Parts</li>
-                <li><i class="fa fa-check"></i>Vaccum Floor Trap Drainage</li>
-                <li><i class="fa fa-check"></i>Transporation Charge ($15/Trip)</li>
+                <li><i class="icon-aieicons-check"></i>Cleaning of Casing</li>
+                <li><i class="icon-aieicons-check"></i>Cleaning of Filters</li>
+                <li><i class="icon-aieicons-check"></i>Vaccum Cooling Coil</li>
+                <li><i class="icon-aieicons-check"></i>Vaccum Drainage Pipes</li>
+                <li><i class="icon-aieicons-check"></i>Cleaning of Blower Wheel</li>
+                <li><i class="icon-aieicons-check"></i>Lubricate Moving Parts</li>
+                <li><i class="icon-aieicons-check"></i>Vaccum Floor Trap Drainage</li>
+                <li><i class="icon-aieicons-check"></i>Transporation Charge ($15/Trip)</li>
               </ul>
             </div>
           </div>

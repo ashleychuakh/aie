@@ -24,23 +24,23 @@
     <div class="materials-cta-container desktop-only">
       <ul>
         <li> 
-          <img src="http://placehold.it/100x100">
+          <img class="circle" src="http://placehold.it/100x100">
           <p>Copper Pipes</p>
         <li>
         <li> 
-          <img src="http://placehold.it/100x100">
+          <img class="circle" src="http://placehold.it/100x100">
           <p>Copper Pipes</p>
         <li>
         <li> 
-          <img src="http://placehold.it/100x100">
+          <img class="circle" src="http://placehold.it/100x100">
           <p>Copper Pipes</p>
         <li>
         <li> 
-          <img src="http://placehold.it/100x100">
+          <img class="circle" src="http://placehold.it/100x100">
           <p>Copper Pipes</p>
         <li>
         <li> 
-          <img src="http://placehold.it/100x100">
+          <img class="circle" src="http://placehold.it/100x100">
           <p>Copper Pipes</p>
         <li>
       </ul>
