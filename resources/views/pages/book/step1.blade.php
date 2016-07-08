@@ -30,6 +30,12 @@
 .select-wrapper span.caret {
   right: 10px;
 }
+input:not([type]):focus:not([readonly]), input[type=text]:focus:not([readonly]), input[type=password]:focus:not([readonly]), input[type=email]:focus:not([readonly]), input[type=url]:focus:not([readonly]), input[type=time]:focus:not([readonly]), input[type=date]:focus:not([readonly]), input[type=datetime]:focus:not([readonly]), input[type=datetime-local]:focus:not([readonly]), input[type=tel]:focus:not([readonly]), input[type=number]:focus:not([readonly]), input[type=search]:focus:not([readonly]), textarea.materialize-textarea:focus:not([readonly]) {
+    border-bottom: thin solid #808aa3;
+    box-shadow: none;
+    background-color: #f7f7f7;
+}
+
 
 </style>
 
@@ -66,7 +72,7 @@
        <form class="contact-form col s12">
          <div class="row">
            <div class="input-field col s12">
-             <input name="name" class="input-box" type="text" class="datepicker" placeholder="Select Date">
+              <input id="appointmentdate" name="date" type="date" class="input-box datepicker" placeholder="Select Date">
            </div>
            <div class="input-field col s12">
             <select class="input-select-border">
@@ -93,10 +99,10 @@
              </select>
            </div>
            <div class="input-field col s12 m6">
-             <input name="email" class="input-box" type="text" class="validate" placeholder="Qty">
+             <input name="email" class="input-box" type="text" placeholder="Qty">
            </div>
            <div class="input-field col s12">
-                 <textarea class="form-textarea contact-ta"  type="text" placeholder="Additional Notes"  rows="5" required></textarea>
+                 <textarea class="form-textarea contact-ta" type="text" placeholder="Additional Notes" rows="5" required></textarea>
               </div>
            <div class="input-field col s12 center">
               <button class="btn btn-theme" type="submit">NEXT STEP ></button>
@@ -110,14 +116,28 @@
 
 @section("scripts")
 <script>
+"use strict";
 $(document).ready(function() {
   $.when($('select').material_select()).done(function(e) {
-    console.log($('.select-wrapper span.caret').html('<i class="icon-aieicons-downarrow grey-theme-text"></i>'));
+    $('.select-wrapper span.caret').html('<i class="icon-aieicons-downarrow grey-theme-text"></i>');
   });
 
-  $('.datepicker').pickadate({
+/*  $('.datepicker').pickadate({
     selectMonths: true, // Creates a dropdown to control month
-    selectYears: 15 // Creates a dropdown of 15 years to control year
+    closeOnSelect: true
+  });*/
+
+  var sdatepicker = $('#appointmentdate').pickadate().pickadate('picker');
+  sdatepicker.set('min', moment().add(3, 'days').toDate());
+  sdatepicker.on('set', function(context) {
+    if (context.select != undefined)
+    {
+      sdatepicker.close();
+    }
+  })
+
+  $('select').on('change', function() {
+    $(this).siblings(".select-dropdown").addClass("grey-theme-text");
   });
 });
 </script>

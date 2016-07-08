@@ -190,6 +190,9 @@ a:hover, a:focus {
 .dropdown-content li {
   color: #808aa3;
 }
+.dropdown-content li > span {
+  color: #808aa3;
+}
 .verticalline {
   position: absolute;
   width: 2px;
@@ -1073,6 +1076,41 @@ footer.page-footer .footer-copyright ul li a{
 
 .toast.info, .alt-badge.info {
   background-color: #0091ea;
+}
+
+.picker__weekday-display {
+  background-color: #40c4ff;
+}
+.picker__date-display {
+  background-color: #40c4ff;
+}
+.picker__day--selected, .picker__day--selected:hover, .picker--focused .picker__day--selected {
+  background-color: #2f3080;
+}
+.picker__close, .picker__today {
+  color: #f06464;
+}
+.picker__day.picker__day--today {
+  color: #f06464;
+}
+.picker__day--infocus {
+  color: #2f3080;
+}
+.picker__day--infocus:hover {
+  color: #f06464;
+}
+.picker__footer .picker__clear {
+  color: #2f3080;
+}
+.picker__footer .picker__clear:hover {
+  color: #f06464;
+}
+
+button.picker__today:focus, button.picker__clear:focus, button.picker__close:focus {
+  background-color: #E0F6FF;
+}
+.picker__nav--prev:hover, .picker__nav--next:hover {
+  background: #E0F6FF;
 }
 
 /* FAQ */ 
