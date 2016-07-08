@@ -18,8 +18,10 @@ class AccountController extends AppBaseController
      * @param AccountDataTable $accountDataTable
      * @return Response
      */
+
     public function index()
     {
+
     }
 
     /**
@@ -139,7 +141,8 @@ class AccountController extends AppBaseController
         return redirect(route('admin.accounts.index'));
     }
 
-    public function getAccountSignin(){
+    public function getAccountSignin()
+    {
         return view("pages.signin");
     }
 

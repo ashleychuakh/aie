@@ -35,7 +35,7 @@ input.contact-input{
 
 @section("content")
 <main>
-  <div class="container" style="background: #fff;">
+  <div class="container">
     <div class="row">
       <h4 class="faq-header" style="font-weight:300">BOOK AN APPOINTMENT</h4>
     </div>

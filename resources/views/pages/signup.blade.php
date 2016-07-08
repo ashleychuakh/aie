@@ -20,7 +20,7 @@
 
   <div class="container">
 	<div class="row">
-		<div class="col offset-m3 m6 signin-box">
+		<div class="col offset-m3 m6 s12 signup-box">
 		    	<form class="signin-form" method="POST" action="{{url('/signup')}}">
                     {!! csrf_field() !!}
 
@@ -37,12 +37,11 @@
 		    		</div>
 
 		    		<div class="input-field center">
-		    			<button class="btn signin-submit btn-theme" style="width:100%;" >SIGN UP</button>
+		    			<button class="btn btn-theme btn-fat full-width">SIGN UP</button>
 		    		</div>
 
 		    		<div class="input-field center divider-text" style="">
-		    			<p class="signup-subtext">By continuing, you agree to the <a href="#">T&C</a> and <a href="#">Privacy Policy</a>. Already have an account? 
-		    			<a href="{{url('/signin')}}">Log in. </a> </p>
+		    			<p class="signup-subtext">By continuing, you agree to the <a href="#">T&C</a> and <a href="#">Privacy Policy</a>. Already have an account? <a href="{{url('/signin')}}">Log in.</a> </p>
 		    			<p class="line"> OR </p>
 		    		</div>
 

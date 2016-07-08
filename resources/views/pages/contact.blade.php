@@ -21,7 +21,11 @@
       padding: 25px 200px;
       line-height: 0px;
       margin: 20px 0;
-      font-weight: 300;
+   }
+   .contact-map {
+      width: 100%;
+      height: 500px;
+      background: linear-gradient(rgba(255,255,255,0.4),rgba(255,255,255,0.4)),url(/assets/img/gray-google-map.jpg);
    }
 </style>
 
@@ -103,11 +107,7 @@
    		</div>
    	</div>
    	<div class="container-fluid">
-   		<div class="row">
-   			<div class="contact-map">
-   				<img src="/assets/img/gray-google-map.jpg" style="width:100%">
-   			</div>
-   		</div>
+			<div class="contact-map"></div>
    	</div>
 </main>
 @endsection
