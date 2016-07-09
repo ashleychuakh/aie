@@ -198,7 +198,7 @@ class AccountController extends AppBaseController
 
         Auth::loginUsingId($account->id);
 
-        return redirect()->back();
+        return redirect()->route('signup/info');
     }
 
     public function getAccountSignupInfo()
@@ -209,7 +209,7 @@ class AccountController extends AppBaseController
     public function postAccountSignupInfo(SignupInfoAccountRequest $request)
     {
         $account = Auth::user();
-        $account->type = $request->input('type');
+        $account->fill($request->all());
         $account->save();
 
         $aa = [
@@ -223,7 +223,7 @@ class AccountController extends AppBaseController
             'account_id' => $account->id
         ];
 
-        $accountaddress = new AccountAddress;
+        $accountaddress = $account->defaultaddress()->first() != null ? $account->defaultaddress()->first() : new AccountAddress;
         $accountaddress->fill($aa);
         $accountaddress->save();
 
@@ -242,11 +242,13 @@ class AccountController extends AppBaseController
                     'account_id' => $account->id
                 ];
 
-                $accountaddress = new AccountAddress;
+                $accountaddress = $account->billingaddress()->first() != null ? $account->billingaddress()->first() : new AccountAddress;
                 $accountaddress->fill($aab);
                 $accountaddress->save();
             }
         }
+
+        return redirect()->route('main');
     }
 
     public function getAccountSignout()
@@ -301,7 +303,7 @@ class AccountController extends AppBaseController
                     'account_id' => $account->id
                 ];
 
-                $accountaddress = new AccountAddress;
+                $accountaddress = $account->billingaddress()->first() != null ? $account->billingaddress()->first() : new AccountAddress;
                 $accountaddress->fill($aab);
                 $accountaddress->save();
             }
