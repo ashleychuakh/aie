@@ -2,61 +2,29 @@
 
 @section("head")
 <style>
-.contact-ta{
-  height:100px;
-  padding:10px;
-  width:102%;
-  border: thin solid #808aa3;
+.section {
+  position: relative;
+  margin-bottom: 20px;
 }
-input.contact-input{
-  border: thin solid #808aa3;
-  padding:5px 10px;
-  margin-bottom: 18px;
+.edit-section {
+  position: absolute;
+  top: 20px;
+  right: 0;
+  font-size: 2.1em;
 }
-
-.aieDropDownList{
-  border: thin solid #808aa3;
-  padding:0px 10px;
-  margin-bottom: 18px;
+.booking-subheader {
+  font-size: 1.2em;
+  display: block;
+  margin-top: 30px;
 }
-
-.progress-bar {
-  text-align: center;
+.divider {
+  background-color: #808aa3;
+  height: 2px;
+  margin: 20px 0;
 }
-
-.select-wrapper input.select-dropdown {
-  border-bottom: none;
-  margin: 5px 0;
+.dinline-block {
+  display: inline-block;
 }
-
-.tabs .tab a {
-  color: #3d9ff9;
-}
-.tabs .tab a:hover {
-  color: #bdc3c7;
-}
-
-.book-btn {
-  margin-bottom: 50px;
-  background-color: #fff;
-  border-style: solid;
-  border-width: 2px;
-  border-radius: 0px;
-  box-shadow: none;
-  color: #3d9ff9;
-  border-color: #3d9ff9;
-}
-
-.book-btn a.active {
-  margin-bottom: 50px;
-  background-color: #3d9ff9;
-  color: #fff;
-}
-
-.tabs .indicator {
-  display: none;
-}
-
 </style>
 
 @endsection
@@ -90,46 +58,37 @@ input.contact-input{
     <div class="row">
       <div class="contact-form">
         <form >
+          <h5>1. BOOKING</h5>
           <div class="section">
-            <h5>1. BOOKING</h5>
-            <br/><br/>
-            <div class="lightblue-theme-text">
-              DATE AND TIME: Tuesday, 2 June At 14:00
-              <br/><br/>
-              SERVICE TYPE: Cleaning
+            <div class="booking-details">
+              <p class="lightblue-theme-text">DATE AND TIME: Tuesday, 2 June At 14:00</p>
+              <p class="lightblue-theme-text">SERVICE TYPE: Cleaning</p>
             </div>
+            <a class="edit-section" href=""><i class="icon-aieicons-editbutton grey-theme-text"></i></a>
           </div>
           <div class="divider"></div>
+          <h5>2. YOUR INFO</h5>
           <div class="section">
-            <h5>2. YOUR INFO</h5>
-            <br/><br/>
-            <div style="font-size: 1.2rem">BILLING ADDRESS</div>
-            <div class="lightblue-theme-text">
-              NAME: Mr Ryan Hu
-              <br/><br/>
-              CONTACT NUMBER: 8100 455
-              <br/><br/>
-              EMAIL: ryan213@gmail.com
-              <br/><br/>
-              ADDRESS: 450 HilView Rise
-              <br/><br/>
-              BUILDING TYPE: Residential
+            <span class="booking-subheader">BILLING ADDRESS</span>
+            <div class="booking-billingaddress">
+              <p class="lightblue-theme-text">NAME: Mr Ryan Hu</p>
+              <p class="dinline-block lightblue-theme-text">CONTACT NUMBER: 8100 455</p>
+              <p class="dinline-block mleft30 lightblue-theme-text">EMAIL: ryan213@gmail.com</p>
+              <p class="lightblue-theme-text">ADDRESS: 450 HilView Rise</p>
+              <p class="lightblue-theme-text">BUILDING TYPE: Residential</p>
             </div>
-            <br/><br/>
-            <div class="section">
-              <div style="font-size: 1.2rem">SERVICE ADDRESS</div>
-              <div class="lightblue-theme-text">
-                NAME: Mr Ryan Hu
-                <br/><br/>
-                CONTACT NUMBER: 8100 455
-                <br/><br/>
-                EMAIL: ryan213@gmail.com
-                <br/><br/>
-                ADDRESS: 450 HilView Rise
-                <br/><br/>
-                BUILDING TYPE: Residential
-              </div>
+            <a class="edit-section" href=""><i class="icon-aieicons-editbutton grey-theme-text"></i></a>
+          </div>
+          <div class="section">
+            <span class="booking-subheader">SERVICE ADDRESS</span>
+            <div class="booking-serviceaddress">
+              <p class="lightblue-theme-text">NAME: Mr Ryan Hu</p>
+              <p class="dinline-block lightblue-theme-text">CONTACT NUMBER: 8100 455</p>
+              <p class="dinline-block mleft30 lightblue-theme-text">EMAIL: ryan213@gmail.com</p>
+              <p class="lightblue-theme-text">ADDRESS: 450 HilView Rise</p>
+              <p class="lightblue-theme-text">BUILDING TYPE: Residential</p>
             </div>
+            <a class="edit-section" href=""><i class="icon-aieicons-editbutton grey-theme-text"></i></a>
           </div>
           <div class="container-fluid">
             <div class="row">
@@ -140,7 +99,7 @@ input.contact-input{
           </div>
 
           <div class="form-group center">
-            <button class="btn btn-submit contact-submit"> CONFIRM BOOKING </button>
+            <button class="btn btn-theme contact-submit"> CONFIRM BOOKING </button>
           </div>
         </form>
       </div>

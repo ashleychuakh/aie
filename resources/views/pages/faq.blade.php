@@ -165,13 +165,13 @@
     <h5>MORE QUESTIONS?</h5>
     <p>Didn't find my answers to your questions? why not send it directly to us?</p>
     <div class="input-field center">
-      <input class="contact-input input-box" type="text" placeholder="Name*">
+      <input class="input-box" type="text" placeholder="Name*">
     </div>
     <div class="input-field center">
-      <input class="contact-input input-box" type="text" placeholder="Contact*">
+      <input class="input-box" type="text" placeholder="Contact*">
     </div>
     <div class="input-field center">
-      <input class="contact-input input-box" type="text" placeholder="Email*">
+      <input class="input-box" type="text" placeholder="Email*">
     </div>
     <div class="input-field center">
       <textarea class="form-textarea contact-ta"  type="text" placeholder="Leave a Message*"  rows="5" required></textarea>

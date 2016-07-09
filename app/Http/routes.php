@@ -11,6 +11,65 @@
 |
 */
 
+Route::group(['middleware' => ['guest']], function () {
+  Route::get("/signin", [
+    "as"   => "signin",
+    "uses" => "AccountController@getAccountSignin"
+  ]);
+
+  Route::post("/signin", [
+    "as"   => "signin",
+    "uses" => "AccountController@postAccountSignin"
+  ]);
+
+  Route::get("/signup", [
+    "as"   => "signup",
+    "uses" => "AccountController@getAccountSignup"
+  ]);
+
+  Route::post("/signup", [
+    "as"   => "signup",
+    "uses" => "AccountController@postAccountSignup"
+  ]);
+});
+
+Route::group(['middleware' => ['auth']], function () {
+  Route::get("/signup/info",[
+    "as"   => "signup/info",
+    "uses" => "AccountController@getAccountSignupInfo"
+  ]);
+
+  Route::post("/signup/info", [
+    "as"   => "signup/info",
+    "uses" => "AccountController@postAccountSignupInfo"
+  ]);
+  
+  Route::get("/profile", [
+    "as"   => "profile",
+    "uses" => "AccountController@getAccountProfile"
+  ]);
+
+  Route::post("/profile", [
+    "as"   => "profile",
+    "uses" => "AccountController@postAccountProfile"
+  ]);
+
+  Route::get("/book/step1", [
+    "as"   => "book/step1",
+    "uses" => "BookingController@getBookAppointmentStep1"
+  ]);
+
+  Route::get("/book/step2", [
+    "as"   => "book/step2",
+    "uses" => "BookingController@getBookAppointmentStep2"
+  ]);
+
+  Route::get("/book/step3", [
+    "as"   => "book/step3",
+    "uses" => "BookingController@getBookAppointmentStep3"
+  ]);
+});
+
 Route::get("/", [
   "as"   => "main",
   "uses" => "MainController@getMain"
@@ -56,49 +115,9 @@ Route::get("/contact", [
   "uses" => "MainController@getContact"
 ]);
 
-Route::get("/signin", [
-  "as"   => "signin",
-  "uses" => "AccountController@getAccountSignin"
-]);
-
-Route::post("/signin", [
-  "as"   => "signin",
-  "uses" => "AccountController@postAccountSignin"
-]);
-
-Route::get("/signup", [
-  "as"   => "signup",
-  "uses" => "AccountController@getAccountSignup"
-]);
-
-Route::post("/signup", [
-  "as"   => "signup",
-  "uses" => "AccountController@postAccountSignup"
-]);
-
-Route::get("/signupinfo",[
-  "as"   => "signupinfo",
-  "uses" => "AccountController@getAccountSignupInfo"
-]);
-
 Route::get("/signout", [
   "as"   => "signout",
   "uses" => "AccountController@getAccountSignout"
-]);
-
-Route::get("/book/step1", [
-  "as"   => "book/step1",
-  "uses" => "BookingController@getBookAppointmentStep1"
-]);
-
-Route::get("/book/step2", [
-  "as"   => "book/step2",
-  "uses" => "BookingController@getBookAppointmentStep2"
-]);
-
-Route::get("/book/step3", [
-  "as"   => "book/step3",
-  "uses" => "BookingController@getBookAppointmentStep3"
 ]);
 
 /*Route::resource('accounts', 'Admin\AccountController');
@@ -183,3 +202,13 @@ Route::patch('admin/roles/{roles}', ['as'=> 'admin.roles.update', 'uses' => 'Adm
 Route::delete('admin/roles/{roles}', ['as'=> 'admin.roles.destroy', 'uses' => 'Admin\RoleController@destroy']);
 Route::get('admin/roles/{roles}', ['as'=> 'admin.roles.show', 'uses' => 'Admin\RoleController@show']);
 Route::get('admin/roles/{roles}/edit', ['as'=> 'admin.roles.edit', 'uses' => 'Admin\RoleController@edit']);
+
+
+Route::get('admin/accountaddresses', ['as'=> 'admin.accountaddresses.index', 'uses' => 'AccountAddressController@index']);
+Route::post('admin/accountaddresses', ['as'=> 'admin.accountaddresses.store', 'uses' => 'AccountAddressController@store']);
+Route::get('admin/accountaddresses/create', ['as'=> 'admin.accountaddresses.create', 'uses' => 'AccountAddressController@create']);
+Route::put('admin/accountaddresses/{accountaddresses}', ['as'=> 'admin.accountaddresses.update', 'uses' => 'AccountAddressController@update']);
+Route::patch('admin/accountaddresses/{accountaddresses}', ['as'=> 'admin.accountaddresses.update', 'uses' => 'AccountAddressController@update']);
+Route::delete('admin/accountaddresses/{accountaddresses}', ['as'=> 'admin.accountaddresses.destroy', 'uses' => 'AccountAddressController@destroy']);
+Route::get('admin/accountaddresses/{accountaddresses}', ['as'=> 'admin.accountaddresses.show', 'uses' => 'AccountAddressController@show']);
+Route::get('admin/accountaddresses/{accountaddresses}/edit', ['as'=> 'admin.accountaddresses.edit', 'uses' => 'AccountAddressController@edit']);

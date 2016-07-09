@@ -2,8 +2,19 @@
 
 namespace App\Http\Controllers;
 
+use Auth;
+use Log;
 use Flash;
 use Response;
+use Session;
+
+use App\Http\Requests\SigninAccountRequest;
+use App\Http\Requests\SignupAccountRequest;
+use App\Http\Requests\SignupInfoAccountRequest;
+use App\Http\Requests\UpdateAccountRequest;
+
+use App\Models\Account;
+use App\Models\AccountAddress;
 
 class AccountController extends AppBaseController
 {
@@ -146,8 +157,32 @@ class AccountController extends AppBaseController
         return view("pages.signin");
     }
 
-    public function postAccountSignin()
+    public function postAccountSignin(SigninAccountRequest $request)
     {
+        $remember = $request->has('remember') ? true : false;
+
+        //$field = filter_var($request->input("username"), FILTER_VALIDATE_EMAIL) ? 'email' : 'username';
+
+        $creds = [
+        'email'     => $request->input("username"), 
+        'password' => $request->input("password")
+        ];
+
+        if (Auth::attempt($creds, $remember)) {
+            if (auth()->user()->status == 0)
+            {
+                return redirect()->route('main');
+            }
+            else
+            {
+                Auth::logout();
+                Session::flush();
+                return redirect()->route('signin');
+            }
+        }
+
+        flash('Invalid Credentials', 'error');
+        return redirect()->back();
     }
 
     public function getAccountSignup()
@@ -155,13 +190,99 @@ class AccountController extends AppBaseController
         return view("pages.signup");
     }
 
-    public function postAccountSignup()
+    public function postAccountSignup(SignupAccountRequest $request)
     {   
-        return redirect('/signupinfo');
+        $account = new Account;
+        $account->fill($request->all());
+        $account->save();
+
+        Auth::loginUsingId($account->id);
+
+        return redirect()->back();
     }
 
     public function getAccountSignupInfo()
     {
         return view("pages.signupinfo");
+    }
+
+    public function postAccountSignupInfo(SignupInfoAccountRequest $request)
+    {
+        $account = Auth::user();
+        $account->type = $request->input('type');
+        $account->save();
+
+        $aa = [
+            'name' => $request->input('name'),
+            'phone' => $request->input('phone'),
+            'email' => $request->input('email'),
+            'address' => $request->input('address'),
+            'postalcode' => $request->input('postalcode'),
+            'buildingtype' => $request->input('buildingtype'),
+            'type' => 'default',
+            'account_id' => $account->id
+        ];
+
+        $accountaddress = new AccountAddress;
+        $accountaddress->fill($aa);
+        $accountaddress->save();
+
+        if($request->has('billing-check'))
+        {
+            if($request->input('billing-check') == "on")
+            {
+                $aab = [
+                    'name' => $request->input('billing-name'),
+                    'phone' => $request->input('billing-phone'),
+                    'email' => $request->input('billing-email'),
+                    'address' => $request->input('billing-address'),
+                    'postalcode' => $request->input('billing-postalcode'),
+                    'buildingtype' => $request->input('billing-buildingtype'),
+                    'type' => 'billing',
+                    'account_id' => $account->id
+                ];
+
+                $accountaddress = new AccountAddress;
+                $accountaddress->fill($aab);
+                $accountaddress->save();
+            }
+        }
+    }
+
+    public function getAccountSignout()
+    {
+        Auth::logout();
+        Session::flush();
+        return redirect()->route('main');
+    }
+
+    public function getAccountProfile()
+    {
+        $account = Auth::user();
+        return view("pages.profile", compact('account'));
+    }
+
+    public function postAccountProfile(UpdateAccountRequest $request)
+    {
+        $account = Auth::user();
+        $account->fill($request->all());
+        $account->save();
+
+        $aa = [
+            'name' => $request->input('address-name'),
+            'phone' => $request->input('address-phone'),
+            'email' => $request->input('address-email'),
+            'address' => $request->input('address'),
+            'postalcode' => $request->input('postalcode'),
+            'buildingtype' => $request->input('buildingtype'),
+            'type' => 'default',
+            'account_id' => $account->id
+        ];
+
+        $accountaddress = $account->defaultaddress != null ? $account->defaultaddress : new AccountAddress;
+        $accountaddress->fill($aa);
+        $accountaddress->save();
+        
+        return redirect()->back();
     }
 }

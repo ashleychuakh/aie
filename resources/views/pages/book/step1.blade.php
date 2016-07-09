@@ -2,41 +2,9 @@
 
 @section("head")
 <style>
-.contact-ta{
-  height:100px;
-  padding:10px;
-  border: thin solid #808aa3;
-}
-
-.select-wrapper.input-select-border input {
-  border: thin solid #808aa3;
-  padding: 0px 10px;
-  max-width: calc(100% - 20px);
-  color: rgba(0, 0, 0, 0.26);
-}
-
-.select-wrapper i {
-  font-size: 1.6em;
-}
-
-.select-wrapper span {
-  color: #808aa3;
-}
-
 .progress-bar {
   text-align: center;
 }
-
-.select-wrapper span.caret {
-  right: 10px;
-}
-input:not([type]):focus:not([readonly]), input[type=text]:focus:not([readonly]), input[type=password]:focus:not([readonly]), input[type=email]:focus:not([readonly]), input[type=url]:focus:not([readonly]), input[type=time]:focus:not([readonly]), input[type=date]:focus:not([readonly]), input[type=datetime]:focus:not([readonly]), input[type=datetime-local]:focus:not([readonly]), input[type=tel]:focus:not([readonly]), input[type=number]:focus:not([readonly]), input[type=search]:focus:not([readonly]), textarea.materialize-textarea:focus:not([readonly]) {
-    border-bottom: thin solid #808aa3;
-    box-shadow: none;
-    background-color: #f7f7f7;
-}
-
-
 </style>
 
 @endsection
@@ -45,7 +13,7 @@ input:not([type]):focus:not([readonly]), input[type=text]:focus:not([readonly]),
 <main>
   <div class="container">
     <div class="row">
-      <h4 class="faq-header" style="font-weight:300">BOOK AN APPOINTMENT</h4>
+      <h4 class="faq-header">BOOK AN APPOINTMENT</h4>
     </div>
   </div>
 
@@ -72,10 +40,10 @@ input:not([type]):focus:not([readonly]), input[type=text]:focus:not([readonly]),
        <form class="contact-form col s12">
          <div class="row">
            <div class="input-field col s12">
-              <input id="appointmentdate" name="date" type="date" class="input-box datepicker" placeholder="Select Date">
+              <input id="appointmentdate" name="date" type="date" class="input-box datepicker" placeholder="Select Date" data-parsley-required="true" data-parsley-trigger="change">
            </div>
            <div class="input-field col s12">
-            <select class="input-select-border">
+            <select class="input-select-border" data-parsley-required="true" data-parsley-trigger="change">
               <option value="" disabled selected>Select Arrival Time</option>
               <option value="1">Option 1</option>
               <option value="2">Option 2</option>
@@ -83,7 +51,7 @@ input:not([type]):focus:not([readonly]), input[type=text]:focus:not([readonly]),
             </select>
            </div>
            <div class="input-field col s12">
-            <select class="input-select-border">
+            <select class="input-select-border" data-parsley-required="true" data-parsley-trigger="change">
               <option value="" disabled selected>Service Type</option>
               <option value="1">Option 1</option>
               <option value="2">Option 2</option>
@@ -91,7 +59,7 @@ input:not([type]):focus:not([readonly]), input[type=text]:focus:not([readonly]),
             </select>
            </div>
            <div class="input-field col s12 m6">
-             <select class="input-select-border">
+             <select class="input-select-border" data-parsley-required="true" data-parsley-trigger="change">
                <option value="" disabled selected>A/C Type</option>
                <option value="1">Option 1</option>
                <option value="2">Option 2</option>
@@ -99,13 +67,13 @@ input:not([type]):focus:not([readonly]), input[type=text]:focus:not([readonly]),
              </select>
            </div>
            <div class="input-field col s12 m6">
-             <input name="email" class="input-box" type="text" placeholder="Qty">
+              <input name="email" class="input-box" type="text" placeholder="Qty" data-parsley-required="true" data-parsley-trigger="change">
            </div>
            <div class="input-field col s12">
-                 <textarea class="form-textarea contact-ta" type="text" placeholder="Additional Notes" rows="5" required></textarea>
-              </div>
+              <textarea class="materialize-textarea" type="text" placeholder="Additional Notes" data-parsley-required="true" data-parsley-trigger="change"></textarea>
+           </div>
            <div class="input-field col s12 center">
-              <button class="btn btn-theme" type="submit">NEXT STEP ></button>
+              <button class="btn btn-theme btn-fat" type="submit">NEXT STEP ></button>
            </div>
          </div>
        </form>

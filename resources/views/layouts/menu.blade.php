@@ -46,3 +46,9 @@
     <span  class="title">Roles</span></a>
 </li>
 
+<li class="{!! Request::is('accountaddresses*') ? 'active' : '' !!}">
+    <a class="nav-link nav-toggle" href="{!! route('admin.accountaddresses.index') !!}">
+    <i class="fa fa-edit"></i>
+    <span  class="title">accountaddresses</span></a>
+</li>
+

@@ -22,6 +22,7 @@ class CreateLocationsTable extends Migration
             $table->string('latitude');
             $table->string('longitude');
             $table->string("place_id");
+            $table->string('contract');
             $table->string('status');
             $table->integer('company_id')->unsigned();
             $table->foreign('company_id')->references('id')->on('companies');

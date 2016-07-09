@@ -86,7 +86,7 @@ input.contact-input{
       <div class="contact-form">
         <form class="">
           <div class="input-field center">
-            <input class="contact-input input-box" type="date" class="datepicker" placeholder="Select Date">
+            <input class="input-box" type="date" class="datepicker" placeholder="Select Date">
           </div>
           <div class="input-field center">
             <select class="aieDropDownList">
@@ -113,7 +113,7 @@ input.contact-input{
             </select>
           </div>
           <div class="input-field col m6">
-            <input class="contact-input input-box" type="text" placeholder="Qty" style="margin-left:10px">
+            <input class="input-box" type="text" placeholder="Qty" style="margin-left:10px">
           </div>
           <div class="input-field center">
             <textarea class="form-textarea contact-ta"  type="text" placeholder="Additional Notes"  rows="5" required></textarea>

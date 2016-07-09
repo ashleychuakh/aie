@@ -2,34 +2,11 @@
 
 @section("head")
 <style>
-.select-wrapper input.select-dropdown{
-	border-bottom: none;
-}
-.select-wrapper span.caret{
-	padding-right:10px;
-}
-.tabs .tab a{
-	color: #9e9e9e;
-}
-
-ul.tabs, li.tab {
-    border: thin solid #9e9e9e;
-}
-.tabs .tab a.active{
-	color:#fff;
-}
-.tabs .tab a:hover, .tabs .tab a:active, .tabs .tab a:focus, .active{
-	background-color: #03a9f4;
-	color: #fff;
-}
-.tabs .indicator {
-    height: 1px;
-    background-color: #fff;
-}
-.hidden{
+#billing.hidden{
 	display: none;
 }
 .hidden-billing{
+	display: inline-block;
 	margin-top:35px;
 }
 </style>
@@ -43,159 +20,84 @@ ul.tabs, li.tab {
 		</div>
 	</div>
 
-	<div class="container" style="margin-bottom:30px">
+	<div class="container mbtm30">
 		<div class="row">
-			<div class="col offset-m3 m6">
-				<ul class="tabs">
-				<li class="tab col s6"><a href="#residential" class="active">RESIDENTAL</a></li>
-				<li class="tab col s6"><a href="#business">BUSINESS</a></li>
-				</ul>
-			</div>
 			<div class="col offset-m2 m8">
-				<form class="signin-form" method="POST" id="residential">
-					<div class="input-field center">
-						<input class="input-box" type="text" placeholder="Name">
+				<form id="signup-info" class="signin-form" method="post">
+					<div class="container" style="width: 80%">
+						<div class="col s12 rbtn-toggle">
+						  <p>
+						    <input id="location-type-residential" name="type" type="radio" value="residential" checked data-parsley-required="true" data-parsley-trigger="change">
+						    <label for="location-type-residential">Residential</label>
+						  </p>
+						  <p>
+						    <input id="location-type-business" name="type" type="radio" value="business" data-parsley-required="true" data-parsley-trigger="change">
+						    <label for="location-type-business">Business</label>
+						  </p>
+						</div>
 					</div>
-
-					<div class="input-field col m6">
-						<input class="contact-input input-box" type="text" placeholder="Contact No." style="margin-left:-11px">
+					<div class="input-field col s12">
+					   <input id="name" name="name" class="input-box" type="text" placeholder="Name" data-parsley-required="true" data-parsley-trigger="change">
 					</div>
-
-					<div class="input-field col m6">
-						<input class="contact-input input-box" type="text" placeholder="Email" style="margin-left:11px">
+					<div class="input-field col s12 m6">
+					  <input id="phone" name="phone" class="input-box" type="text" placeholder="Contact No." data-parsley-required="true" data-parsley-trigger="change" data-parsley-pattern="^[\d\+\-\.\(\)\/\s]*$">
 					</div>
-
-					<div class="input-field center">
-						<input class="input-box" type="text" placeholder="Address" style="margin-top:15px">
+					<div class="input-field col s12 m6">
+					  <input id="email" name="email" class="input-box" type="email" placeholder="Email" data-parsley-required="true" data-parsley-trigger="change">
 					</div>
-
-					<div class="input-field center">
-						<input class="input-box" type="number" placeholder="Postal Code">
+					<div class="input-field col s12">
+					   <input id="address" name="address" class="input-box" type="text" placeholder="Address Line" data-parsley-required="true" data-parsley-trigger="change">
 					</div>
-
-					<div class="input-field center">
-						<select class="select-box" >
+					<div class="input-field col s12">
+					   <input id="postalcode" name="postalcode" class="input-box" type="text" placeholder="Postal Code" data-parsley-required="true" data-parsley-trigger="change">
+					</div>
+					<div class="input-field col s12">
+						<select id="buildingtype" name="buildingtype" class="input-select-border" data-parsley-required="true" data-parsley-trigger="change">
 							<option value="" disabled selected>Building Type</option>
-							<option value="hdb">HDB</option>
-							<option value="ec">Executive Condominium</option>
-							<option value="condo">Condominium</option>
-							<option value="terrace">Terrace</option>
-							<option value="bungalow">Bungalow</option>
+							<option value="1">Option 1</option>
+							<option value="2">Option 2</option>
+							<option value="3">Option 3</option>
 						</select>
 					</div>
 
-					<div class="input-field">
-						<input type="checkbox" id="billing-check" />
-				      <label for="billing-check">Different Billing Address?</label>
+					<div class="input-field col s12">
+						<input id="billing-check" name="billing-check" type="checkbox">
+						<label for="billing-check">Different Billing Address?</label>
 					</div>
 
-
-				<!-- Billing form -->
-
-				
-				<div class="hidden hidden-billing" id="billing">
-					<h6 class="lightblue-theme-text center">BILLING ADDRESS</h6>
-					<div class="input-field center">
-						<input class="input-box" type="text" placeholder="Name">
+					<!-- Billing form -->
+					<div id="billing" class="hidden hidden-billing" >
+						<h6 class="lightblue-theme-text center">BILLING ADDRESS</h6>
+						<div class="input-field col s12">
+						   <input id="billing-name" name="billing-name" class="input-box" type="text" placeholder="Name" data-parsley-trigger="change">
+						</div>
+						<div class="input-field col s12 m6">
+						  <input id="billing-phone" name="billing-phone" class="input-box" type="text" placeholder="Contact No." data-parsley-trigger="change" data-parsley-pattern="^[\d\+\-\.\(\)\/\s]*$">
+						</div>
+						<div class="input-field col s12 m6">
+						  <input id="billing-email" name="billing-email" class="input-box" type="email" placeholder="Email" data-parsley-trigger="change">
+						</div>
+						<div class="input-field col s12">
+						   <input id="billing-address" name="billing-address" class="input-box" type="text" placeholder="Address Line" data-parsley-trigger="change">
+						</div>
+						<div class="input-field col s12">
+						   <input id="billing-postalcode" name="billing-postalcode" class="input-box" type="text" placeholder="Postal Code" data-parsley-trigger="change">
+						</div>
+						<div class="input-field col s12">
+							<select id="billing-buildingtype" name="billing-buildingtype" class="input-select-border" data-parsley-trigger="change">
+								<option value="" disabled selected>Building Type</option>
+								<option value="1">Option 1</option>
+								<option value="2">Option 2</option>
+								<option value="3">Option 3</option>
+							</select>
+						</div>
 					</div>
 
-					<div class="input-field col m6">
-						<input class="contact-input input-box" type="text" placeholder="Contact No." style="margin-left:-11px">
-					</div>
-
-					<div class="input-field col m6">
-						<input class="contact-input input-box" type="text" placeholder="Email" style="margin-left:11px">
-					</div>
-
-					<div class="input-field center">
-						<input class="input-box" type="text" placeholder="Address" style="margin-top:15px">
-					</div>
-
-					<div class="input-field center">
-						<input class="input-box" type="number" placeholder="Postal Code">
-					</div>
-
-					<div class="input-field center">
-						<select class="select-box" >
-							<option value="" disabled selected>Building Type</option>
-							<option value="hdb">HDB</option>
-							<option value="ec">Executive Condominium</option>
-							<option value="condo">Condominium</option>
-							<option value="terrace">Terrace</option>
-							<option value="bungalow">Bungalow</option>
-						</select>
-					</div>
-
-				</div>
-
-					<div class="input-field center">
-						<button class="btn signin-submit btn-theme" style="width:25%; margin-top:15px;">CREATE</button>
+					<div class="input-field col s12 center">
+						{!! csrf_field() !!}
+						<button class="btn btn-theme btn-fat" type="submit" style="width: 30%;">CREATE</button>
 					</div>
 				</form>
-
-
-				<!-- business form --> 
-
-			<form class="signin-form" method="POST" id="business">
-					<div class="input-field center">
-						<input class="input-box" type="text" placeholder="Name">
-					</div>
-
-					<div class="input-field col m6">
-						<input class="contact-input input-box" type="text" placeholder="Contact No." style="margin-left:-11px">
-					</div>
-
-					<div class="input-field col m6">
-						<input class="contact-input input-box" type="text" placeholder="Email" style="margin-left:11px">
-					</div>
-
-					<div class="input-field center">
-						<input class="input-box" type="text" placeholder="Address" style="margin-top:15px">
-					</div>
-
-					<div class="input-field center">
-						<input class="input-box" type="number" placeholder="Postal Code">
-					</div>
-
-
-					<div class="input-field">
-						<input type="checkbox" id="biz-billing-check" />
-				      <label for="biz-billing-check">Different Billing Address?</label>
-					</div>
-
-
-				<!-- Billing form -->
-
-				
-				<div class="hidden hidden-billing" id="biz-billing">
-					<h6 class="lightblue-theme-text center">BILLING ADDRESS</h6>
-					<div class="input-field center">
-						<input class="input-box" type="text" placeholder="Name">
-					</div>
-
-					<div class="input-field col m6">
-						<input class="contact-input input-box" type="text" placeholder="Contact No." style="margin-left:-11px">
-					</div>
-
-					<div class="input-field col m6">
-						<input class="contact-input input-box" type="text" placeholder="Email" style="margin-left:11px">
-					</div>
-
-					<div class="input-field center">
-						<input class="input-box" type="text" placeholder="Address" style="margin-top:15px">
-					</div>
-
-					<div class="input-field center">
-						<input class="input-box" type="number" placeholder="Postal Code">
-					</div>
-				</div>
-
-					<div class="input-field center">
-						<button class="btn signin-submit btn-theme" style="width:25%; margin-top:15px">CREATE</button>
-					</div>
-				</form>
-
-
 			</div>
 		</div>
 	</div>
@@ -205,14 +107,44 @@ ul.tabs, li.tab {
 @section("scripts")
 <script>
 $(document).ready(function() {
-	$('select').material_select();
+	$.when($('select').material_select()).done(function(e) {
+	  $('.select-wrapper span.caret').html('<i class="icon-aieicons-downarrow grey-theme-text"></i>');
+	});
+
+	$('select').on('change', function() {
+	  $(this).siblings(".select-dropdown").addClass("grey-theme-text");
+	});
 
 	$('#billing-check').click(function(){
-        $("#billing").toggle();
+        $("#billing").toggleClass("hidden");
     });
 
-    $('#biz-billing-check').click(function(){
-        $("#biz-billing").toggle();
+    $('#signup-info').parsley({
+      successClass: 'valid',
+      errorClass: 'invalid',
+      errorsContainer: function (velem) {
+        var $errelem = velem.$element.siblings('label');
+        $errelem.attr('data-error', window.Parsley.getErrorMessage(velem.validationResult[0].assert));
+        return true;
+      },
+      errorsWrapper: '',
+      errorTemplate: ''
+    })
+    .on('field:validated', function(velem) {
+      
+    })
+    .on('field:success', function(velem) {
+      if (velem.$element.is('select'))
+      {
+        velem.$element.parent().removeClass('invalid').addClass('valid');
+        console.log("yah");
+      }
+    })
+    .on('field:error', function(velem) {
+      if (velem.$element.is('select'))
+      {
+        velem.$element.parent().removeClass('valid').addClass('invalid');
+      }
     });
 });
 </script>

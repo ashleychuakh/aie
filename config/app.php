@@ -165,6 +165,7 @@ return [
         InfyOm\Generator\InfyOmGeneratorServiceProvider::class,
         InfyOm\MetronicTemplates\MetronicTemplatesServiceProvider::class,
         Yajra\Datatables\DatatablesServiceProvider::class,
+        Orangehill\Iseed\IseedServiceProvider::class,
     ],
 
     /*

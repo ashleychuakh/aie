@@ -4,6 +4,12 @@ namespace App\Models;
 
 use Eloquent as Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Auth\Authenticatable;
+use Illuminate\Foundation\Auth\Access\Authorizable;
+use Illuminate\Auth\Passwords\CanResetPassword;
+use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
+use Illuminate\Contracts\Auth\Access\Authorizable as AuthorizableContract;
+use Illuminate\Contracts\Auth\CanResetPassword as CanResetPasswordContract;
 
 /**
  * @SWG\Definition(
@@ -84,8 +90,9 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  *      )
  * )
  */
-class Account extends Model
+class Account extends Model implements AuthenticatableContract, AuthorizableContract, CanResetPasswordContract
 {
+    use Authenticatable, Authorizable, CanResetPassword;
     use SoftDeletes;
 
     public $table = 'accounts';
@@ -96,20 +103,19 @@ class Account extends Model
 
     protected $dates = ['deleted_at'];
 
+    protected $attributes = array(
+      'role_id' => '1',
+      'status' => '0'
+    );
 
     public $fillable = [
-        'client_name',
-        'client_address',
-        'client_email',
-        'client_numbers',
-        'password',
-        'contract',
+        'name',
         'type',
-        'status',
-        'role_id',
+        'email',
+        'phone',
+        'password',
         'company_id',
-        'confirmed',
-        'confirmation_code',
+        'confirmation_token',
         'remember_token',
         'deleted_at'
     ];
@@ -121,18 +127,15 @@ class Account extends Model
      */
     protected $casts = [
         'id' => 'integer',
-        'client_name' => 'string',
-        'client_address' => 'string',
-        'client_email' => 'string',
-        'client_numbers' => 'string',
-        'password' => 'string',
-        'contract' => 'string',
+        'name' => 'string',
         'type' => 'string',
+        'email' => 'string',
+        'phone' => 'string',
+        'password' => 'string',
         'status' => 'string',
         'role_id' => 'integer',
         'company_id' => 'integer',
-        'confirmed' => 'boolean',
-        'confirmation_code' => 'string',
+        'confirmation_token' => 'string',
         'remember_token' => 'string',
         'deleted_at' => 'datetime'
     ];
@@ -145,4 +148,47 @@ class Account extends Model
     public static $rules = [
         
     ];
+
+    /**
+     * Boot the model.
+     *
+     * @return void
+     */
+    public static function boot()
+    {
+        parent::boot();
+
+        static::creating(function ($account) {
+            $account->confirmation_token = str_random(30);
+        });
+    }
+
+    /**
+     * Set the password attribute.
+     *
+     * @param string $password
+     */
+    public function setPasswordAttribute($password)
+    {
+        $this->attributes['password'] = bcrypt($password);
+    }
+
+    public function addresses()
+    {
+        return $this->hasMany('App\Models\AccountAddress', 'account_id');
+    }
+
+    public function defaultaddress()
+    {
+        $address = $this->addresses()->default();
+
+        return $address;
+    }
+
+    public function billingaddress()
+    {
+        $address = $this->addresses()->billing();
+
+        return $address;
+    }
 }

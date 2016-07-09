@@ -11,10 +11,18 @@
         </div>
         <div class="col s6 right">
           <ul>
-            <li><a href="{{ route('book/step1') }}" class="btn-border">BOOK NOW</a></li>
-            <li><a href="{{ route('signin') }}">Login</a></li>
-            <li><div class="verticalline"></div></li>
-            <li><a href="{{ route('signup') }}">Signup</a></li>
+              <li><a href="{{ route('book/step1') }}" class="btn-border">BOOK NOW</a></li>
+            @if(Auth::check())
+              <li><a class="dropdown-button" href="javascript:;" data-activates="dropdown1">Welcome {{ Auth::user()->name }} <i class="icon-aieicons-downarrow"></i></a></li>
+              <ul id="dropdown1" class="dropdown-content">
+                <li><a href="{{ route('profile') }}">Profile</a></li>
+                <li><a href="{{ route('signout') }}">Sign Out</a></li>
+              </ul>
+            @else
+              <li><a href="{{ route('signin') }}">Login</a></li>
+              <li><div class="verticalline"></div></li>
+              <li><a href="{{ route('signup') }}">Signup</a></li>
+            @endif
           </ul>
         </div>
       </div>
