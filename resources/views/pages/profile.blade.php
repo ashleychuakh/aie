@@ -37,7 +37,7 @@
 	    				<input id="name" name="name" class="input-box" type="text" placeholder="{{ empty($account->name) ? 'Name' : $account->name }}" value="{{ $account->name }}" data-parsley-required="true" data-parsley-trigger="change">
 	    			</div>
 	    			<div class="input-field col s12">
-	    				<input id="email" name="email" class="input-box" type="text" placeholder="{{ $account->email }}" value="{{ $account->email }}" data-parsley-required="true" data-parsley-trigger="change">
+	    				<input id="email" name="email" class="input-box" type="text" placeholder="{{ empty($account->email) ? 'Email' : $account->email }}" value="{{ $account->email }}" data-parsley-required="true" data-parsley-trigger="change">
 	    			</div>
 	    			<div class="input-field col s12">
 						<input id="phone" name="phone" class="input-box" type="text" placeholder="{{ empty($account->phone) ? 'Phone' : $account->phone }}" value="{{ $account->phone }}" data-parsley-required="true" data-parsley-trigger="change" data-parsley-pattern="^[\d\+\-\.\(\)\/\s]*$">
@@ -59,26 +59,26 @@
 					  </p>
 					</div>
 					<div class="input-field col s12">
-					   <input id="address-name" name="address-name" class="input-box" type="text" placeholder="Name" data-parsley-trigger="change">
+					   <input id="address-name" name="address-name" class="input-box" type="text" placeholder="{{ empty($defaultaddress->name) ? 'Phone' : $defaultaddress->name }}" value="{{ $defaultaddress->name }}" data-parsley-required="true" data-parsley-trigger="change">
 					</div>
 					<div class="input-field col s12 m6">
-					  <input id="address-phone" name="address-phone" class="input-box" type="text" placeholder="Contact No." data-parsley-trigger="change" data-parsley-pattern="^[\d\+\-\.\(\)\/\s]*$">
+					  <input id="address-phone" name="address-phone" class="input-box" type="text" placeholder="{{ empty($defaultaddress->phone) ? 'Phone' : $defaultaddress->phone }}" value="{{ $defaultaddress->phone }}" data-parsley-required="true" data-parsley-trigger="change" data-parsley-pattern="^[\d\+\-\.\(\)\/\s]*$">
 					</div>
 					<div class="input-field col s12 m6">
-					  <input id="address-email" name="address-email" class="input-box" type="email" placeholder="Email" data-parsley-trigger="change">
+					  <input id="address-email" name="address-email" class="input-box" type="email" placeholder="{{ empty($defaultaddress->email) ? 'Phone' : $defaultaddress->email }}" value="{{ $defaultaddress->email }}" data-parsley-required="true" data-parsley-trigger="change">
 					</div>
 					<div class="input-field col s12">
-						<input id="address" name="address" class="input-box" type="text" placeholder="{{ empty($account->address) ? 'Address' : $account->address }}" value="{{ $account->address }}" data-parsley-required="true" data-parsley-trigger="change">
+						<input id="address" name="address" class="input-box" type="text" placeholder="{{ empty($defaultaddress->address) ? 'Address' : $defaultaddress->address }}" value="{{ $defaultaddress->address }}" data-parsley-required="true" data-parsley-trigger="change">
 					</div>
 					<div class="input-field col s12">
-						<input id="postalcode" name="postalcode" class="input-box" type="text" placeholder="{{ empty($account->postalcode) ? 'Postal Code' : $account->postalcode }}" value="{{ $account->postalcode }}" data-parsley-required="true" data-parsley-trigger="change">
+						<input id="postalcode" name="postalcode" class="input-box" type="text" placeholder="{{ empty($defaultaddress->postalcode) ? 'Postal Code' : $defaultaddress->postalcode }}" value="{{ $defaultaddress->postalcode }}" data-parsley-required="true" data-parsley-trigger="change">
 					</div>
 					<div class="input-field col s12">
 						<select id="buildingtype" name="buildingtype" class="input-select-border" data-parsley-required="true" data-parsley-trigger="change">
 							<option value="" disabled selected>Building Type</option>
-							<option value="1" @if(isset($account->buildingtype)) @if($account->buildingtype == "1") selected @endif @endif>Option 1</option>
-							<option value="2" @if(isset($account->buildingtype)) @if($account->buildingtype == "2") selected @endif @endif>Option 2</option>
-							<option value="3" @if(isset($account->buildingtype)) @if($account->buildingtype == "3") selected @endif @endif>Option 3</option>
+							<option value="1" @if(isset($defaultaddress->buildingtype)) @if($defaultaddress->buildingtype == "1") selected @endif @endif>Option 1</option>
+							<option value="2" @if(isset($defaultaddress->buildingtype)) @if($defaultaddress->buildingtype == "2") selected @endif @endif>Option 2</option>
+							<option value="3" @if(isset($defaultaddress->buildingtype)) @if($defaultaddress->buildingtype == "3") selected @endif @endif>Option 3</option>
 						</select>
 					</div>
 					<div class="input-field col s12 mbtm20 mtop0">
@@ -141,7 +141,7 @@ $(function() {
         $("#billing").toggleClass("hidden");
     });
 
-	@if(isset($account->buildingtype))
+	@if(isset($defaultaddress->buildingtype))
 		$('select').siblings(".select-dropdown").addClass("grey-theme-text");
 	@endif
 

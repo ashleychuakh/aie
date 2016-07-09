@@ -259,7 +259,10 @@ class AccountController extends AppBaseController
     public function getAccountProfile()
     {
         $account = Auth::user();
-        return view("pages.profile", compact('account'));
+        $defaultaddress = $account->defaultaddress()->first();
+        $billingaddress = $account->billingaddress()->first();
+
+        return view("pages.profile", compact('account', 'defaultaddress', 'billingaddress'));
     }
 
     public function postAccountProfile(UpdateAccountRequest $request)
@@ -279,9 +282,30 @@ class AccountController extends AppBaseController
             'account_id' => $account->id
         ];
 
-        $accountaddress = $account->defaultaddress != null ? $account->defaultaddress : new AccountAddress;
+        $accountaddress = $account->defaultaddress()->first() != null ? $account->defaultaddress()->first() : new AccountAddress;
         $accountaddress->fill($aa);
         $accountaddress->save();
+
+        if($request->has('billing-check'))
+        {
+            if($request->input('billing-check') == "on")
+            {
+                $aab = [
+                    'name' => $request->input('billing-name'),
+                    'phone' => $request->input('billing-phone'),
+                    'email' => $request->input('billing-email'),
+                    'address' => $request->input('billing-address'),
+                    'postalcode' => $request->input('billing-postalcode'),
+                    'buildingtype' => $request->input('billing-buildingtype'),
+                    'type' => 'billing',
+                    'account_id' => $account->id
+                ];
+
+                $accountaddress = new AccountAddress;
+                $accountaddress->fill($aab);
+                $accountaddress->save();
+            }
+        }
         
         return redirect()->back();
     }
