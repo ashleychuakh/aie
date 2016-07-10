@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-        <title>Package Request</title>
+        <title>Contact</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     </head>
     <body style="margin: 0; padding: 0;">
@@ -12,7 +12,7 @@
                     <table align="center" border="0" cellpadding="0" cellspacing="0" width="600" style="border: 1px solid #cccccc; border-collapse: collapse;">
                         <tr>
                             <td align="center" bgcolor="#2C2C2C" style="padding: 40px 0 30px 0; color: #fff; font-size: 28px; font-weight: bold; font-family: Arial, sans-serif;">
-                                Package Request
+                                Contact
                             </td>
                         </tr>
                         <tr>
@@ -20,7 +20,7 @@
                                 <table border="0" cellpadding="0" cellspacing="0" width="100%">
                                     <tr>
                                         <td style="color: #153643; font-family: Arial, sans-serif; font-size: 24px; padding-bottom: 10px;">
-                                            <b>Package Request</b>
+                                            <b>Contact</b>
                                         </td>
                                     </tr>
                                     <tr>

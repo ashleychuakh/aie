@@ -77,22 +77,48 @@
               <li>Prices applicable for HDB and private residential only. For commercial clients please <a href="{{ route('contact') }}">Contact Us</a></li>
             </ul>
           </div>
-          <div class="col s12">
-            <form>
-               <input id="packageselected" name="packageselected" type="hidden">
-               {!! csrf_field() !!}
-               <button class="btn btn-theme btn-table-fat">Book Package</button>
-            </form>
+          <div class="input-field col s12 center">
+            <a id="book-package-btn" class="btn btn-theme btn-fat modal-trigger" href="#book-package">Book Package</a>
           </div>
         </div>
       </div>
     </div>
 </main>
+<!-- Modal Structure -->
+<div id="book-package" class="modal modal-theme">
+  <div class="modal-header">
+    <i class="icon-aieicons-question"></i>
+    <a href="javascript:;" class="modal-action modal-close"><i id="exit-modal" class="fa fa-times" aria-hidden="true"></i></a>
+  </div>
+  <div class="modal-content center">
+    <h5>BOOK PACKAGE</h5>
+    <form id="package-request" method="post">
+      <div class="input-field center">
+        <input id="name" name="name" class="input-box" type="text" placeholder="Name*" data-parsley-required="true" data-parsley-trigger="change">
+      </div>
+      <div class="input-field center">
+        <input id="phone" name="phone" class="input-box" type="text" placeholder="Contact No.*" data-parsley-required="true" data-parsley-trigger="change" data-parsley-pattern="^[\d\+\-\.\(\)\/\s]*$">
+      </div>
+      <div class="input-field center">
+        <input id="email" name="email" class="input-box" type="email" placeholder="Email*" data-parsley-required="true" data-parsley-trigger="change">
+      </div>
+      <div class="input-field center">
+        <textarea id="message" name="message" class="materialize-textarea"  type="text" placeholder="Leave a Message*" rows="5" data-parsley-required="true" data-parsley-trigger="change"></textarea>
+      </div>
+      <div class="input-field center">
+        {!! csrf_field() !!}
+        <input id="packageselected" name="packageselected" type="hidden" data-parsley-required="true" data-parsley-trigger="change">
+        <button class="btn btn-theme full-width" type="submit">SELECT PACKAGE</button>
+      </div>
+    </form>
+  </div>
+</div>
 @stop
 
 @section("scripts")
 <script src="/assets/js/owl.carousel.js"></script>
 <script>
+"use strict"
 $(function() {
   $('.owl-carousel').owlCarousel({
       items: 1,
@@ -108,6 +134,51 @@ $(function() {
     $(this).addClass('selected');
     $('#packageselected').val($(this).attr('data-package'));
   });
+
+  $("#book-package-btn").on('click', function() {
+    event.preventDefault();
+    if($("#packageselected").val() == "")
+    {
+      Materialize.toast('You have not selected a package', 5000, 'error');
+    }
+    else
+    {
+      $('#book-package').openModal();
+    }
+  });
+
+  initParsley('package-request');
+
+  function initParsley(elementid)
+  {
+    $('#' + elementid).parsley({
+      successClass: 'valid',
+      errorClass: 'invalid',
+      errorsContainer: function (velem) {
+        var $errelem = velem.$element.siblings('label');
+        $errelem.attr('data-error', window.Parsley.getErrorMessage(velem.validationResult[0].assert));
+        return true;
+      },
+      errorsWrapper: '',
+      errorTemplate: '',
+      excluded: ':disabled'
+    })
+    .on('field:validated', function(velem) {
+      
+    })
+    .on('field:success', function(velem) {
+      if (velem.$element.is('select'))
+      {
+        velem.$element.parent().removeClass('invalid').addClass('valid');
+      }
+    })
+    .on('field:error', function(velem) {
+      if (velem.$element.is('select'))
+      {
+        velem.$element.parent().removeClass('valid').addClass('invalid');
+      }
+    });
+  }
 });
 </script>
 @stop

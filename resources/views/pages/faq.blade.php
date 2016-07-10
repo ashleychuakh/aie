@@ -42,7 +42,7 @@
   </a>
 </div>
 <!-- Modal Structure -->
-<div id="more-questions" class="modal">
+<div id="more-questions" class="modal modal-theme">
   <div class="modal-header">
     <i class="icon-aieicons-question"></i>
     <a href="javascript:;" class="modal-action modal-close"><i id="exit-modal" class="fa fa-times" aria-hidden="true"></i></a>
@@ -65,7 +65,7 @@
       </div>
       <div class="input-field center">
         {!! csrf_field() !!}
-        <button href="#!" class="btn btn-theme full-width" type="submit">TALK TO US</button>
+        <button class="btn btn-theme full-width" type="submit">TALK TO US</button>
       </div>
     </form>
   </div>
@@ -87,7 +87,11 @@ $(function() {
     }
   })
 
-  $('#faq-contact').parsley({
+  initParsley('faq-contact');
+
+  function initParsley(elementid)
+  {
+    $('#' + elementid).parsley({
       successClass: 'valid',
       errorClass: 'invalid',
       errorsContainer: function (velem) {
@@ -96,8 +100,25 @@ $(function() {
         return true;
       },
       errorsWrapper: '',
-      errorTemplate: ''
+      errorTemplate: '',
+      excluded: ':disabled'
+    })
+    .on('field:validated', function(velem) {
+      
+    })
+    .on('field:success', function(velem) {
+      if (velem.$element.is('select'))
+      {
+        velem.$element.parent().removeClass('invalid').addClass('valid');
+      }
+    })
+    .on('field:error', function(velem) {
+      if (velem.$element.is('select'))
+      {
+        velem.$element.parent().removeClass('valid').addClass('invalid');
+      }
     });
+  }
 
   @if(Session::has('flash_notification.message'))
     Materialize.toast('{{ Session::get('flash_notification.message')}}', 5000, '{{ Session::get('flash_notification.level')}}');

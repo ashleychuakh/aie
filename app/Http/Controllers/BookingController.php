@@ -99,7 +99,7 @@ class BookingController extends Controller {
 	{
 		if ($request->session()->has('bookingconfirmed'))
 		{
-			//$request->session()->flush();
+			$request->session()->flush();
 			return view("pages.book.step4");
 		}
 		else
