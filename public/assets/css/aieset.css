@@ -32,9 +32,6 @@
     font-size: 5em;
 }
 
-.icon-aieicons-leftarrow:before {
-    content: "\e917";
-}
 .icon-aieicons-snowflake:before {
     content: "\e90c";
 }
@@ -86,24 +83,30 @@
 .icon-aieicons-clock:before {
     content: "\e910";
 }
-.icon-aieicons-quickview-14:before {
+.icon-aieicons-filledphone:before {
     content: "\e911";
 }
-.icon-aieicons-rightarrow:before {
+.icon-aieicons-quickview-14:before {
     content: "\e912";
 }
-.icon-aieicons-totop:before {
+.icon-aieicons-rightarrow:before {
     content: "\e913";
 }
-.icon-aieicons-search-10:before {
+.icon-aieicons-totop:before {
     content: "\e914";
 }
-.icon-aieicons-troubleshooting-04:before {
+.icon-aieicons-search-10:before {
     content: "\e915";
 }
-.icon-aieicons-twitter:before {
+.icon-aieicons-troubleshooting-04:before {
     content: "\e916";
 }
-.icon-aieicons-spanner:before {
+.icon-aieicons-twitter:before {
+    content: "\e917";
+}
+.icon-aieicons-leftarrow:before {
     content: "\e918";
+}
+.icon-aieicons-spanner:before {
+    content: "\e919";
 }

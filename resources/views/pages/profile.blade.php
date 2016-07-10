@@ -66,13 +66,14 @@
 							<option value="3" @if(isset($defaultaddress->buildingtype)) @if($defaultaddress->buildingtype == "3") selected @endif @endif>Option 3</option>
 						</select>
 					</div>
+
 					<div class="input-field col s12 mbtm20 mtop0">
 						<input id="billing-check" name="billing-check" type="checkbox" value="yes">
 						<label for="billing-check">Different Billing Address?</label>
 					</div>
 
 					<!-- Billing form -->
-					<div id="billing" class="hidden hidden-billing" >
+					<div id="billing" class="hidden hidden-billing full-width" >
 						<h6 class="lightblue-theme-text center">BILLING ADDRESS</h6>
 						<div class="input-field col s12">
 						   <input id="billing-name" name="billing-name" class="input-box" type="text" placeholder="{{ empty($billingaddress->name) ? 'Name' : $billingaddress->name }}" value="{{ $billingaddress->name }}" data-parsley-required="true" data-parsley-trigger="change" disabled>
@@ -122,16 +123,16 @@ $(function() {
 	});
 
 	$('#billing-check').click(function(){
-        $('#billing').toggleClass("hidden");
-        if($(this).prop('checked') == true)
-        {
-        	enableConditionalForm('billing');
-        }
-        else
-        {
-        	$('#billing').find('input,select').prop('disabled', true);
-        }
-        $('#profile').parsley().destroy();
+	    $('#billing').toggleClass("hidden");
+	    if($(this).prop('checked') == true)
+	    {
+	    	enableConditionalForm('billing');
+	    }
+	    else
+	    {
+	    	$('#billing').find('input,select').prop('disabled', true);
+	    }
+	    $('#profile').parsley().destroy();
 		initParsley('profile');
     });
 

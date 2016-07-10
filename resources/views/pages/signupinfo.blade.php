@@ -59,7 +59,7 @@
 					</div>
 
 					<!-- Billing form -->
-					<div id="billing" class="hidden hidden-billing" >
+					<div id="billing" class="hidden hidden-billing full-width" >
 						<h6 class="lightblue-theme-text center">BILLING ADDRESS</h6>
 						<div class="input-field col s12">
 						   <input id="billing-name" name="billing-name" class="input-box" type="text" placeholder="Name" data-parsley-required="true" data-parsley-trigger="change" disabled>

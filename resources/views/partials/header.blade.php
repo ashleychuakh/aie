@@ -5,7 +5,7 @@
       <div class="row no-margin">
         <div class="col s6">
           <ul>
-            <li><i class="icon-aieicons-phone hflip"></i><a href=""> (65) 6592 6887</a></li>
+            <li><i class="icon-aieicons-filledphone"></i><a href=""> (65) 6592 6887</a></li>
             <li><a href="">Operating Hours: Mon-Sat 11am-6pm</a></li>
           </ul>
         </div>

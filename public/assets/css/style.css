@@ -241,6 +241,9 @@ a:hover, a:focus {
   font-weight: 600;
   color: #2f3080;
 }
+.top-bar ul i {
+  color: #2f3080;
+}
 .top-bar ul li .btn-border:hover, .top-bar ul li .btn-border:focus {
   color: #fff;
 }
