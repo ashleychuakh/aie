@@ -17,7 +17,7 @@
     </div>
   </div>
 
-  <div class="container">
+  <div class="container stage-bar">
     <div class="row">
       <div class="col s4 m4 l4 progress-bar">
         STEP 1: BOOKING
@@ -36,44 +36,37 @@
   </div>
 
   <div class="container">
-    <div class="row">
-      <div class="container" style="width: 80%">
-        <div class="col s12 rbtn-toggle">
-          <p>
-            <input id="location-type-residential" name="location-type" type="radio" checked/>
-            <label for="location-type-residential">Residential</label>
-          </p>
-          <p>
-            <input id="location-type-business" name="location-type" type="radio" />
-            <label for="location-type-business">Business</label>
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="container">
      <div class="row">
       <div class="col s12">
         <form id="book-address" class="contact-form" method="post">
+          <div class="col s12 m8 offset-m2 l10 offset-l1 rbtn-toggle">
+            <p>
+              <input id="location-type-residential" name="locationtype" type="radio" value="residential" checked data-parsley-required="true" data-parsley-trigger="change">
+              <label for="location-type-residential">Residential</label>
+            </p>
+            <p>
+              <input id="location-type-business" name="locationtype" type="radio" value="business" data-parsley-required="true" data-parsley-trigger="change">
+              <label for="location-type-business">Business</label>
+            </p>
+          </div>
           <div class="row">
             <div class="input-field col s12">
-               <input class="input-box" type="text" placeholder="Name" data-parsley-required="true" data-parsley-trigger="change">
+               <input id="name" name="name" class="input-box" type="text" placeholder="Name" data-parsley-required="true" data-parsley-trigger="change">
             </div>
             <div class="input-field col s12 m6">
-              <input class="input-box" type="text" placeholder="Contact No." data-parsley-required="true" data-parsley-trigger="change" data-parsley-pattern="^[\d\+\-\.\(\)\/\s]*$">
+              <input id="phone" name="phone" class="input-box" type="text" placeholder="Contact No." data-parsley-required="true" data-parsley-trigger="change" data-parsley-pattern="^[\d\+\-\.\(\)\/\s]*$">
             </div>
             <div class="input-field col s12 m6">
-              <input class="input-box" type="email" placeholder="Email" data-parsley-required="true" data-parsley-trigger="change">
+              <input id="email" name="email" class="input-box" type="email" placeholder="Email" data-parsley-required="true" data-parsley-trigger="change">
             </div>
             <div class="input-field col s12">
-               <input class="input-box" type="text" placeholder="Address Line" data-parsley-required="true" data-parsley-trigger="change">
+               <input id="address" name="address" class="input-box" type="text" placeholder="Address Line" data-parsley-required="true" data-parsley-trigger="change">
             </div>
             <div class="input-field col s12">
-               <input class="input-box" type="text" placeholder="Postal Code" data-parsley-required="true" data-parsley-trigger="change">
+               <input id="postalcode" name="postalcode" class="input-box" type="text" placeholder="Postal Code" data-parsley-required="true" data-parsley-trigger="change">
             </div>
             <div class="input-field col s12">
-             <select class="input-select-border" data-parsley-required="true" data-parsley-trigger="change">
+             <select id="buildingtype" name="buildingtype" class="input-select-border" data-parsley-required="true" data-parsley-trigger="change">
                <option value="" disabled selected>Building Type</option>
                <option value="1">Option 1</option>
                <option value="2">Option 2</option>
@@ -113,8 +106,9 @@
              </div>
             </div>
 
-            <div class="input-field col s12 center">
-               <button class="btn btn-theme btn-fat" type="submit">NEXT STEP ></button>
+            <div class="input-field col s12 center">  
+              {!! csrf_field() !!}
+              <button class="btn btn-theme btn-fat" type="submit">NEXT STEP ></button>
             </div>
           </div>
         </form>

@@ -79,6 +79,26 @@ class AppMailer
         $this->deliver();
     }
 
+    public function sendContactEmail($data)
+    {
+        $this->to = 'zane@webtailors.sg';
+        $this->view = 'emails.contact';
+        $this->data = compact('data');
+        $this->subject = 'AIESG Contact Email';
+
+        $this->deliver();
+    }
+
+    public function sendBookingRequestEmail($bookingdetails, $bookingaddress)
+    {
+        $this->to = 'zane@webtailors.sg';
+        $this->view = 'emails.booking';
+        $this->data = compact('bookingdetails', 'bookingaddress');
+        $this->subject = 'AIESG Booking Request Email';
+
+        $this->deliver();
+    }
+
     /**
      * Deliver the email.
      *

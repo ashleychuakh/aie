@@ -125,9 +125,19 @@ Route::get("/contact", [
   "uses" => "MainController@getContact"
 ]);
 
+Route::post("/contact", [
+  "as"   => "contact",
+  "uses" => "MailController@postContact"
+]);
+
 Route::get("/book/details", [
   "as"   => "book/step1",
   "uses" => "BookingController@getBookAppointmentStep1"
+]);
+
+Route::post("/book/details", [
+  "as"   => "book/step1",
+  "uses" => "BookingController@postBookAppointmentStep1"
 ]);
 
 Route::get("/book/address", [
@@ -135,9 +145,24 @@ Route::get("/book/address", [
   "uses" => "BookingController@getBookAppointmentStep2"
 ]);
 
+Route::post("/book/address", [
+  "as"   => "book/step2",
+  "uses" => "BookingController@postBookAppointmentStep2"
+]);
+
 Route::get("/book/confirmation", [
   "as"   => "book/step3",
   "uses" => "BookingController@getBookAppointmentStep3"
+]);
+
+Route::post("/book/confirmation", [
+  "as"   => "book/step3",
+  "uses" => "BookingController@postBookAppointmentStep3"
+]);
+
+Route::get("/book/confirmed", [
+  "as"   => "book/step4",
+  "uses" => "BookingController@getBookAppointmentStep4"
 ]);
 
 /*Route::resource('accounts', 'Admin\AccountController');

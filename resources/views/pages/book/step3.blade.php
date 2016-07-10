@@ -59,50 +59,67 @@
   </div>
   <div class="container">
     <div class="row">
-      <div class="contact-form">
-        <form >
-          <h5>1. BOOKING</h5>
-          <div class="section">
-            <div class="booking-details">
-              <p class="lightblue-theme-text">DATE AND TIME: Tuesday, 2 June At 14:00</p>
-              <p class="lightblue-theme-text">SERVICE TYPE: Cleaning</p>
-            </div>
-            <a class="edit-section" href=""><i class="icon-aieicons-editbutton grey-theme-text"></i></a>
+      <div class="booking-confirmation">
+        <h5>1. BOOKING</h5>
+        <div class="section">
+          <div class="booking-details">
+            <p class="lightblue-theme-text">DATE AND TIME: {{ $bookingdetails["appointmentdate"] }} at {{ $bookingdetails["arrivaltime"] }}</p>
+            <p class="lightblue-theme-text">SERVICE TYPE: {{ $bookingdetails["servicetype"] }}</p>
+            <p class="lightblue-theme-text">AIRCON TYPE: {{ $bookingdetails["aircontype"] }}</p>
+            <p class="lightblue-theme-text">QUANTITY: {{ $bookingdetails["quantity"] }}</p>
+            <p class="lightblue-theme-text">ADDITIONAL NOTES: {{ $bookingdetails["additionalnotes"] }}</p>
           </div>
-          <div class="divider"></div>
-          <h5>2. YOUR INFO</h5>
-          <div class="section">
-            <span class="booking-subheader">BILLING ADDRESS</span>
+          <a class="edit-section" href=""><i class="icon-aieicons-editbutton grey-theme-text"></i></a>
+        </div>
+        <div class="divider"></div>
+        <h5>2. YOUR INFO</h5>
+        <div class="section">
+          <span class="booking-subheader">BILLING ADDRESS</span>
+          @if(isset($bookingaddress["billing-check"]))
             <div class="booking-billingaddress">
-              <p class="lightblue-theme-text">NAME: Mr Ryan Hu</p>
-              <p class="dinline-block lightblue-theme-text">CONTACT NUMBER: 8100 455</p>
-              <p class="dinline-block mleft30 lightblue-theme-text">EMAIL: ryan213@gmail.com</p>
-              <p class="lightblue-theme-text">ADDRESS: 450 HilView Rise</p>
-              <p class="lightblue-theme-text">BUILDING TYPE: Residential</p>
+              <p class="lightblue-theme-text">LOCATION TYPE: {{ $bookingaddress["locationtype"] }}</p>
+              <p class="lightblue-theme-text">NAME: {{ $bookingaddress["billing-name"] }}</p>
+              <p class="dinline-block lightblue-theme-text">CONTACT NUMBER: {{ $bookingaddress["billing-phone"] }}</p>
+              <p class="dinline-block mleft30 lightblue-theme-text">EMAIL: {{ $bookingaddress["billing-email"] }}</p>
+              <p class="lightblue-theme-text">ADDRESS: {{ $bookingaddress["billing-address"] }}</p>
+              <p class="lightblue-theme-text">BUILDING TYPE: {{ $bookingaddress["billing-buildingtype"] }}</p>
             </div>
-            <a class="edit-section" href=""><i class="icon-aieicons-editbutton grey-theme-text"></i></a>
-          </div>
-          <div class="section">
-            <span class="booking-subheader">SERVICE ADDRESS</span>
-            <div class="booking-serviceaddress">
-              <p class="lightblue-theme-text">NAME: Mr Ryan Hu</p>
-              <p class="dinline-block lightblue-theme-text">CONTACT NUMBER: 8100 455</p>
-              <p class="dinline-block mleft30 lightblue-theme-text">EMAIL: ryan213@gmail.com</p>
-              <p class="lightblue-theme-text">ADDRESS: 450 HilView Rise</p>
-              <p class="lightblue-theme-text">BUILDING TYPE: Residential</p>
+          @else
+            <div class="booking-billingaddress">
+              <p class="lightblue-theme-text">LOCATION TYPE: {{ $bookingaddress["locationtype"] }}</p>
+              <p class="lightblue-theme-text">NAME: {{ $bookingaddress["name"] }}</p>
+              <p class="dinline-block lightblue-theme-text">CONTACT NUMBER: {{ $bookingaddress["phone"] }}</p>
+              <p class="dinline-block mleft30 lightblue-theme-text">EMAIL: {{ $bookingaddress["email"] }}</p>
+              <p class="lightblue-theme-text">ADDRESS: {{ $bookingaddress["address"] }}</p>
+              <p class="lightblue-theme-text">BUILDING TYPE: {{ $bookingaddress["buildingtype"] }}</p>
             </div>
-            <a class="edit-section" href=""><i class="icon-aieicons-editbutton grey-theme-text"></i></a>
+          @endif
+          <a class="edit-section" href=""><i class="icon-aieicons-editbutton grey-theme-text"></i></a>
+        </div>
+        <div class="section">
+          <span class="booking-subheader">SERVICE ADDRESS</span>
+          <div class="booking-serviceaddress">
+            <p class="lightblue-theme-text">LOCATION TYPE: {{ $bookingaddress["locationtype"] }}</p>
+            <p class="lightblue-theme-text">NAME: {{ $bookingaddress["name"] }}</p>
+            <p class="dinline-block lightblue-theme-text">CONTACT NUMBER: {{ $bookingaddress["phone"] }}</p>
+            <p class="dinline-block mleft30 lightblue-theme-text">EMAIL: {{ $bookingaddress["email"] }}</p>
+            <p class="lightblue-theme-text">ADDRESS: {{ $bookingaddress["address"] }}</p>
+            <p class="lightblue-theme-text">BUILDING TYPE: {{ $bookingaddress["buildingtype"] }}</p>
           </div>
-          <div class="container-fluid">
-            <div class="row">
-              <div id="map"></div>
-            </div>
+          <a class="edit-section" href=""><i class="icon-aieicons-editbutton grey-theme-text"></i></a>
+        </div>
+        <div class="container-fluid">
+          <div class="row">
+            <div id="map"></div>
           </div>
+        </div>
 
-          <div class="form-group center">
-            <button class="btn btn-theme contact-submit"> CONFIRM BOOKING </button>
-          </div>
-        </form>
+        <div class="form-group center">
+          <form method="post">
+            {!! csrf_field() !!}
+            <button class="btn btn-theme btn-fat" type="submit">CONFIRM BOOKING</button>
+          </form>
+        </div>
       </div>
     </div>
   </div>

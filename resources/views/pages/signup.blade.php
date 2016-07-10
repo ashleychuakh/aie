@@ -80,6 +80,10 @@ $(function() {
       errorsWrapper: '',
       errorTemplate: ''
     });
+
+  @if(Session::has('flash_notification.message'))
+    Materialize.toast('{{ Session::get('flash_notification.message')}}', 5000, '{{ Session::get('flash_notification.level')}}');
+  @endif
 });
 </script>
 @stop
