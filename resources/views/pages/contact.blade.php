@@ -1,6 +1,7 @@
 @extends("layouts/default")
 
 @section("head")
+<title>AIE SG | Contact Us</title>
 <style>
 .map-responsive{
     overflow: hidden;

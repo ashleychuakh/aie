@@ -11,6 +11,11 @@
 |
 */
 
+Route::get("/test", [
+  "as"   => "test",
+  "uses" => "MainController@getTest"
+]);
+
 Route::group(['middleware' => ['guest']], function () {
   Route::get("/signin", [
     "as"   => "signin",
@@ -60,6 +65,16 @@ Route::group(['middleware' => ['auth']], function () {
   ]);
 });
 
+Route::get("/confirm/{token}", [
+  "as"   => "confirm",
+  "uses" => "AccountController@getAccountConfirmEmail"
+]);
+
+Route::get("/confirmation", [
+  "as"   => "confirmation",
+  "uses" => "AccountController@getAccountConfirmation"
+]);
+
 Route::get("/", [
   "as"   => "main",
   "uses" => "MainController@getMain"
@@ -98,6 +113,11 @@ Route::get("/products", [
 Route::get("/faq", [
   "as"   => "faq",
   "uses" => "MainController@getFAQ"
+]);
+
+Route::post("/faq", [
+  "as"   => "faq",
+  "uses" => "MailController@postFaqContact"
 ]);
 
 Route::get("/contact", [

@@ -8,6 +8,7 @@ use Flash;
 use Response;
 use Session;
 
+use App\Mailers\AppMailer;
 use App\Http\Requests\SigninAccountRequest;
 use App\Http\Requests\SignupAccountRequest;
 use App\Http\Requests\SignupInfoAccountRequest;
@@ -152,6 +153,27 @@ class AccountController extends AppBaseController
         return redirect(route('admin.accounts.index'));
     }
 
+    public function getAccountConfirmEmail($token)
+    {
+        $account = Account::where('confirmation_token', $token)->first();
+
+        if ($account)
+        {
+            $account->confirmEmail();
+            flash('You are now confirmed. Please signin.');
+        }
+        else
+        {
+
+        }
+        return redirect()->route('confirmation');
+    }
+
+    public function getAccountConfirmation()
+    {
+        return view("pages.confirmation");
+    }
+
     public function getAccountSignin()
     {
         return view("pages.signin");
@@ -190,11 +212,13 @@ class AccountController extends AppBaseController
         return view("pages.signup");
     }
 
-    public function postAccountSignup(SignupAccountRequest $request)
+    public function postAccountSignup(SignupAccountRequest $request, AppMailer $mailer)
     {   
         $account = new Account;
         $account->fill($request->all());
         $account->save();
+
+        $mailer->sendEmailConfirmationTo($account);
 
         Auth::loginUsingId($account->id);
 

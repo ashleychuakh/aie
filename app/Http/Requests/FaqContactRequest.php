@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use App\Http\Requests\Request;
 
-class UpdateAccountRequest extends Request {
+class FaqContactRequest extends Request {
 
 	/**
 	 * Determine if the user is authorized to make this request.
@@ -25,16 +25,9 @@ class UpdateAccountRequest extends Request {
 	{
 		return [
 			'name' => 'required',
-			'email' => 'required|email|unique:accounts,email,'.auth()->user()->id,
 			'phone' => 'required',
-			'password' => 'confirmed',
-			'type' => 'required',
-			'address-name' => 'required',
-			'address-phone' => 'required',
-			'address-email' => 'required',
-			'address' => 'required',
-			'postalcode' => 'required',
-			'buildingtype' => 'required',
+			'email' => 'required|email',
+			'message' => 'required',
 		];
 	}
 

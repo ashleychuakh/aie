@@ -1,19 +1,25 @@
 @extends("layouts/default")
 
 @section("head")
+<title>AIE SG | Book | Details</title>
 <style>
 .progress-bar {
   text-align: center;
 }
+.input-righticon{
+  font-size: 1.9em;
+  position: absolute;
+  top: 15%;
+  right: 20px;
+}
 </style>
-
 @endsection
 
 @section("content")
 <main>
-  <div class="container">
-    <div class="row">
-      <h4 class="faq-header">BOOK AN APPOINTMENT</h4>
+  <div class="blank-hero">
+    <div class="hero-text">
+      <h4 class="lightblue-theme-text">BOOK AN APPOINTMENT</h4>
     </div>
   </div>
 
@@ -41,6 +47,7 @@
          <div class="row">
            <div class="input-field col s12">
               <input id="appointmentdate" name="date" type="date" class="input-box datepicker" placeholder="Select Date" data-parsley-required="true" data-parsley-trigger="change">
+              <i class="icon-aieicons-calendar input-righticon"></i>
            </div>
            <div class="input-field col s12">
             <select class="input-select-border" data-parsley-required="true" data-parsley-trigger="change">

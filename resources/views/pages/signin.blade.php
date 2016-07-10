@@ -1,13 +1,14 @@
 @extends("layouts/default")
 
 @section("head")
+<title>AIE SG | Sign In</title>
 <style>
 .forgetpass-l{
-  margin-top:-50px;
-  margin-right: 10px;
-  color:#808aa3;
   text-decoration: underline;
-  position: relative;
+  position: absolute;
+  top: 14px;
+  right: 20px;
+  color:#808aa3;
 }
 </style>
 @endsection
@@ -30,7 +31,7 @@
 
 		    		<div class="input-field center">
 		    			<input id="password" name="password" class="input-box" type="password" placeholder="Password" data-parsley-required="true" data-parsley-trigger="change" data-parsley-minlength="8">
-		    			<a href="#" class="right forgetpass-l">Forget Password?</a>
+		    			<a href="#" class="forgetpass-l">Forget Password?</a>
 		    		</div>
 
 		    		<div class="input-field center">

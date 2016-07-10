@@ -62,8 +62,7 @@ class MainController extends Controller {
 
 	public function getTest()
 	{
-        $assignment = Assignment::findOrFail(5);
-		return view("pages.blank");
+		return view("pages.confirmation");
 	}
 
 	public function getPromotions(Request $request)

@@ -1,7 +1,7 @@
 @extends("layouts/default")
 
 @section("head")
-<title>AIE SG</title>
+<title>AIE SG | Packages</title>
 <style>
 
 .package-item.selected {

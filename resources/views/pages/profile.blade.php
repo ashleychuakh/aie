@@ -1,6 +1,7 @@
 @extends("layouts/default")
 
 @section("head")
+<title>AIE SG | Profile</title>
 <style>
 </style>
 @stop 

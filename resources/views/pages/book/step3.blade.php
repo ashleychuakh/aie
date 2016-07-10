@@ -1,6 +1,7 @@
 @extends("layouts/default")
 
 @section("head")
+<title>AIE SG | Book | Confirmation</title>
 <style>
 .progress-bar {
   text-align: center;
@@ -22,25 +23,24 @@
 }
 .divider {
   background-color: #808aa3;
-  height: 2px;
-  margin: 20px 0;
+  height: 3px;
+  margin: 40px 0;
 }
 .dinline-block {
   display: inline-block;
 }
 </style>
-
 @endsection
 
 @section("content")
 <main>
-  <div class="container">
-    <div class="row">
-      <h4 class="faq-header" style="font-weight:300">BOOK AN APPOINTMENT</h4>
+  <div class="blank-hero">
+    <div class="hero-text">
+      <h4 class="lightblue-theme-text">BOOK AN APPOINTMENT</h4>
     </div>
   </div>
 
-  <div class="container">
+  <div class="container stage-bar">
     <div class="row">
       <div class="col s4 m4 l4 progress-bar">
         STEP 1: BOOKING

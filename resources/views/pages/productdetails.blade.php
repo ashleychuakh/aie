@@ -1,7 +1,7 @@
 @extends("layouts/default")
 
 @section("head")
-
+<title>AIE SG</title>
 <style>
 .breadcrumbs{
   box-shadow: none;

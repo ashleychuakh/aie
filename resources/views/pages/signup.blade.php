@@ -1,6 +1,7 @@
 @extends("layouts/default")
 
 @section("head")
+<title>AIE SG | Sign Up</title>
 <style>
 .signup-subtext{
 	width:80%;

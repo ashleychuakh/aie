@@ -1,7 +1,7 @@
 @extends("layouts/default")
 
 @section("head")
-<title>AIE SG</title>
+<title>AIE SG | Services</title>
 <style>
 </style>
 <link type="text/css" rel="stylesheet" href="/assets/css/owl.carousel.css" />
@@ -16,7 +16,7 @@
       <p class="lightblue-theme-text">ONLY THE HIGHEST QUALITY OF SERVICES FOR YOU</p>
     </div>
     <div>
-      <div id="services-header-img"></div>
+      <div class="header-img services-header-img"></div>
     </div>
   </div>
   <div class="container mtop50 mbtm50">
@@ -105,14 +105,14 @@
             <div class="scope mtop30">
               <h5 class="blue-text">Scope of Work</h5>
               <ul>
-                <li><i class="icon-aieicons-check"></i>Cleaning of Casing</li>
-                <li><i class="icon-aieicons-check"></i>Cleaning of Filters</li>
-                <li><i class="icon-aieicons-check"></i>Vaccum Cooling Coil</li>
-                <li><i class="icon-aieicons-check"></i>Vaccum Drainage Pipes</li>
-                <li><i class="icon-aieicons-check"></i>Cleaning of Blower Wheel</li>
-                <li><i class="icon-aieicons-check"></i>Lubricate Moving Parts</li>
-                <li><i class="icon-aieicons-check"></i>Vaccum Floor Trap Drainage</li>
-                <li><i class="icon-aieicons-check"></i>Transporation Charge ($15/Trip)</li>
+                <li><i class="icon-aieicons-check tobelightedup-1"></i>Cleaning of Casing</li>
+                <li><i class="icon-aieicons-check tobelightedup-2"></i>Cleaning of Filters</li>
+                <li><i class="icon-aieicons-check tobelightedup-3"></i>Vaccum Cooling Coil</li>
+                <li><i class="icon-aieicons-check tobelightedup-4"></i>Vaccum Drainage Pipes</li>
+                <li><i class="icon-aieicons-check tobelightedup-5"></i>Cleaning of Blower Wheel</li>
+                <li><i class="icon-aieicons-check tobelightedup-6"></i>Lubricate Moving Parts</li>
+                <li><i class="icon-aieicons-check tobelightedup-7"></i>Vaccum Floor Trap Drainage</li>
+                <li><i class="icon-aieicons-check tobelightedup-8"></i>Transporation Charge ($15/Trip)</li>
               </ul>
             </div>
           </div>
@@ -156,13 +156,38 @@ $(function() {
 
 $('.parallax').parallax();
 
-  var owl = $('#owl-item-projects');
-  $(".next").click(function(){
-    owl.trigger('next.owl.carousel');
-  })
-  $(".prev").click(function(){
-    owl.trigger('prev.owl.carousel');
-  })
+function lightUpArrowsPlz(count) {
+  $('.tobelightedup-' + count).removeClass('grey-theme-text').addClass('lightblue-theme-text');
+}
+
+var options = [
+  {selector: '.service-content .scope', offset: 150, callback: function() {
+    lightUpArrowsPlz(1);
+  } },
+  {selector: '.service-content .scope', offset: 250, callback: function() {
+    lightUpArrowsPlz(2);
+  } },
+  {selector: '.service-content .scope', offset: 350, callback: function() {
+    lightUpArrowsPlz(3);
+  } },
+  {selector: '.service-content .scope', offset: 450, callback: function() {
+    lightUpArrowsPlz(4);
+  } },
+  {selector: '.service-content .scope', offset: 550, callback: function() {
+    lightUpArrowsPlz(5);
+  } },
+  {selector: '.service-content .scope', offset: 650, callback: function() {
+    lightUpArrowsPlz(6);
+  } },
+  {selector: '.service-content .scope', offset: 750, callback: function() {
+    lightUpArrowsPlz(7);
+  } },
+  {selector: '.service-content .scope', offset: 850, callback: function() {
+    lightUpArrowsPlz(8);
+  } }
+];
+Materialize.scrollFire(options);
+
 });
 </script>
 @stop

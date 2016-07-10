@@ -40,7 +40,7 @@ nav {
           <h3>Our Services</h3>
           <p>Only the Highest Quality of Services For You</p>
         </div>
-        <div id="owl-item" class="owl-carousel owl-theme">
+        <div id="owl-services" class="owl-carousel owl-theme">
           <div class="item">
             <i class="icon-aieicons-snowflake lightblue-theme-text"></i>
             <h5>General Service</h5>
@@ -80,7 +80,7 @@ nav {
         <div class="parallax"><img src="/assets/img/main/hero-item-1.jpg"></div>
           <h3>The Facts</h3>
           <div class="container mtop70">
-            <div class="row no-margin">
+            <div class="row">
               <div class="item col s12 m6 l3">
                 <img class="circle" src="http://placehold.it/150x150">
                 <h4>300</h4>
@@ -160,22 +160,22 @@ nav {
         </div>
         <div id="owl-clients" class="owl-carousel owl-theme">
           <div class="item">
-            <img src="http://placehold.it/320x150">
+            <img src="http://placehold.it/420x150">
           </div>
           <div class="item">
-            <img src="http://placehold.it/320x150">
+            <img src="http://placehold.it/420x150">
           </div>
           <div class="item">
-            <img src="http://placehold.it/320x150">
+            <img src="http://placehold.it/420x150">
           </div>
           <div class="item">
-            <img src="http://placehold.it/320x150">
+            <img src="http://placehold.it/420x150">
           </div>
           <div class="item">
-            <img src="http://placehold.it/320x150">
+            <img src="http://placehold.it/420x150">
           </div>
           <div class="item">
-            <img src="http://placehold.it/320x150">
+            <img src="http://placehold.it/420x150">
           </div>
         </div>
       </div>
@@ -195,7 +195,7 @@ nav {
           autoplay: true
       });
 
-      $('#owl-item').owlCarousel({
+      $('#owl-services').owlCarousel({
           items:3,
           margin:10,
           loop: true,
@@ -206,17 +206,17 @@ nav {
           slideBy: 1,
           responsive:{
             0:{
-              items:1,
-              nav:false
+              items: 1,
+              nav: false
             },
             600:{
-              items:3,
-              nav:false
+              items: 3,
+              nav: false
             },
             1000:{
-              items:5,
-              nav:true,
-              loop:false
+              items: 3,
+              nav: true,
+              loop: false
             }
           }
       });
@@ -232,17 +232,17 @@ nav {
           slideBy: 1,
           responsive:{
             0:{
-              items:1,
-              nav:false
+              items: 1,
+              nav: false
             },
             600:{
-              items:3,
-              nav:false
+              items: 3,
+              nav: false
             },
             1000:{
-              items:5,
-              nav:true,
-              loop:false
+              items: 3,
+              nav: true,
+              loop: false
             }
           }
       });

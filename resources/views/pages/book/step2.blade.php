@@ -1,19 +1,19 @@
 @extends("layouts/default")
 
 @section("head")
+<title>AIE SG | Book | Address</title>
 <style>
 .progress-bar {
   text-align: center;
 }
 </style>
-
 @endsection
 
 @section("content")
 <main>
-  <div class="container">
-    <div class="row">
-      <h4 class="faq-header">BOOK AN APPOINTMENT</h4>
+  <div class="blank-hero">
+    <div class="hero-text">
+      <h4 class="lightblue-theme-text">BOOK AN APPOINTMENT</h4>
     </div>
   </div>
 

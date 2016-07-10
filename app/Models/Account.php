@@ -173,6 +173,20 @@ class Account extends Model implements AuthenticatableContract, AuthorizableCont
         $this->attributes['password'] = bcrypt($password);
     }
 
+    /**
+     * Confirm the user.
+     *
+     * @return void
+     */
+    public function confirmEmail()
+    {
+      $this->confirmation_token = null;
+      $this->save();
+        
+      $this->status = 1;
+      $this->save();
+    }
+
     public function addresses()
     {
         return $this->hasMany('App\Models\AccountAddress', 'account_id');

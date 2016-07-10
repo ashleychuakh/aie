@@ -32,7 +32,7 @@ p {
     margin-bottom: 12px;
     font-family: 'proxima-nova', sans-serif;
     font-weight: 400;
-    font-size: 14px;
+    font-size: 15px;
     line-height: 24px;
     color: #808aa3;
     margin-top: 10px;
@@ -98,6 +98,12 @@ a:hover, a:focus {
   content:"";
   display:block;
   clear:both;
+}
+.lightblue-theme-bg {
+  background-color: #3d9ff9 !important;
+}
+.grey-theme-bg {
+  background-color: #808aa3 !important;
 }
 .grey-theme-text {
   color: #808aa3 !important;
@@ -306,6 +312,8 @@ footer.page-footer {
   transform: scale(-1, 1);
 }
 
+
+
 /* Main Page */
 .hero {
   color: #fff;
@@ -324,13 +332,20 @@ footer.page-footer {
   font-size: 1.5em;
 }
 
+.hero .header-img {
+  width: 100%;
+  height: 720px;
+  background-position: center;
+  background-size: cover;
+}
+
 .hero-text {
   position: absolute;
   text-align: center;
   z-index: 2;
   width: 100%;
   height: 100%;
-  top: 40%;
+  top: 45%;
 }
 
 .hero-text h1 {
@@ -456,30 +471,32 @@ footer.page-footer {
 
 .hero-item-blank .owl-carousel .owl-nav .owl-prev {
   position: absolute;
-  top: 0;
-  margin-top: 60px;
-  margin-left: -60px;
   font-size: 3em;
 }
 
 .hero-item-blank .owl-carousel .owl-nav .owl-next {
   position: absolute;
-  top: 0;
-  right: 0;
-  margin-top: 60px;
-  margin-right: -60px;
   font-size: 3em;
 }
 
-.hero-item-blank #owl-clients .owl-nav .owl-prev {
-  margin-top: 75px;
-  margin-left: -120px;
+.hero-item-blank #owl-services .owl-nav .owl-prev {
+  top: 60px;
+  left: -60px;
 }
 
+.hero-item-blank #owl-services .owl-nav .owl-next {
+  top: 60px;
+  right: -60px;
+}
+
+.hero-item-blank #owl-clients .owl-nav .owl-prev {
+  top: 75px;
+  left: -120px;
+}
 
 .hero-item-blank #owl-clients .owl-nav .owl-next {
-  margin-top: 75px;
-  margin-right: -120px;
+  top: 75px;
+  right: -120px;
 }
 
 #owl-item {
@@ -561,38 +578,8 @@ footer.page-footer {
 }
 
 /* About Page */
-#about-header-img {
-  width: 100%;
-  height: 720px;
+.about-header-img {
   background: linear-gradient(rgba(255,255,255,0.4),rgba(255,255,255,0.4)),url(/assets/img/about/about-banner.jpg);
-  background-position: center;
-}
-
-.slider-projects {
-  background-color: #676767;
-}
-
-.slider-projects-header {
-  color: #fff;
-  font-size: 1.4em;
-  text-transform: uppercase;
-}
-
-.slider-projects-subs {
-  color: #fff;
-  font-size: 1.0em;
-  text-transform: uppercase;
-}
-
-.hero-item-blank.projects .slider-projects .prev, .hero-item-blank.projects .slider-projects .next {
-  margin-top: 20px;
-  color: white;
-  font-size: 3em;
-  cursor: pointer;
-}
-
-.hero-item-blank.projects .owl-stage-outer .owl-item {
-  margin-right: 10px !important;
 }
 
 .hero-item-blank.projects .owl-carousel .owl-item img {
@@ -601,12 +588,27 @@ footer.page-footer {
   margin: 0 auto;
 }
 
+.hero-item-blank.projects .item .project-title {
+  margin: 50px 0;
+  text-transform: uppercase;
+}
+
+.hero-item-blank.projects .item {
+  background-color: #676767;
+}
+
+.hero-item-blank.projects .item .project-text {
+}
+
+.hero-item-blank.projects .item .item-subtext {
+  font-size: 1.5em;
+  font-family: proxima-nova, sans-serif;
+  font-weight: 300;
+}
+
 /* Services Page */
-#services-header-img {
-  width: 100%;
-  height: 720px;
+.services-header-img {
   background: linear-gradient(rgba(255,255,255,0.4),rgba(255,255,255,0.4)),url(/assets/img/services/services-banner.jpg);
-  background-position: center;
 }
 
 .service-sidebar a:hover .service-single {
@@ -732,10 +734,7 @@ footer.page-footer {
 
 /* Packages Page */
 .blank-hero .hero-text {
-  position: absolute;
-  text-align: center;
-  width: 100%;
-  margin-top: 250px;
+  margin-top: 80px;
 }
 
 .blank-hero {
@@ -802,11 +801,8 @@ footer.page-footer {
 }
 
 /* Materials Page */
-#materials-header-img {
-  width: 100%;
-  height: 720px;
+.materials-header-img {
   background: linear-gradient(rgba(255,255,255,0.4),rgba(255,255,255,0.4)),url(/assets/img/materials/materials-banner.jpg);
-  background-position: center;
 }
 
 .materials-cta-container ul {
@@ -869,20 +865,12 @@ footer.page-footer {
   border-radius: 0;
 }
 
-.single-material-item .aie-progress {
+.single-material-item .progress .determinate {
   color: #fff;
-  width: 70%;
   text-align: right;
   padding-right: 20px;
   line-height: 35px;
-}
-
-.single-material-item .competitor-progress {
-  color: #fff;
-  width: 60%;
-  text-align: right;
-  padding-right: 20px;
-  line-height: 35px;
+  width: 0%;
 }
 
 .single-material-item .owl-carousel .owl-item img {
@@ -898,6 +886,11 @@ footer.page-footer {
 .single-material-item .owl-theme .owl-dots .owl-dot.active span, .single-material-item .owl-theme .owl-dots .owl-dot:hover span {
   background: #3D9FF9;
   border: none;
+}
+
+/* Booking Page */
+.stage-bar {
+  margin: 40px auto;
 }
 
 /* Accent Colors*/
@@ -1300,17 +1293,17 @@ button.picker__today:focus, button.picker__clear:focus, button.picker__close:foc
 #more-questions .modal-header i {
   border: 1px solid #fff;
   border-radius: 50%;
-  padding: 0.25em;
-  font-size: 4.5em;
+  padding: 0.5em;
+  font-size: 3em;
   color: #fff;
 }
 #more-questions .modal-header #exit-modal {
   position: absolute;
-  right: 40px;
+  right: 20px;
   font-size: 2em;
   color: #fff;
   border: none;
-  top: 20px;
+  top: 10px;
 }
 #more-questions .btn-theme.full-width {
   padding: 25px;

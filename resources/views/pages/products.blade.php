@@ -1,8 +1,7 @@
 @extends("layouts/default")
 
 @section("head")
-<link href="/assets/css/nouislider.min.css" rel="stylesheet">
-<link href="/assets/css/nouislider.css" rel="stylesheet">
+<title>AIE SG | Products</title>
 <style>
 .products-sidebar-box{
   border: thin solid #9e9e9e;
@@ -63,7 +62,8 @@ hr{
   color:#808aa3;
 }
 </style>
-
+<link href="/assets/css/nouislider.min.css" rel="stylesheet">
+<link href="/assets/css/nouislider.css" rel="stylesheet">
 @endsection
 
 @section("content")

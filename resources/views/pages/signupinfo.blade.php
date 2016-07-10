@@ -1,6 +1,7 @@
 @extends("layouts/default")
 
 @section("head")
+<title>AIE SG | Sign Up | Info</title>
 <style>
 </style>
 @stop 
