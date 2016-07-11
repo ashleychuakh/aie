@@ -10,6 +10,9 @@
 .products-sidebar{
   padding: 10px 20px;
 }
+.product-item p{
+  margin:0;
+}
 a.reset.right{
   margin-top: -30px;
   font-size:0.8rem;
@@ -45,7 +48,6 @@ hr{
   position: relative;
   display: inline-block;
 }
-
 .product-item:hover .over {
   display: block;
 }
@@ -61,6 +63,9 @@ hr{
 }
 .prod-search a{
   color:#808aa3;
+}
+.row .col{
+  padding: 0 1rem;
 }
 </style>
 
@@ -88,7 +93,7 @@ hr{
     <hr>
     <div class="products">
       <div class="col m4 s6 center product-item">
-        <div class="row"><img src="http://placehold.it/180x180"></div>
+        <div class="row"><img src="http://placehold.it/180x180" class="responsive-img"></div>
         <p class="prod-model lightblue-theme-text">Model</p>
         <p>#Model No<br>Product Name</p>
         <div class="over valign-wrapper"><a href="{{url('/productdetails')}}"> 
@@ -98,7 +103,7 @@ hr{
       </div>
 
       <div class="col m4 s6 center product-item">
-        <div class="row"><img src="http://placehold.it/180x180"></div>
+        <div class="row"><img src="http://placehold.it/180x180" class="responsive-img"></div>
         <p class="prod-model lightblue-theme-text">Model</p>
         <p>#Model No<br>Product Name</p>
         <div class="over valign-wrapper"><a href="{{url('/productdetails')}}"> 
@@ -108,7 +113,7 @@ hr{
       </div>
 
       <div class="col m4 s6 center product-item">
-        <div class="row"><img src="http://placehold.it/180x180"></div>
+        <div class="row"><img src="http://placehold.it/180x180" class="responsive-img"></div>
         <p class="prod-model lightblue-theme-text">Model</p>
         <p>#Model No<br>Product Name</p>
         <div class="over valign-wrapper"><a href="{{url('/productdetails')}}"> 
@@ -118,7 +123,7 @@ hr{
       </div>
 
       <div class="col m4 s6 center product-item">
-        <div class="row"><img src="http://placehold.it/180x180"></div>
+        <div class="row"><img src="http://placehold.it/180x180" class="responsive-img"></div>
         <p class="prod-model lightblue-theme-text">Model</p>
         <p>#Model No<br>Product Name</p>
         <div class="over valign-wrapper"><a href="{{url('/productdetails')}}"> 

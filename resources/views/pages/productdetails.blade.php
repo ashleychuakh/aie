@@ -22,7 +22,8 @@ hr{
 }
 .tabs .tab a, .tabs .tab a:hover{
   color:#808aa3;
-  font-size: 16px;
+  font-size: 18px;
+  text-transform: none;
 }
 .tabs .indicator{
   height:4px;
@@ -50,7 +51,9 @@ hr{
   </div>
   <div class="row">
     <div class="col m7">
-      <div class="row"><img src="http://placehold.it/400x150"></div>
+      <div class="row">
+        <img src="http://placehold.it/500x200" class="responsive-img">
+      </div>
       <div class="row">
         <img src="http://placehold.it/100x100">
         <img src="http://placehold.it/100x100">
@@ -82,11 +85,11 @@ hr{
     <p class="prod-desc-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam turpis nibh, 
       vestibulum non tempor nec, lobortis eu justo. Proin gravida eu augue sit amet gravida. Integer hendrerit 
       suscipit augue.  </p> 
-      <div class="col s12 center" style="margin-top:35px">
-        <img src="http://placehold.it/900x500">
+      <div class="col s12 l6 center" style="margin-top:35px;">
+        <img src="http://placehold.it/900x500" class="responsive-img">
       </div>
   </div>
-  
+
   <div id="prod-spec" class="col s12">Product Spec</div>
 
 
